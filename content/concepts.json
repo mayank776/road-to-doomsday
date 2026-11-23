@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "multiverse",
+    "name": "The Multiverse",
+    "summary": "An infinite set of parallel universes. It opened up in the MCU after He Who Remains was killed.",
+    "status": "confirmed",
+    "citation": "Loki S1 E6"
+  },
+  {
+    "slug": "incursions",
+    "name": "Incursions",
+    "summary": "Two universes collide and one destroys the other.",
+    "status": "confirmed",
+    "citation": "Doctor Strange in the Multiverse of Madness"
+  },
+  {
+    "slug": "anchor-beings",
+    "name": "Anchor beings",
+    "summary": "A person whose existence holds a universe together. When they die, that universe begins to end.",
+    "status": "confirmed",
+    "citation": "Deadpool & Wolverine"
+  },
+  {
+    "slug": "earth-828",
+    "name": "Earth-828",
+    "summary": "The Fantastic Four's home universe, separate from the main MCU's Earth-616.",
+    "status": "confirmed",
+    "citation": "The Fantastic Four: First Steps"
+  }
+]

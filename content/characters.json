@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "doctor-doom",
+    "name": "Victor von Doom",
+    "alias": "Doctor Doom",
+    "summary": "The announced central threat of Avengers: Doomsday. On screen, the MCU has shown almost nothing about him so far. Most of what fans 'know' comes from the comics, and this page keeps the two apart.",
+    "mcu": [
+      {
+        "text": "Robert Downey Jr. will play Victor von Doom in Avengers: Doomsday.",
+        "status": "confirmed",
+        "basis": "official-announcement",
+        "citation": "Marvel Studios Hall H panel, San Diego Comic-Con, 27 July 2024"
+      },
+      {
+        "text": "A hooded figure sits with baby Franklin Richards on Earth-828. A Doom mask is visible on screen; the face is not.",
+        "status": "confirmed",
+        "citation": "The Fantastic Four: First Steps — post-credits scene"
+      },
+      {
+        "text": "The hooded figure in that scene is Doctor Doom.",
+        "status": "supported",
+        "citation": "The Fantastic Four: First Steps — post-credits scene",
+        "note": "Strongly implied by the mask and by the Doomsday announcement, but the scene does not name him."
+      },
+      {
+        "text": "His MCU origin, home universe, powers and motive have not yet been established on screen.",
+        "status": "confirmed",
+        "note": "Recorded as an absence: there is no on-screen evidence yet. This will be updated when Doomsday releases."
+      }
+    ],
+    "comics": [
+      {
+        "text": "First appeared in Fantastic Four #5 (1962), created by Stan Lee and Jack Kirby.",
+        "status": "confirmed",
+        "basis": "comics"
+      },
+      {
+        "text": "Monarch of the small European nation of Latveria. Diplomatic immunity is a recurring part of his character.",
+        "status": "confirmed",
+        "basis": "comics"
+      },
+      {
+        "text": "Reed Richards' college rival. A failed experiment that Doom blamed on Reed scarred him and drove him behind his iron mask.",
+        "status": "confirmed",
+        "basis": "comics"
+      },
+      {
+        "text": "A genius who combines advanced science with sorcery. His mother's pact with Mephisto drives many of his storylines.",
+        "status": "confirmed",
+        "basis": "comics"
+      },
+      {
+        "text": "In Secret Wars (2015), Doom salvages the remains of a dying multiverse after the incursions and rules the patchwork Battleworld as God Emperor Doom.",
+        "status": "confirmed",
+        "basis": "comics",
+        "citation": "Secret Wars (2015), Jonathan Hickman & Esad Ribić"
+      }
+    ],
+    "open": [
+      {
+        "text": "Doom has a specific interest in Franklin Richards.",
+        "status": "supported",
+        "citation": "The Fantastic Four: First Steps — post-credits scene",
+        "note": "The staging of the scene points to it. His reason is unknown."
+      },
+      {
+        "text": "Doom wants to use Franklin's reality-altering power.",
+        "status": "theory"
+      },
+      {
+        "text": "Downey's Doom is a variant of Tony Stark.",
+        "status": "theory",
+        "note": "Popular because of the casting. Nothing on screen or in official material supports it yet."
+      },
+      {
+        "text": "Doomsday will adapt elements of the comics' incursion and Secret Wars story.",
+        "status": "theory",
+        "note": "Avengers: Secret Wars is announced as the next Avengers film, but how closely either film follows the comics is unknown."
+      }
+    ],
+    "openQuestions": [
+      "Which universe is this Doom from? Is he native to Earth-828?",
+      "Why is Doom with Franklin, and what does he want?",
+      "Why did Marvel cast Robert Downey Jr., and does the casting matter in-story?"
+    ],
+    "art": {
+      "hue": 140,
+      "motif": "eclipse"
+    }
+  },
+  {
+    "slug": "reed-richards",
+    "name": "Reed Richards",
+    "alias": "Mister Fantastic",
+    "summary": "The Fantastic Four's leader and, in the comics, Doom's defining rival. The MCU has shown two versions of him so far.",
+    "mcu": [
+      {
+        "text": "An Earth-838 variant played by John Krasinski appears briefly and is killed by Wanda.",
+        "status": "confirmed",
+        "citation": "Doctor Strange in the Multiverse of Madness"
+      },
+      {
+        "text": "Pedro Pascal plays the Earth-828 Reed Richards and is confirmed for Avengers: Doomsday.",
+        "status": "confirmed",
+        "basis": "official-announcement",
+        "citation": "The Fantastic Four: First Steps; Doomsday cast livestream, 26 March 2025"
+      }
+    ],
+    "comics": [
+      {
+        "text": "Doom and Reed met as college students. Their rivalry is one of Marvel's oldest.",
+        "status": "confirmed",
+        "basis": "comics"
+      }
+    ],
+    "art": {
+      "hue": 205,
+      "motif": "orbit"
+    }
+  },
+  {
+    "slug": "franklin-richards",
+    "name": "Franklin Richards",
+    "summary": "Reed and Sue's son. His power drew Galactus to Earth-828, and he is the child Doom is seen with.",
+    "mcu": [
+      {
+        "text": "Galactus wants Franklin because of his extraordinary power.",
+        "status": "confirmed",
+        "citation": "The Fantastic Four: First Steps"
+      },
+      {
+        "text": "Seen with a hooded figure holding Doom's mask.",
+        "status": "confirmed",
+        "citation": "The Fantastic Four: First Steps — post-credits scene"
+      }
+    ],
+    "comics": [
+      {
+        "text": "One of Marvel's most powerful reality-warping mutants. He has created entire pocket universes.",
+        "status": "confirmed",
+        "basis": "comics"
+      }
+    ],
+    "art": {
+      "hue": 265,
+      "motif": "rings"
+    }
+  },
+  {
+    "slug": "loki",
+    "name": "Loki",
+    "summary": "No longer just a trickster: Loki is now the being who holds the multiverse's timelines together.",
+    "mcu": [
+      {
+        "text": "Sits at the End of Time and sustains the branching timelines.",
+        "status": "confirmed",
+        "citation": "Loki S2 E6"
+      },
+      {
+        "text": "Tom Hiddleston is confirmed in the Avengers: Doomsday cast.",
+        "status": "confirmed",
+        "basis": "official-announcement",
+        "citation": "Doomsday cast livestream, 26 March 2025"
+      }
+    ],
+    "open": [
+      {
+        "text": "Doom's plans will threaten or exploit the structure Loki maintains.",
+        "status": "theory"
+      }
+    ],
+    "art": {
+      "hue": 95,
+      "motif": "tree"
+    }
+  },
+  {
+    "slug": "he-who-remains",
+    "name": "He Who Remains / Kang",
+    "summary": "The MCU's original multiverse-saga villain. The thread was dropped, and it stays on the map so the history of the story is clear.",
+    "mcu": [
+      {
+        "text": "Killed by Sylvie, which triggers the multiverse.",
+        "status": "confirmed",
+        "citation": "Loki S1 E6"
+      },
+      {
+        "text": "A Council of Kangs is shown preparing for war.",
+        "status": "confirmed",
+        "citation": "Ant-Man and the Wasp: Quantumania — mid-credits scene",
+        "superseded": {
+          "date": "2024-07-27",
+          "note": "Avengers: The Kang Dynasty was retitled Avengers: Doomsday, with Doom replacing Kang as the central villain."
+        }
+      }
+    ],
+    "art": {
+      "hue": 38,
+      "motif": "branch"
+    }
+  },
+  {
+    "slug": "sam-wilson",
+    "name": "Sam Wilson",
+    "alias": "Captain America",
+    "summary": "The current Captain America, set up as the person who will reassemble the Avengers.",
+    "mcu": [
+      {
+        "text": "Commits to rebuilding the Avengers.",
+        "status": "confirmed",
+        "citation": "Captain America: Brave New World"
+      },
+      {
+        "text": "Anthony Mackie is confirmed for Avengers: Doomsday.",
+        "status": "confirmed",
+        "basis": "official-announcement",
+        "citation": "Doomsday cast livestream, 26 March 2025"
+      }
+    ],
+    "art": {
+      "hue": 215,
+      "motif": "shield"
+    }
+  },
+  {
+    "slug": "new-avengers",
+    "name": "The New Avengers",
+    "alias": "formerly the Thunderbolts",
+    "summary": "Yelena Belova, Bucky Barnes, Red Guardian, John Walker, Ghost and Bob, rebranded by Valentina Allegra de Fontaine.",
+    "mcu": [
+      {
+        "text": "Publicly presented as \"The New Avengers\".",
+        "status": "confirmed",
+        "citation": "Thunderbolts* — closing scene"
+      },
+      {
+        "text": "They are the first on Earth-616 to detect the arrival from another dimension.",
+        "status": "confirmed",
+        "citation": "Thunderbolts* — post-credits scene"
+      }
+    ],
+    "art": {
+      "hue": 45,
+      "motif": "ship"
+    }
+  }
+]

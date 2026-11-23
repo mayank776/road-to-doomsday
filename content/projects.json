@@ -1,0 +1,277 @@
+[
+  {
+    "slug": "loki-season-1",
+    "title": "Loki",
+    "kind": "series",
+    "detail": "Season 1",
+    "releaseDate": "2021-06-09",
+    "whyItMatters": "The point where the MCU's single, protected timeline breaks open into a multiverse.",
+    "events": [
+      {
+        "text": "The Time Variance Authority (TVA) is revealed to prune branching timelines to protect a single 'Sacred Timeline'.",
+        "status": "confirmed",
+        "citation": "Loki S1 E1, \"Glorious Purpose\""
+      },
+      {
+        "text": "He Who Remains, who controls the TVA, is killed by Sylvie. The timeline immediately begins to branch uncontrollably.",
+        "status": "confirmed",
+        "citation": "Loki S1 E6, \"For All Time. Always.\" — the Citadel at the End of Time"
+      },
+      {
+        "text": "He Who Remains warns that his death will unleash variants of himself who are far more dangerous.",
+        "status": "confirmed",
+        "citation": "Loki S1 E6, \"For All Time. Always.\"",
+        "superseded": {
+          "date": "2024-07-27",
+          "note": "The Kang storyline this set up was later dropped; Avengers: The Kang Dynasty became Avengers: Doomsday."
+        }
+      }
+    ],
+    "tagline": "The timeline breaks",
+    "art": {
+      "hue": 38,
+      "motif": "branch"
+    }
+  },
+  {
+    "slug": "spider-man-no-way-home",
+    "title": "Spider-Man: No Way Home",
+    "kind": "film",
+    "releaseDate": "2021-12-17",
+    "whyItMatters": "The first time characters from other film universes cross into the MCU on screen.",
+    "events": [
+      {
+        "text": "A corrupted spell from Doctor Strange pulls people who know Peter Parker's identity in from other universes.",
+        "status": "confirmed",
+        "citation": "Spider-Man: No Way Home — the Sanctum spell scene"
+      },
+      {
+        "text": "Spider-Man variants played by Tobey Maguire and Andrew Garfield appear, establishing that earlier non-MCU film universes exist inside the multiverse.",
+        "status": "confirmed",
+        "citation": "Spider-Man: No Way Home — third act"
+      }
+    ],
+    "tagline": "Other worlds bleed in",
+    "art": {
+      "hue": 0,
+      "motif": "web"
+    }
+  },
+  {
+    "slug": "doctor-strange-multiverse-of-madness",
+    "title": "Doctor Strange in the Multiverse of Madness",
+    "kind": "film",
+    "releaseDate": "2022-05-06",
+    "whyItMatters": "Names and explains incursions: the collisions between universes that sit at the heart of Marvel's multiverse endgame in the comics.",
+    "events": [
+      {
+        "text": "An incursion is described as two universes colliding, with one destroying the other. Earth-838 is shown to have suffered one.",
+        "status": "confirmed",
+        "citation": "Doctor Strange in the Multiverse of Madness — Earth-838 sequences"
+      },
+      {
+        "text": "A variant of Reed Richards (John Krasinski) appears as a member of Earth-838's Illuminati and is killed by Wanda.",
+        "status": "confirmed",
+        "citation": "Doctor Strange in the Multiverse of Madness — Illuminati sequence"
+      },
+      {
+        "text": "Clea tells Strange that he caused an incursion and must help fix it.",
+        "status": "confirmed",
+        "citation": "Doctor Strange in the Multiverse of Madness — mid-credits scene"
+      }
+    ],
+    "tagline": "Universes collide",
+    "art": {
+      "hue": 285,
+      "motif": "rings"
+    }
+  },
+  {
+    "slug": "ant-man-quantumania",
+    "title": "Ant-Man and the Wasp: Quantumania",
+    "kind": "film",
+    "releaseDate": "2023-02-17",
+    "whyItMatters": "Built the Kang-led saga that Doomsday ultimately replaced, which makes it essential context for what changed.",
+    "events": [
+      {
+        "text": "Kang the Conqueror is introduced as an exiled variant in the Quantum Realm.",
+        "status": "confirmed",
+        "citation": "Ant-Man and the Wasp: Quantumania"
+      },
+      {
+        "text": "A Council of Kangs gathers, signalling a multiversal war led by Kang variants.",
+        "status": "confirmed",
+        "citation": "Ant-Man and the Wasp: Quantumania — mid-credits scene",
+        "superseded": {
+          "date": "2024-07-27",
+          "note": "Marvel moved away from Kang as the saga's central villain; the planned Kang Dynasty film became Avengers: Doomsday."
+        }
+      }
+    ],
+    "tagline": "A war that never came",
+    "art": {
+      "hue": 200,
+      "motif": "quantum"
+    }
+  },
+  {
+    "slug": "loki-season-2",
+    "title": "Loki",
+    "kind": "series",
+    "detail": "Season 2",
+    "releaseDate": "2023-10-05",
+    "whyItMatters": "Leaves Loki as the being who holds the multiverse's timelines together, making him a structural part of the multiverse.",
+    "events": [
+      {
+        "text": "Loki takes the seat at the End of Time and binds the branching timelines into a tree-like structure, sustaining the multiverse.",
+        "status": "confirmed",
+        "citation": "Loki S2 E6, \"Glorious Purpose\""
+      }
+    ],
+    "tagline": "A god holds it together",
+    "art": {
+      "hue": 95,
+      "motif": "tree"
+    }
+  },
+  {
+    "slug": "deadpool-and-wolverine",
+    "title": "Deadpool & Wolverine",
+    "kind": "film",
+    "releaseDate": "2024-07-26",
+    "whyItMatters": "Brings the Fox X-Men universe into MCU continuity and explains how a universe can die when it loses its 'anchor being'.",
+    "events": [
+      {
+        "text": "The TVA explains that a universe depends on an 'anchor being'. When that being dies, the universe slowly ends.",
+        "status": "confirmed",
+        "citation": "Deadpool & Wolverine — TVA sequence"
+      },
+      {
+        "text": "The Void is shown as a dumping ground for pruned characters, including figures from earlier Fox Marvel films.",
+        "status": "confirmed",
+        "citation": "Deadpool & Wolverine — the Void"
+      }
+    ],
+    "tagline": "Worlds can die",
+    "art": {
+      "hue": 350,
+      "motif": "void"
+    }
+  },
+  {
+    "slug": "captain-america-brave-new-world",
+    "title": "Captain America: Brave New World",
+    "kind": "film",
+    "releaseDate": "2025-02-14",
+    "whyItMatters": "Positions Sam Wilson as Captain America and the person who will rebuild the Avengers.",
+    "events": [
+      {
+        "text": "Sam Wilson commits to rebuilding the Avengers.",
+        "status": "confirmed",
+        "citation": "Captain America: Brave New World — closing act"
+      }
+    ],
+    "tagline": "Assemble again",
+    "art": {
+      "hue": 215,
+      "motif": "shield"
+    }
+  },
+  {
+    "slug": "thunderbolts",
+    "title": "Thunderbolts*",
+    "kind": "film",
+    "releaseDate": "2025-05-02",
+    "whyItMatters": "Creates a rival 'New Avengers' team and ends by bringing the Fantastic Four's world into contact with Earth-616.",
+    "events": [
+      {
+        "text": "Valentina Allegra de Fontaine publicly presents the team as \"The New Avengers\".",
+        "status": "confirmed",
+        "citation": "Thunderbolts* — closing scene"
+      },
+      {
+        "text": "A spacecraft from another dimension is detected entering Earth's atmosphere.",
+        "status": "confirmed",
+        "citation": "Thunderbolts* — post-credits scene"
+      },
+      {
+        "text": "The spacecraft is the Fantastic Four's ship, arriving from their universe.",
+        "status": "supported",
+        "citation": "Thunderbolts* — post-credits scene",
+        "note": "The ship design matches The Fantastic Four: First Steps. The scene does not name its occupants."
+      }
+    ],
+    "tagline": "Something arrives",
+    "art": {
+      "hue": 45,
+      "motif": "ship"
+    }
+  },
+  {
+    "slug": "fantastic-four-first-steps",
+    "title": "The Fantastic Four: First Steps",
+    "kind": "film",
+    "releaseDate": "2025-07-25",
+    "whyItMatters": "Introduces Reed, Sue, Johnny, Ben and baby Franklin on Earth-828, then gives Doctor Doom his first on-screen appearance.",
+    "events": [
+      {
+        "text": "The Fantastic Four live on Earth-828, a separate universe from the main MCU (Earth-616).",
+        "status": "confirmed",
+        "citation": "The Fantastic Four: First Steps"
+      },
+      {
+        "text": "Galactus targets the Richards' newborn son Franklin because of the child's extraordinary power.",
+        "status": "confirmed",
+        "citation": "The Fantastic Four: First Steps — main plot"
+      },
+      {
+        "text": "Years later, Sue finds a hooded figure sitting with Franklin. A Doom mask is visible, but the figure's face is not shown.",
+        "status": "confirmed",
+        "citation": "The Fantastic Four: First Steps — post-credits scene"
+      },
+      {
+        "text": "An end card states that the Fantastic Four will return in Avengers: Doomsday.",
+        "status": "confirmed",
+        "citation": "The Fantastic Four: First Steps — end credits"
+      }
+    ],
+    "tagline": "First steps, first sighting",
+    "art": {
+      "hue": 205,
+      "motif": "orbit"
+    }
+  },
+  {
+    "slug": "avengers-doomsday",
+    "title": "Avengers: Doomsday",
+    "kind": "film",
+    "releaseDate": "2026-12-18",
+    "upcoming": true,
+    "whyItMatters": "The destination. Robert Downey Jr. plays Victor von Doom, with Avengers, the New Avengers, the Fantastic Four and X-Men characters in the announced cast.",
+    "events": [
+      {
+        "text": "Marvel Studios announced Robert Downey Jr. as Victor von Doom, with Joe and Anthony Russo directing.",
+        "status": "confirmed",
+        "basis": "official-announcement",
+        "citation": "Marvel Studios Hall H panel, San Diego Comic-Con, 27 July 2024"
+      },
+      {
+        "text": "Marvel's cast reveal livestream confirmed returning actors including Chris Hemsworth, Tom Hiddleston, Anthony Mackie, Florence Pugh, Pedro Pascal, Patrick Stewart and Ian McKellen.",
+        "status": "confirmed",
+        "basis": "official-announcement",
+        "citation": "Marvel Studios cast announcement livestream, 26 March 2025"
+      },
+      {
+        "text": "The film opens in theaters on 18 December 2026.",
+        "status": "confirmed",
+        "basis": "official-announcement",
+        "citation": "Marvel Entertainment — \"Avengers: Doomsday | Final Trailer\""
+      }
+    ],
+    "tagline": "Doomsday",
+    "art": {
+      "hue": 140,
+      "motif": "eclipse"
+    }
+  }
+]

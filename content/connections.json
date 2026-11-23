@@ -1,0 +1,217 @@
+[
+  {
+    "id": "loki1-multiverse",
+    "from": "project:loki-season-1",
+    "to": "concept:multiverse",
+    "reason": "Sylvie kills He Who Remains, and the Sacred Timeline breaks into a multiverse.",
+    "status": "confirmed",
+    "citation": "Loki S1 E6"
+  },
+  {
+    "id": "hwr-loki1",
+    "from": "character:he-who-remains",
+    "to": "project:loki-season-1",
+    "reason": "He Who Remains is introduced, and killed, in the season finale.",
+    "status": "confirmed",
+    "citation": "Loki S1 E6"
+  },
+  {
+    "id": "hwr-quantumania",
+    "from": "character:he-who-remains",
+    "to": "project:ant-man-quantumania",
+    "reason": "Kang variants, the Council of Kangs, were set up as the next big threat.",
+    "status": "confirmed",
+    "citation": "Quantumania — mid-credits scene",
+    "superseded": {
+      "date": "2024-07-27",
+      "note": "Kang was dropped as the saga's villain."
+    }
+  },
+  {
+    "id": "nwh-multiverse",
+    "from": "project:spider-man-no-way-home",
+    "to": "concept:multiverse",
+    "reason": "A spell pulls in visitors from other universes, including earlier Spider-Man films.",
+    "status": "confirmed",
+    "citation": "Spider-Man: No Way Home"
+  },
+  {
+    "id": "mom-incursions",
+    "from": "project:doctor-strange-multiverse-of-madness",
+    "to": "concept:incursions",
+    "reason": "The film defines incursions, and Clea's mid-credits scene leaves one unresolved.",
+    "status": "confirmed",
+    "citation": "Multiverse of Madness — Earth-838; mid-credits scene"
+  },
+  {
+    "id": "multiverse-incursions",
+    "from": "concept:multiverse",
+    "to": "concept:incursions",
+    "reason": "Incursions are collisions between universes, so they can only happen once there is a multiverse.",
+    "status": "confirmed",
+    "citation": "Multiverse of Madness"
+  },
+  {
+    "id": "mom-reed",
+    "from": "project:doctor-strange-multiverse-of-madness",
+    "to": "character:reed-richards",
+    "reason": "The first on-screen Reed Richards is an Earth-838 variant.",
+    "status": "confirmed",
+    "citation": "Multiverse of Madness — Illuminati sequence"
+  },
+  {
+    "id": "loki2-loki",
+    "from": "project:loki-season-2",
+    "to": "character:loki",
+    "reason": "Loki becomes the being who holds the multiverse's timelines together.",
+    "status": "confirmed",
+    "citation": "Loki S2 E6"
+  },
+  {
+    "id": "loki-multiverse",
+    "from": "character:loki",
+    "to": "concept:multiverse",
+    "reason": "The branching timelines are sustained by Loki.",
+    "status": "confirmed",
+    "citation": "Loki S2 E6"
+  },
+  {
+    "id": "dw-anchor",
+    "from": "project:deadpool-and-wolverine",
+    "to": "concept:anchor-beings",
+    "reason": "The TVA explains that a universe dies when its anchor being dies.",
+    "status": "confirmed",
+    "citation": "Deadpool & Wolverine"
+  },
+  {
+    "id": "dw-doomsday",
+    "from": "project:deadpool-and-wolverine",
+    "to": "project:avengers-doomsday",
+    "reason": "Fox-era X-Men actors, including Patrick Stewart, Ian McKellen and James Marsden, are confirmed in the Doomsday cast.",
+    "status": "confirmed",
+    "basis": "official-announcement",
+    "citation": "Doomsday cast livestream, 26 March 2025"
+  },
+  {
+    "id": "bnw-sam",
+    "from": "project:captain-america-brave-new-world",
+    "to": "character:sam-wilson",
+    "reason": "Sam commits to rebuilding the Avengers.",
+    "status": "confirmed",
+    "citation": "Brave New World"
+  },
+  {
+    "id": "thunderbolts-newavengers",
+    "from": "project:thunderbolts",
+    "to": "character:new-avengers",
+    "reason": "Valentina rebrands the team as the New Avengers.",
+    "status": "confirmed",
+    "citation": "Thunderbolts* — closing scene"
+  },
+  {
+    "id": "thunderbolts-f4",
+    "from": "project:thunderbolts",
+    "to": "project:fantastic-four-first-steps",
+    "reason": "A ship matching the Fantastic Four's enters Earth-616 from another dimension.",
+    "status": "supported",
+    "citation": "Thunderbolts* — post-credits scene"
+  },
+  {
+    "id": "f4-828",
+    "from": "project:fantastic-four-first-steps",
+    "to": "concept:earth-828",
+    "reason": "The film is set on Earth-828.",
+    "status": "confirmed",
+    "citation": "The Fantastic Four: First Steps"
+  },
+  {
+    "id": "f4-franklin",
+    "from": "project:fantastic-four-first-steps",
+    "to": "character:franklin-richards",
+    "reason": "Franklin is born, and Galactus targets him for his power.",
+    "status": "confirmed",
+    "citation": "The Fantastic Four: First Steps"
+  },
+  {
+    "id": "f4-reed",
+    "from": "project:fantastic-four-first-steps",
+    "to": "character:reed-richards",
+    "reason": "Introduces Pedro Pascal's Earth-828 Reed Richards.",
+    "status": "confirmed",
+    "citation": "The Fantastic Four: First Steps"
+  },
+  {
+    "id": "doom-franklin",
+    "from": "character:doctor-doom",
+    "to": "character:franklin-richards",
+    "reason": "A hooded figure holding Doom's mask is seen with Franklin. The mask and the timing point to Doom, but he is not named.",
+    "status": "supported",
+    "citation": "The Fantastic Four: First Steps — post-credits scene"
+  },
+  {
+    "id": "doom-reed",
+    "from": "character:doctor-doom",
+    "to": "character:reed-richards",
+    "reason": "Lifelong rivals in the comics. The MCU has not yet shown their relationship.",
+    "status": "confirmed",
+    "basis": "comics"
+  },
+  {
+    "id": "f4-doomsday",
+    "from": "project:fantastic-four-first-steps",
+    "to": "project:avengers-doomsday",
+    "reason": "An end card states that the Fantastic Four return in Avengers: Doomsday.",
+    "status": "confirmed",
+    "citation": "First Steps — end credits"
+  },
+  {
+    "id": "doom-doomsday",
+    "from": "character:doctor-doom",
+    "to": "project:avengers-doomsday",
+    "reason": "Robert Downey Jr. is announced as Victor von Doom.",
+    "status": "confirmed",
+    "basis": "official-announcement",
+    "citation": "SDCC Hall H, 27 July 2024"
+  },
+  {
+    "id": "newavengers-doomsday",
+    "from": "character:new-avengers",
+    "to": "project:avengers-doomsday",
+    "reason": "Thunderbolts* cast members are confirmed for Doomsday.",
+    "status": "confirmed",
+    "basis": "official-announcement",
+    "citation": "Doomsday cast livestream, 26 March 2025"
+  },
+  {
+    "id": "sam-doomsday",
+    "from": "character:sam-wilson",
+    "to": "project:avengers-doomsday",
+    "reason": "Anthony Mackie is confirmed for Doomsday.",
+    "status": "confirmed",
+    "basis": "official-announcement",
+    "citation": "Doomsday cast livestream, 26 March 2025"
+  },
+  {
+    "id": "loki-doomsday",
+    "from": "character:loki",
+    "to": "project:avengers-doomsday",
+    "reason": "Tom Hiddleston is confirmed for Doomsday.",
+    "status": "confirmed",
+    "basis": "official-announcement",
+    "citation": "Doomsday cast livestream, 26 March 2025"
+  },
+  {
+    "id": "incursions-doomsday",
+    "from": "concept:incursions",
+    "to": "project:avengers-doomsday",
+    "reason": "Incursions drive the comics' road to Secret Wars, and the MCU has left one unresolved. Whether Doomsday uses them is unconfirmed.",
+    "status": "theory"
+  },
+  {
+    "id": "doom-franklin-power",
+    "from": "character:franklin-richards",
+    "to": "project:avengers-doomsday",
+    "reason": "Franklin's reality-altering power may be what Doom is after.",
+    "status": "theory"
+  }
+]

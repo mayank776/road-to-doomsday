@@ -1,0 +1,75 @@
+{
+  "trailers": [
+    {
+      "slug": "doomsday-final-trailer",
+      "title": "Avengers: Doomsday | Final Trailer",
+      "publisher": "Marvel Entertainment",
+      "official": true,
+      "youtubeId": "Wb8Tq_HD4E8",
+      "reviewStatus": "pending",
+      "observations": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "ref-1",
+      "label": "Reference video 1",
+      "url": "https://youtu.be/lA3_FYXUJ-Y",
+      "title": "Avengers Endgame Encore 4 New Post-Credit Scenes | 4k",
+      "channel": "2POOL",
+      "official": false,
+      "reviewStatus": "pending",
+      "editorNote": "This is not an official Marvel channel. Treat any 'new post-credit scenes' as unverified until each one is matched to an official release. Do not publish them as canon."
+    },
+    {
+      "id": "ref-2",
+      "label": "Reference video 2",
+      "url": "https://youtu.be/c27jDP-ddQA",
+      "title": "Give Me 20 Minutes, Explained Everything before Doomsday",
+      "channel": "Jamculture",
+      "official": false,
+      "reviewStatus": "pending",
+      "editorNote": "A fan recap that is useful for finding leads. Check every claim against the film or episode it cites before adding it to the timeline."
+    },
+    {
+      "id": "ref-3",
+      "label": "Reference video 3",
+      "url": "https://youtu.be/Wb8Tq_HD4E8",
+      "title": "Avengers: Doomsday | Final Trailer | In Theaters December 18",
+      "channel": "Marvel Entertainment",
+      "official": true,
+      "reviewStatus": "pending",
+      "editorNote": "An official primary source. Log timestamped observations on the Trailer page, keeping what is shown separate from interpretation."
+    },
+    {
+      "id": "ref-4",
+      "label": "Reference video 4",
+      "url": "https://youtu.be/95GgMkfrtSk",
+      "title": "Who is Dr Doom?",
+      "channel": "ComicVerse",
+      "official": false,
+      "reviewStatus": "pending",
+      "editorNote": "Useful for comics background. Anything taken from it belongs under 'Comics context', never under MCU facts."
+    }
+  ],
+  "updates": [
+    {
+      "date": "2026-11-23",
+      "title": "Official Final Trailer added to the review queue",
+      "href": "/trailer",
+      "source": "Marvel Entertainment (YouTube)"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Doctor Doom dossier: MCU facts and comics context separated",
+      "href": "/characters/doctor-doom",
+      "source": "The Fantastic Four: First Steps; SDCC 2024"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Kang thread marked as superseded",
+      "href": "/clues/council-of-kangs",
+      "source": "SDCC Hall H, 27 July 2024"
+    }
+  ]
+}
