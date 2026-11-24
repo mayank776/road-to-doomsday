@@ -1,9 +1,9 @@
 import Link from "next/link";
-import type { Project } from "@/lib/types";
-import { GenerativeArt } from "@/components/visual/generative-art";
+import type { Media, Project } from "@/lib/types";
+import { Visual } from "@/components/media/visual";
 import { EvidenceDots } from "@/components/evidence";
 
-export function RoadPanel({ p, i, total }: { p: Project; i: number; total: number }) {
+export function RoadPanel({ p, i, total, cover }: { p: Project; i: number; total: number; cover?: Media }) {
   return (
     <Link
       href={`/timeline/${p.slug}`}
@@ -12,7 +12,7 @@ export function RoadPanel({ p, i, total }: { p: Project; i: number; total: numbe
       }`}
     >
       <div className="road-art absolute -inset-x-[10%] inset-y-0">
-        <GenerativeArt seed={p.slug} art={p.art} className="h-full w-full transition duration-[1.2s] ease-out group-hover:scale-105" />
+        <Visual media={cover} seed={p.slug} art={p.art} sizes="(min-width: 1024px) 36vw, (min-width: 640px) 52vw, 82vw" className="transition duration-[1.2s] ease-out group-hover:scale-105" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/40" />
 

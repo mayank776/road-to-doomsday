@@ -7,13 +7,13 @@
     "mcu": [
       {
         "text": "Robert Downey Jr. will play Victor von Doom in Avengers: Doomsday.",
-        "status": "confirmed",
+        "status": "official",
         "basis": "official-announcement",
         "citation": "Marvel Studios Hall H panel, San Diego Comic-Con, 27 July 2024"
       },
       {
         "text": "A hooded figure sits with baby Franklin Richards on Earth-828. A Doom mask is visible on screen; the face is not.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "The Fantastic Four: First Steps — post-credits scene"
       },
       {
@@ -23,35 +23,45 @@
         "note": "Strongly implied by the mask and by the Doomsday announcement, but the scene does not name him."
       },
       {
-        "text": "His MCU origin, home universe, powers and motive have not yet been established on screen.",
-        "status": "confirmed",
-        "note": "Recorded as an absence: there is no on-screen evidence yet. This will be updated when Doomsday releases."
+        "text": "Doom tells the heroes they have \"lived stolen lives\" and must give them back.",
+        "status": "trailer",
+        "citation": "Final trailer, quoted by The Hollywood Reporter"
+      },
+      {
+        "text": "\"Hell answers to me, for I am Doom.\" He raises Sentinels against the Avengers and X-Men.",
+        "status": "trailer",
+        "citation": "Final trailer, as reported by Variety"
+      },
+      {
+        "text": "His origin, home universe and full motive have not been established on screen.",
+        "status": "canon",
+        "note": "Recorded as an absence: nothing on screen yet. Update after 18 December."
       }
     ],
     "comics": [
       {
         "text": "First appeared in Fantastic Four #5 (1962), created by Stan Lee and Jack Kirby.",
-        "status": "confirmed",
+        "status": "canon",
         "basis": "comics"
       },
       {
         "text": "Monarch of the small European nation of Latveria. Diplomatic immunity is a recurring part of his character.",
-        "status": "confirmed",
+        "status": "canon",
         "basis": "comics"
       },
       {
         "text": "Reed Richards' college rival. A failed experiment that Doom blamed on Reed scarred him and drove him behind his iron mask.",
-        "status": "confirmed",
+        "status": "canon",
         "basis": "comics"
       },
       {
         "text": "A genius who combines advanced science with sorcery. His mother's pact with Mephisto drives many of his storylines.",
-        "status": "confirmed",
+        "status": "canon",
         "basis": "comics"
       },
       {
         "text": "In Secret Wars (2015), Doom salvages the remains of a dying multiverse after the incursions and rules the patchwork Battleworld as God Emperor Doom.",
-        "status": "confirmed",
+        "status": "canon",
         "basis": "comics",
         "citation": "Secret Wars (2015), Jonathan Hickman & Esad Ribić"
       }
@@ -86,7 +96,20 @@
     "art": {
       "hue": 140,
       "motif": "eclipse"
-    }
+    },
+    "castStatus": "official",
+    "actor": "Robert Downey Jr.",
+    "media": [
+      "doom-still",
+      "doom-hooded",
+      "doom-sentinels",
+      "doom-court",
+      "doom-wide",
+      "doom-throne",
+      "doom-stolen-lives",
+      "doom-hell-answers",
+      "thor-vs-doom"
+    ]
   },
   {
     "slug": "reed-richards",
@@ -96,12 +119,12 @@
     "mcu": [
       {
         "text": "An Earth-838 variant played by John Krasinski appears briefly and is killed by Wanda.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Doctor Strange in the Multiverse of Madness"
       },
       {
         "text": "Pedro Pascal plays the Earth-828 Reed Richards and is confirmed for Avengers: Doomsday.",
-        "status": "confirmed",
+        "status": "official",
         "basis": "official-announcement",
         "citation": "The Fantastic Four: First Steps; Doomsday cast livestream, 26 March 2025"
       }
@@ -109,14 +132,22 @@
     "comics": [
       {
         "text": "Doom and Reed met as college students. Their rivalry is one of Marvel's oldest.",
-        "status": "confirmed",
+        "status": "canon",
         "basis": "comics"
       }
     ],
     "art": {
       "hue": 205,
       "motif": "orbit"
-    }
+    },
+    "universe": "earth-828",
+    "castStatus": "official",
+    "actor": "Pedro Pascal",
+    "media": [
+      "f4-poster",
+      "steve-f4",
+      "f4-city"
+    ]
   },
   {
     "slug": "franklin-richards",
@@ -125,26 +156,30 @@
     "mcu": [
       {
         "text": "Galactus wants Franklin because of his extraordinary power.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "The Fantastic Four: First Steps"
       },
       {
         "text": "Seen with a hooded figure holding Doom's mask.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "The Fantastic Four: First Steps — post-credits scene"
       }
     ],
     "comics": [
       {
         "text": "One of Marvel's most powerful reality-warping mutants. He has created entire pocket universes.",
-        "status": "confirmed",
+        "status": "canon",
         "basis": "comics"
       }
     ],
     "art": {
       "hue": 265,
       "motif": "rings"
-    }
+    },
+    "universe": "earth-828",
+    "media": [
+      "franklin-comic"
+    ]
   },
   {
     "slug": "loki",
@@ -153,12 +188,12 @@
     "mcu": [
       {
         "text": "Sits at the End of Time and sustains the branching timelines.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Loki S2 E6"
       },
       {
         "text": "Tom Hiddleston is confirmed in the Avengers: Doomsday cast.",
-        "status": "confirmed",
+        "status": "official",
         "basis": "official-announcement",
         "citation": "Doomsday cast livestream, 26 March 2025"
       }
@@ -172,7 +207,16 @@
     "art": {
       "hue": 95,
       "motif": "tree"
-    }
+    },
+    "universe": "earth-616",
+    "castStatus": "official",
+    "actor": "Tom Hiddleston",
+    "media": [
+      "loki-poster",
+      "loki-tree",
+      "loki-clock",
+      "tva-poster"
+    ]
   },
   {
     "slug": "he-who-remains",
@@ -181,12 +225,12 @@
     "mcu": [
       {
         "text": "Killed by Sylvie, which triggers the multiverse.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Loki S1 E6"
       },
       {
         "text": "A Council of Kangs is shown preparing for war.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Ant-Man and the Wasp: Quantumania — mid-credits scene",
         "superseded": {
           "date": "2024-07-27",
@@ -197,7 +241,11 @@
     "art": {
       "hue": 38,
       "motif": "branch"
-    }
+    },
+    "universe": "earth-616",
+    "media": [
+      "kang-comic"
+    ]
   },
   {
     "slug": "sam-wilson",
@@ -207,12 +255,12 @@
     "mcu": [
       {
         "text": "Commits to rebuilding the Avengers.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Captain America: Brave New World"
       },
       {
         "text": "Anthony Mackie is confirmed for Avengers: Doomsday.",
-        "status": "confirmed",
+        "status": "official",
         "basis": "official-announcement",
         "citation": "Doomsday cast livestream, 26 March 2025"
       }
@@ -220,7 +268,15 @@
     "art": {
       "hue": 215,
       "motif": "shield"
-    }
+    },
+    "universe": "earth-616",
+    "castStatus": "official",
+    "actor": "Anthony Mackie",
+    "media": [
+      "sam-wings",
+      "sam-wilson",
+      "avengers-team-up"
+    ]
   },
   {
     "slug": "new-avengers",
@@ -230,18 +286,353 @@
     "mcu": [
       {
         "text": "Publicly presented as \"The New Avengers\".",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Thunderbolts* — closing scene"
       },
       {
         "text": "They are the first on Earth-616 to detect the arrival from another dimension.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Thunderbolts* — post-credits scene"
       }
     ],
     "art": {
       "hue": 45,
       "motif": "ship"
-    }
+    },
+    "universe": "earth-616",
+    "castStatus": "official",
+    "media": [
+      "new-avengers-poster",
+      "thunderbolts-poster",
+      "new-avengers-grey"
+    ]
+  },
+  {
+    "slug": "steve-rogers",
+    "name": "Steve Rogers",
+    "alias": "The first Avenger",
+    "universe": "earth-616",
+    "castStatus": "official",
+    "actor": "Chris Evans",
+    "summary": "He put the shield down to live a life with Peggy. Doomsday brings him back.",
+    "art": {
+      "hue": 12,
+      "motif": "shield"
+    },
+    "mcu": [
+      {
+        "text": "Steve returns the Infinity Stones, then stays in the past to live his life with Peggy Carter.",
+        "status": "canon",
+        "citation": "Avengers: Endgame"
+      },
+      {
+        "text": "Steve and Peggy have a son.",
+        "status": "canon",
+        "citation": "Avengers Endgame: Encore, as reported by Variety",
+        "note": "The son's name is not confirmed by Marvel."
+      },
+      {
+        "text": "The Fantastic Four arrive at the family's home and bring Steve back to lead the fight against Doom.",
+        "status": "trailer",
+        "citation": "Avengers: Doomsday final trailer, as reported by Variety"
+      },
+      {
+        "text": "Steve summons Mjölnir.",
+        "status": "trailer",
+        "citation": "Final trailer, as described by Gulf News and others"
+      },
+      {
+        "text": "Chris Evans returns as Steve Rogers, and Hayley Atwell as Peggy Carter.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com (5 Nov 2026)"
+      }
+    ],
+    "open": [
+      {
+        "text": "Doom's \"stolen lives\" line is aimed at Steve's life with Peggy.",
+        "status": "theory",
+        "note": "The line is in the trailer. Its target is not stated."
+      }
+    ],
+    "openQuestions": [
+      "Did Steve's life with Peggy happen in the main timeline or in a branch?",
+      "What is their son's name, and what part does he play?"
+    ],
+    "media": [
+      "steve-rogers",
+      "steve-peggy-lamplight",
+      "steve-peggy-dance",
+      "steve-f4",
+      "avengers-team-up",
+      "steve-mjolnir",
+      "captain-america-flag",
+      "captain-america-leap"
+    ]
+  },
+  {
+    "slug": "thor",
+    "name": "Thor",
+    "alias": "God of Thunder",
+    "universe": "earth-616",
+    "castStatus": "official",
+    "actor": "Chris Hemsworth",
+    "summary": "One of the original six, back on the front line.",
+    "art": {
+      "hue": 205,
+      "motif": "shield"
+    },
+    "mcu": [
+      {
+        "text": "Last seen leaving with Love, the child he took in.",
+        "status": "canon",
+        "citation": "Thor: Love and Thunder (2022)"
+      },
+      {
+        "text": "Chris Hemsworth returns as Thor.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com (5 Nov 2026)"
+      }
+    ],
+    "media": [
+      "thor-doomsday",
+      "thor-portrait",
+      "thor-storm",
+      "thor-vs-doom",
+      "avengers-team-up",
+      "thor-comic"
+    ]
+  },
+  {
+    "slug": "doctor-strange",
+    "name": "Stephen Strange",
+    "alias": "Doctor Strange",
+    "universe": "earth-616",
+    "castStatus": "not-announced",
+    "actor": "Benedict Cumberbatch",
+    "summary": "The MCU's incursion expert, and absent from Marvel's official Doomsday cast list.",
+    "art": {
+      "hue": 285,
+      "motif": "rings"
+    },
+    "mcu": [
+      {
+        "text": "Learns about incursions on Earth-838.",
+        "status": "canon",
+        "citation": "Doctor Strange in the Multiverse of Madness"
+      },
+      {
+        "text": "Clea tells him he caused an incursion and must help fix it.",
+        "status": "canon",
+        "citation": "Multiverse of Madness: mid-credits scene"
+      },
+      {
+        "text": "He is not in Marvel's official Avengers: Doomsday cast list.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com cast list (5 Nov 2026)"
+      }
+    ],
+    "openQuestions": [
+      "Is the incursion Clea warned about connected to Doomsday?"
+    ],
+    "media": [
+      "strange-portrait",
+      "strange-illustration",
+      "mom-poster"
+    ]
+  },
+  {
+    "slug": "scarlet-witch",
+    "name": "Wanda Maximoff",
+    "alias": "Scarlet Witch",
+    "universe": "earth-616",
+    "castStatus": "not-announced",
+    "actor": "Elizabeth Olsen",
+    "summary": "She ripped through the multiverse. Her fate is unresolved, and she is absent from the official cast.",
+    "art": {
+      "hue": 350,
+      "motif": "void"
+    },
+    "mcu": [
+      {
+        "text": "Pursues her children across the multiverse and kills Earth-838's Illuminati.",
+        "status": "canon",
+        "citation": "Doctor Strange in the Multiverse of Madness"
+      },
+      {
+        "text": "Brings Wundagore Mountain down on herself to destroy every copy of the Darkhold. Her fate is not shown.",
+        "status": "canon",
+        "citation": "Doctor Strange in the Multiverse of Madness"
+      },
+      {
+        "text": "She is not in Marvel's official Avengers: Doomsday cast list.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com cast list (5 Nov 2026)"
+      }
+    ],
+    "media": [
+      "wanda-split",
+      "wanda-hex",
+      "wanda-mom",
+      "wanda-streak"
+    ]
+  },
+  {
+    "slug": "cyclops",
+    "name": "Scott Summers",
+    "alias": "Cyclops",
+    "universe": "earth-10005",
+    "castStatus": "official",
+    "actor": "James Marsden",
+    "summary": "The X-Men's field leader, back from the 2000s films.",
+    "art": {
+      "hue": 5,
+      "motif": "rings"
+    },
+    "mcu": [
+      {
+        "text": "Leads the X-Men across the Fox films. He is killed in X-Men: The Last Stand, then restored in Days of Future Past's new timeline.",
+        "status": "canon",
+        "citation": "X-Men (2000); X2 (2003); The Last Stand (2006); Days of Future Past (2014)",
+        "note": "Fox film continuity, now part of the multiverse."
+      },
+      {
+        "text": "James Marsden returns as Cyclops.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com cast list (5 Nov 2026)"
+      },
+      {
+        "text": "Cyclops calls the X-Men together.",
+        "status": "trailer",
+        "citation": "Final trailer, as reported by Variety"
+      }
+    ],
+    "openQuestions": [
+      "Which point in the Fox timeline does this Scott come from?"
+    ],
+    "media": [
+      "cyclops-render",
+      "cyclops-still",
+      "cyclops-blast",
+      "cyclops-red",
+      "cyclops-comic",
+      "xmen-cyclops-cover"
+    ]
+  },
+  {
+    "slug": "gambit",
+    "name": "Remy LeBeau",
+    "alias": "Gambit",
+    "castStatus": "official",
+    "actor": "Channing Tatum",
+    "summary": "A hero pulled from the Void, now fighting beside the X-Men.",
+    "art": {
+      "hue": 320,
+      "motif": "void"
+    },
+    "mcu": [
+      {
+        "text": "Appears in the Void, one of the forgotten heroes who help Deadpool and Wolverine.",
+        "status": "canon",
+        "citation": "Deadpool & Wolverine (2024)"
+      },
+      {
+        "text": "Channing Tatum returns as Gambit.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com cast list (5 Nov 2026)"
+      },
+      {
+        "text": "Fights alongside the X-Men.",
+        "status": "trailer",
+        "citation": "Final trailer, as reported by The Week"
+      }
+    ],
+    "openQuestions": [
+      "How did Gambit get from the Void to the X-Men?"
+    ],
+    "media": [
+      "gambit-comic"
+    ]
+  },
+  {
+    "slug": "bucky-barnes",
+    "name": "Bucky Barnes",
+    "alias": "The Winter Soldier",
+    "universe": "earth-616",
+    "castStatus": "official",
+    "actor": "Sebastian Stan",
+    "summary": "Steve's oldest friend, now a congressman and one of the New Avengers.",
+    "art": {
+      "hue": 355,
+      "motif": "shield"
+    },
+    "mcu": [
+      {
+        "text": "Steve's best friend, turned into the Winter Soldier, then freed from that programming.",
+        "status": "canon",
+        "citation": "Captain America: The Winter Soldier; Civil War"
+      },
+      {
+        "text": "Now a US congressman, he joins the team that becomes the New Avengers.",
+        "status": "canon",
+        "citation": "Thunderbolts* (2025)"
+      },
+      {
+        "text": "Sebastian Stan returns as Bucky Barnes.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com cast list (5 Nov 2026)"
+      }
+    ],
+    "openQuestions": [
+      "Will Bucky meet the Steve Rogers who left him behind in Endgame?"
+    ],
+    "media": [
+      "bucky-poster",
+      "thunderbolts-poster",
+      "new-avengers-poster"
+    ]
+  },
+  {
+    "slug": "bruce-banner",
+    "name": "Bruce Banner",
+    "alias": "Hulk",
+    "universe": "earth-616",
+    "castStatus": "not-announced",
+    "actor": "Mark Ruffalo",
+    "summary": "He reversed the Snap. He is not in Marvel's official Doomsday cast list.",
+    "art": {
+      "hue": 110,
+      "motif": "quantum"
+    },
+    "mcu": [
+      {
+        "text": "Wears the Nano Gauntlet to reverse the Snap, and is badly injured doing it.",
+        "status": "canon",
+        "citation": "Avengers: Endgame"
+      },
+      {
+        "text": "Returns from Sakaar with his son, Skaar.",
+        "status": "canon",
+        "citation": "She-Hulk: Attorney at Law (2022), finale"
+      },
+      {
+        "text": "He is not in Marvel's official Avengers: Doomsday cast list.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com cast list (5 Nov 2026)"
+      }
+    ],
+    "openQuestions": [
+      "A single press report says Endgame Encore shows Doom with Banner. This is unverified."
+    ],
+    "media": [
+      "hulk-comic"
+    ]
   }
 ]

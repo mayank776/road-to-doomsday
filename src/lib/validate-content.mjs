@@ -1,13 +1,13 @@
 // Shared content validator. Plain JS so both the Next.js build and
 // `npm run validate` (node scripts/validate.mjs) can use it.
 
-const STATUSES = new Set(["confirmed", "supported", "theory"]);
+const STATUSES = new Set(["official", "trailer", "canon", "supported", "theory"]);
 const BASES = new Set(["mcu", "comics", "official-announcement"]);
 const CLUE_KINDS = new Set(["post-credit", "scene", "dialogue", "reference", "announcement"]);
 const REVIEW = new Set(["pending", "in-review", "reviewed"]);
 
 /** @returns {string[]} list of human-readable problems; empty when valid */
-export function validateContent({ projects, characters, concepts, clues, connections, research }) {
+export function validateContent({ projects, characters, concepts, clues, connections, research, universes = /** @type {any[]} */ ([]), teams = /** @type {any[]} */ ([]), crossings = /** @type {any[]} */ ([]), mediaIds = /** @type {Set<string> | null} */ (null), mediaSubjects = /** @type {{ id: string, subjects: string[] }[]} */ ([]) }) {
   const errors = [];
   const err = (where, msg) => errors.push(`${where}: ${msg}`);
 
@@ -86,6 +86,48 @@ export function validateContent({ projects, characters, concepts, clues, connect
     if (!refExists(e.to)) err(w, `unknown to "${e.to}"`);
     if (!e.reason?.trim()) err(w, "every connection needs a reason");
     checkClaim(w, { text: e.reason, status: e.status, basis: e.basis, superseded: e.superseded });
+  }
+
+  const universeSlugs = unique(universes, "slug", "universes");
+  const teamSlugs = unique(teams, "slug", "teams");
+  for (const u of universes) {
+    const w = `universe ${u.slug}`;
+    if (!["central", "peripheral"].includes(u.role)) err(w, "role must be central or peripheral");
+    if (!STATUSES.has(u.designationStatus)) err(w, "invalid designationStatus");
+    if (!u.designationSource) err(w, "missing designationSource");
+    for (const t of u.teams ?? []) if (!teamSlugs.has(t)) err(w, `unknown team "${t}"`);
+    for (const p of u.projects ?? []) if (!projectSlugs.has(p)) err(w, `unknown project "${p}"`);
+    (u.facts ?? []).forEach((c, i) => checkClaim(`${w} fact ${i}`, c));
+  }
+  if (universes.filter((u) => u.role === "central").length !== 3 && universes.length)
+    err("universes", "Marvel states three central universes; exactly three must be central");
+  for (const t of teams) {
+    const w = `team ${t.slug}`;
+    if (!universeSlugs.has(t.universe)) err(w, `unknown universe "${t.universe}"`);
+    if (t.universeStatus && !STATUSES.has(t.universeStatus)) err(w, "invalid universeStatus");
+    for (const m of t.members ?? []) {
+      if (!m.name || !m.actor) err(w, "member needs name and actor");
+      if (m.character && !characterSlugs.has(m.character)) err(w, `unknown character "${m.character}"`);
+    }
+  }
+  if (mediaIds) {
+    for (const x of [...characters, ...teams])
+      for (const id of x.media ?? []) if (!mediaIds.has(id)) err(`${x.slug}`, `unknown or unprocessed media "${id}" (run npm run media)`);
+  }
+  // every image tag must name real content (or a reserved tag), so a typo cannot silently hide an image
+  const TAGS = new Set(["comics", "texture", ...projectSlugs, ...characterSlugs, ...conceptSlugs, ...clues.map((c) => c.slug), ...universeSlugs, ...teams.map((t) => t.slug)]);
+  for (const m of mediaSubjects) for (const s of m.subjects ?? []) if (!TAGS.has(s)) err(`media ${m.id}`, `unknown subject "${s}"`);
+  unique(crossings, "id", "crossings");
+  for (const x of crossings) {
+    const w = `crossing ${x.id}`;
+    if (!universeSlugs.has(x.from) || !universeSlugs.has(x.to)) err(w, "unknown universe");
+    if (!x.label) err(w, "missing label");
+    if (!x.evidence?.length) err(w, "every crossing needs evidence");
+    (x.evidence ?? []).forEach((c, i) => checkClaim(`${w} evidence ${i}`, c));
+  }
+  for (const c of characters) {
+    if (c.universe && !universeSlugs.has(c.universe) && universes.length) err(`character ${c.slug}`, `unknown universe "${c.universe}"`);
+    if (c.castStatus && !["official", "not-announced"].includes(c.castStatus)) err(`character ${c.slug}`, "invalid castStatus");
   }
 
   for (const t of research.trailers ?? []) {

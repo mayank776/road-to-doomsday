@@ -9,17 +9,17 @@
     "events": [
       {
         "text": "The Time Variance Authority (TVA) is revealed to prune branching timelines to protect a single 'Sacred Timeline'.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Loki S1 E1, \"Glorious Purpose\""
       },
       {
         "text": "He Who Remains, who controls the TVA, is killed by Sylvie. The timeline immediately begins to branch uncontrollably.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Loki S1 E6, \"For All Time. Always.\" — the Citadel at the End of Time"
       },
       {
         "text": "He Who Remains warns that his death will unleash variants of himself who are far more dangerous.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Loki S1 E6, \"For All Time. Always.\"",
         "superseded": {
           "date": "2024-07-27",
@@ -42,12 +42,12 @@
     "events": [
       {
         "text": "A corrupted spell from Doctor Strange pulls people who know Peter Parker's identity in from other universes.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Spider-Man: No Way Home — the Sanctum spell scene"
       },
       {
         "text": "Spider-Man variants played by Tobey Maguire and Andrew Garfield appear, establishing that earlier non-MCU film universes exist inside the multiverse.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Spider-Man: No Way Home — third act"
       }
     ],
@@ -66,17 +66,17 @@
     "events": [
       {
         "text": "An incursion is described as two universes colliding, with one destroying the other. Earth-838 is shown to have suffered one.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Doctor Strange in the Multiverse of Madness — Earth-838 sequences"
       },
       {
         "text": "A variant of Reed Richards (John Krasinski) appears as a member of Earth-838's Illuminati and is killed by Wanda.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Doctor Strange in the Multiverse of Madness — Illuminati sequence"
       },
       {
         "text": "Clea tells Strange that he caused an incursion and must help fix it.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Doctor Strange in the Multiverse of Madness — mid-credits scene"
       }
     ],
@@ -95,12 +95,12 @@
     "events": [
       {
         "text": "Kang the Conqueror is introduced as an exiled variant in the Quantum Realm.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Ant-Man and the Wasp: Quantumania"
       },
       {
         "text": "A Council of Kangs gathers, signalling a multiversal war led by Kang variants.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Ant-Man and the Wasp: Quantumania — mid-credits scene",
         "superseded": {
           "date": "2024-07-27",
@@ -124,7 +124,7 @@
     "events": [
       {
         "text": "Loki takes the seat at the End of Time and binds the branching timelines into a tree-like structure, sustaining the multiverse.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Loki S2 E6, \"Glorious Purpose\""
       }
     ],
@@ -143,12 +143,12 @@
     "events": [
       {
         "text": "The TVA explains that a universe depends on an 'anchor being'. When that being dies, the universe slowly ends.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Deadpool & Wolverine — TVA sequence"
       },
       {
         "text": "The Void is shown as a dumping ground for pruned characters, including figures from earlier Fox Marvel films.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Deadpool & Wolverine — the Void"
       }
     ],
@@ -167,7 +167,7 @@
     "events": [
       {
         "text": "Sam Wilson commits to rebuilding the Avengers.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Captain America: Brave New World — closing act"
       }
     ],
@@ -186,12 +186,12 @@
     "events": [
       {
         "text": "Valentina Allegra de Fontaine publicly presents the team as \"The New Avengers\".",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Thunderbolts* — closing scene"
       },
       {
         "text": "A spacecraft from another dimension is detected entering Earth's atmosphere.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "Thunderbolts* — post-credits scene"
       },
       {
@@ -216,22 +216,22 @@
     "events": [
       {
         "text": "The Fantastic Four live on Earth-828, a separate universe from the main MCU (Earth-616).",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "The Fantastic Four: First Steps"
       },
       {
         "text": "Galactus targets the Richards' newborn son Franklin because of the child's extraordinary power.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "The Fantastic Four: First Steps — main plot"
       },
       {
         "text": "Years later, Sue finds a hooded figure sitting with Franklin. A Doom mask is visible, but the figure's face is not shown.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "The Fantastic Four: First Steps — post-credits scene"
       },
       {
         "text": "An end card states that the Fantastic Four will return in Avengers: Doomsday.",
-        "status": "confirmed",
+        "status": "canon",
         "citation": "The Fantastic Four: First Steps — end credits"
       }
     ],
@@ -247,25 +247,47 @@
     "kind": "film",
     "releaseDate": "2026-12-18",
     "upcoming": true,
-    "whyItMatters": "The destination. Robert Downey Jr. plays Victor von Doom, with Avengers, the New Avengers, the Fantastic Four and X-Men characters in the announced cast.",
+    "whyItMatters": "Heroes from three universes, the Avengers, X-Men and Fantastic Four, together on screen for the first time, against Doctor Doom.",
     "events": [
       {
-        "text": "Marvel Studios announced Robert Downey Jr. as Victor von Doom, with Joe and Anthony Russo directing.",
-        "status": "confirmed",
+        "text": "Heroes from three distinct universes are set on a deadly collision course and face an existential threat.",
+        "status": "official",
         "basis": "official-announcement",
-        "citation": "Marvel Studios Hall H panel, San Diego Comic-Con, 27 July 2024"
+        "citation": "marvel.com, \"Everything to Know About Avengers: Doomsday\" (5 Nov 2026)"
       },
       {
-        "text": "Marvel's cast reveal livestream confirmed returning actors including Chris Hemsworth, Tom Hiddleston, Anthony Mackie, Florence Pugh, Pedro Pascal, Patrick Stewart and Ian McKellen.",
-        "status": "confirmed",
+        "text": "The Avengers, X-Men and Fantastic Four assemble on screen together for the first time.",
+        "status": "official",
         "basis": "official-announcement",
-        "citation": "Marvel Studios cast announcement livestream, 26 March 2025"
+        "citation": "marvel.com (23 Nov 2026)"
       },
       {
-        "text": "The film opens in theaters on 18 December 2026.",
-        "status": "confirmed",
+        "text": "Robert Downey Jr. plays Victor von Doom. Joe and Anthony Russo direct from a script by Stephen McFeely.",
+        "status": "official",
         "basis": "official-announcement",
-        "citation": "Marvel Entertainment — \"Avengers: Doomsday | Final Trailer\""
+        "citation": "marvel.com; SDCC Hall H, 27 July 2024"
+      },
+      {
+        "text": "Doom: \"All of you have lived stolen lives, now you must give them back.\"",
+        "status": "trailer",
+        "citation": "Final trailer, quoted by The Hollywood Reporter (23 Nov 2026)"
+      },
+      {
+        "text": "Two planets loom over Earth.",
+        "status": "trailer",
+        "citation": "Final trailer, as described by Gizmodo, Screen Rant and others",
+        "note": "Widely read as an incursion. The film has not yet named it as one."
+      },
+      {
+        "text": "Doom commands Sentinels against the Avengers and X-Men.",
+        "status": "trailer",
+        "citation": "Final trailer, as reported by Variety"
+      },
+      {
+        "text": "Avengers: Secret Wars follows on 17 December 2027.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com (5 Nov 2026)"
       }
     ],
     "tagline": "Doomsday",
@@ -273,5 +295,79 @@
       "hue": 140,
       "motif": "eclipse"
     }
+  },
+  {
+    "slug": "avengers-endgame",
+    "tagline": "The Heist that started it",
+    "art": {
+      "hue": 12,
+      "motif": "rings"
+    },
+    "title": "Avengers: Endgame",
+    "kind": "film",
+    "releaseDate": "2019-04-26",
+    "whyItMatters": "Marvel traces Doomsday back to Endgame's final moments: Steve Rogers choosing a life with Peggy Carter.",
+    "events": [
+      {
+        "text": "The Avengers travel through time to take the Infinity Stones from the past and reverse the Snap.",
+        "status": "canon",
+        "citation": "Avengers: Endgame: the Time Heist"
+      },
+      {
+        "text": "Steve Rogers returns the Stones, then stays in the past to live his life with Peggy Carter.",
+        "status": "canon",
+        "citation": "Avengers: Endgame: final act"
+      },
+      {
+        "text": "An elderly Steve passes his shield to Sam Wilson.",
+        "status": "canon",
+        "citation": "Avengers: Endgame: final act"
+      },
+      {
+        "text": "Doom's \"stolen lives\" accusation targets heroes whose lives were changed by these events.",
+        "status": "supported",
+        "citation": "Avengers: Doomsday final trailer; press readings (SYFY, Variety)",
+        "note": "Press widely reads the trailer as tying the Time Heist to the incursions. Marvel has not stated it."
+      }
+    ]
+  },
+  {
+    "slug": "endgame-encore",
+    "tagline": "One beat past the ending",
+    "art": {
+      "hue": 28,
+      "motif": "branch"
+    },
+    "title": "Avengers Endgame: Encore",
+    "kind": "film",
+    "detail": "Re-release",
+    "releaseDate": "2026-09-25",
+    "whyItMatters": "Endgame returns with new footage that reframes Steve's ending as the start of Doomsday.",
+    "events": [
+      {
+        "text": "Avengers: Endgame returns to theaters as Avengers Endgame: Encore, with an exclusive look at Doomsday.",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com; The Hollywood Reporter; Deadline"
+      },
+      {
+        "text": "\"We sort of played one beat past where Steve Rogers' story ended with Peggy Carter… that's where Doomsday is born.\" (Anthony Russo)",
+        "status": "official",
+        "basis": "official-announcement",
+        "citation": "marvel.com, \"Watch the Final Avengers: Doomsday Trailer\" (23 Nov 2026)"
+      },
+      {
+        "text": "A new scene reveals that Steve and Peggy have a son.",
+        "status": "canon",
+        "citation": "Avengers Endgame: Encore, as reported by Variety (23 Nov 2026)",
+        "note": "An editor still needs to verify the timestamp. The son's name is not confirmed."
+      },
+      {
+        "text": "A TVA scene shows an incursion between Earth-10005 and Earth-1127.",
+        "status": "supported",
+        "citation": "As reported by TheWrap and Reactor",
+        "note": "Reports differ on the details."
+      }
+    ]
   }
 ]

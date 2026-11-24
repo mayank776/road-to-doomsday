@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# raw source images (processed copies live in public/media)
+/assets

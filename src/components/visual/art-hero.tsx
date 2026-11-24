@@ -1,11 +1,14 @@
 import Link from "next/link";
-import type { Art } from "@/lib/types";
-import { GenerativeArt } from "./generative-art";
+import type { Art, Media } from "@/lib/types";
+import { isWide } from "@/lib/media";
+import { MediaImage } from "@/components/media/media-image";
+import { Visual } from "@/components/media/visual";
 import { SplitHeadline } from "./reveal";
 
 export function ArtHero({
   seed,
   art,
+  media,
   back,
   kicker,
   title,
@@ -14,17 +17,30 @@ export function ArtHero({
 }: {
   seed: string;
   art: Art;
+  /** The site owner's image; the procedural art is the fallback. */
+  media?: Media;
   back: { href: string; label: string };
   kicker: string;
   title: string;
   subtitle?: string;
   children?: React.ReactNode;
 }) {
+  const tall = !!media && !isWide(media);
   return (
     <section className="relative flex min-h-svh flex-col justify-end overflow-hidden">
-      <GenerativeArt seed={seed} art={art} className="absolute inset-0 h-full w-full" />
+      {tall ? (
+        // a tall poster: full-bleed on phones; on desktop a soft wash behind the framed poster
+        <MediaImage m={media!} sizes="(min-width: 1024px) 30vw, 100vw" priority className="lg:scale-110 lg:opacity-40 lg:blur-2xl lg:saturate-150" />
+      ) : (
+        <Visual media={media} seed={seed} art={art} sizes="100vw" priority />
+      )}
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-black/50" />
-      <div className="relative px-4 pb-12 pt-32 sm:px-8 sm:pb-16">
+      {tall && (
+        <div className="absolute bottom-[8svh] right-8 top-28 hidden aspect-[var(--ar)] border border-white/15 shadow-2xl shadow-black lg:block" style={{ "--ar": `${media!.width} / ${media!.height}` } as React.CSSProperties}>
+          <MediaImage m={media!} sizes="30vw" />
+        </div>
+      )}
+      <div className={`relative px-4 pb-12 pt-32 sm:px-8 sm:pb-16 ${tall ? "lg:max-w-[62%]" : ""}`}>
         <Link href={back.href} className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/60 hover:text-doom-bright">
           ← {back.label}
         </Link>

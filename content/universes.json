@@ -1,0 +1,91 @@
+[
+  {
+    "slug": "earth-616",
+    "designation": "Earth-616",
+    "name": "The main MCU",
+    "role": "central",
+    "tagline": "Where the Avengers live, and where the Time Heist happened.",
+    "color": "#ff6a3d",
+    "designationStatus": "canon",
+    "designationSource": "Doctor Strange in the Multiverse of Madness",
+    "teams": ["avengers", "new-avengers", "wakanda-talokan", "legacy"],
+    "projects": ["avengers-endgame", "loki-season-1", "spider-man-no-way-home", "doctor-strange-multiverse-of-madness", "captain-america-brave-new-world", "thunderbolts"],
+    "facts": [
+      { "text": "The Avengers reversed the Snap by taking the Infinity Stones from the past in the Time Heist.", "status": "canon", "citation": "Avengers: Endgame (2019)" },
+      { "text": "Earth now has two teams claiming the Avengers name: Sam Wilson's, and Valentina's New Avengers.", "status": "canon", "citation": "Captain America: Brave New World; Thunderbolts*" },
+      { "text": "Doom tells the heroes they have \"lived stolen lives\" and must give them back.", "status": "trailer", "citation": "Avengers: Doomsday final trailer, quoted by The Hollywood Reporter (23 Nov 2026)" }
+    ],
+    "unknowns": ["Whether Steve Rogers' life with Peggy happened in Earth-616's past or in a branch timeline"]
+  },
+  {
+    "slug": "earth-828",
+    "designation": "Earth-828",
+    "name": "The Fantastic Four's world",
+    "role": "central",
+    "tagline": "A retro-futurist Earth with its own First Family.",
+    "color": "#4da3ff",
+    "designationStatus": "canon",
+    "designationSource": "The Fantastic Four: First Steps (2025)",
+    "teams": ["fantastic-four"],
+    "projects": ["fantastic-four-first-steps", "thunderbolts"],
+    "facts": [
+      { "text": "Home of Reed, Sue, Johnny, Ben and their son Franklin, who drew Galactus to their Earth.", "status": "canon", "citation": "The Fantastic Four: First Steps" },
+      { "text": "A figure holding Doom's mask is seen with Franklin years later.", "status": "canon", "citation": "The Fantastic Four: First Steps — post-credits scene" },
+      { "text": "A ship matching the Fantastic Four's enters Earth-616 from another dimension.", "status": "supported", "citation": "Thunderbolts* — post-credits scene" },
+      { "text": "The Fantastic Four use time travel to reach Steve Rogers and bring him back to fight Doom.", "status": "trailer", "citation": "Avengers: Doomsday final trailer, as reported by Variety (23 Nov 2026)" }
+    ],
+    "unknowns": ["Whether Doom is native to Earth-828"]
+  },
+  {
+    "slug": "earth-10005",
+    "designation": "Earth-10005",
+    "name": "The Fox X-Men universe",
+    "role": "central",
+    "tagline": "The world of the 2000s X-Men films, now in Doom's path.",
+    "color": "#ffd23f",
+    "designationStatus": "canon",
+    "designationSource": "Deadpool & Wolverine (2024): the TVA names Deadpool's universe Earth-10005",
+    "teams": ["x-men"],
+    "projects": ["deadpool-and-wolverine", "endgame-encore"],
+    "facts": [
+      { "text": "Deadpool's universe is Earth-10005. Its anchor being, that universe's Logan, has died.", "status": "canon", "citation": "Deadpool & Wolverine" },
+      { "text": "Marvel says actors from the 2000s X-Men films reprise their roles in Doomsday.", "status": "official", "citation": "marvel.com, \"Everything to Know About Avengers: Doomsday\" (5 Nov 2026)" },
+      { "text": "The Doomsday X-Men come from Earth-10005.", "status": "supported", "citation": "Fox-era actors reprising their roles; Endgame Encore TVA scene as reported by TheWrap", "note": "Marvel has not stated the X-Men's Earth number." },
+      { "text": "A TVA scene shows Earth-10005 on a collision course with Earth-1127.", "status": "supported", "citation": "Avengers Endgame: Encore (2026), as reported by TheWrap and others", "note": "Reported from the re-release. An editor still needs to verify it against the footage." }
+    ],
+    "unknowns": ["Whether Deadpool or Wolverine appear: neither is in Marvel's official cast list"]
+  },
+  {
+    "slug": "earth-838",
+    "designation": "Earth-838",
+    "name": "The Illuminati's world",
+    "role": "peripheral",
+    "tagline": "Visited in Multiverse of Madness. Not named as a Doomsday universe.",
+    "color": "#9aa59d",
+    "designationStatus": "canon",
+    "designationSource": "Doctor Strange in the Multiverse of Madness (2022)",
+    "teams": [],
+    "projects": ["doctor-strange-multiverse-of-madness"],
+    "facts": [
+      { "text": "Its Illuminati included a Charles Xavier played by Patrick Stewart and a Reed Richards played by John Krasinski. Wanda killed both.", "status": "canon", "citation": "Doctor Strange in the Multiverse of Madness" },
+      { "text": "Marvel describes Doomsday's heroes as coming from three universes. Earth-838 is not presented as one of them.", "status": "official", "citation": "marvel.com (5 Nov 2026; 23 Nov 2026)" }
+    ],
+    "unknowns": []
+  },
+  {
+    "slug": "earth-1127",
+    "designation": "Earth-1127",
+    "name": "Unidentified",
+    "role": "peripheral",
+    "tagline": "Reportedly shown colliding with Earth-10005. Nothing else is known.",
+    "color": "#c4a1ff",
+    "designationStatus": "supported",
+    "designationSource": "Avengers Endgame: Encore TVA scene, as reported by the press",
+    "teams": [],
+    "projects": ["endgame-encore"],
+    "facts": [
+      { "text": "Reportedly appears on a TVA display, on a collision course with Earth-10005.", "status": "supported", "citation": "Avengers Endgame: Encore, as reported by TheWrap and Reactor", "note": "Reports differ. Its identity is unknown." }
+    ],
+    "unknowns": ["Who lives on Earth-1127", "Whether the designation was reported correctly"]
+  }
+]

@@ -80,7 +80,7 @@ function Graph({ nodes, edges, selected, onSelect, hover, setHover, graphRef }: 
               transparent
               opacity={on ? (e.superseded ? 0.35 : 0.85) : 0.05}
             />
-            {on && e.status === "confirmed" && !e.superseded && <Pulse a={a} b={b} color={color} offset={i * 0.137} />}
+            {on && e.status !== "supported" && e.status !== "theory" && !e.superseded && <Pulse a={a} b={b} color={color} offset={i * 0.137} />}
           </group>
         );
       })}
@@ -108,7 +108,7 @@ function Graph({ nodes, edges, selected, onSelect, hover, setHover, graphRef }: 
             {n.focal && (
               <mesh rotation={[Math.PI / 2, 0, 0]}>
                 <torusGeometry args={[r * 1.9, 0.01, 8, 64]} />
-                <meshBasicMaterial color="#7dffb0" toneMapped={false} transparent opacity={on ? 0.8 : 0.1} />
+                <meshBasicMaterial color="#ffffff" toneMapped={false} transparent opacity={on ? 0.8 : 0.1} />
               </mesh>
             )}
           </group>

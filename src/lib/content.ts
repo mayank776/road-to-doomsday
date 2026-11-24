@@ -4,16 +4,23 @@ import conceptsJson from "../../content/concepts.json";
 import cluesJson from "../../content/clues.json";
 import connectionsJson from "../../content/connections.json";
 import researchJson from "../../content/research.json";
+import universesJson from "../../content/universes.json";
+import teamsJson from "../../content/teams.json";
+import crossingsJson from "../../content/crossings.json";
 import { validateContent } from "./validate-content.mjs";
+import { media, mediaIds } from "./media";
 import type {
   Character,
   Clue,
   Concept,
   Connection,
+  Crossing,
   NodeRef,
   Project,
   ResearchSource,
+  Team,
   Trailer,
+  Universe,
   Update,
 } from "./types";
 
@@ -24,6 +31,9 @@ export const characters = charactersJson as Character[];
 export const concepts = conceptsJson as Concept[];
 export const clues = cluesJson as Clue[];
 export const connections = connectionsJson as Connection[];
+export const universes = universesJson as Universe[];
+export const teams = teamsJson as Team[];
+export const crossings = crossingsJson as Crossing[];
 export const trailers = researchJson.trailers as Trailer[];
 export const sources = researchJson.sources as ResearchSource[];
 export const updates = (researchJson.updates as Update[])
@@ -38,6 +48,11 @@ const problems = validateContent({
   clues,
   connections,
   research: researchJson,
+  universes,
+  teams,
+  crossings,
+  mediaIds,
+  mediaSubjects: media,
 });
 if (problems.length) {
   throw new Error("Content validation failed:\n- " + problems.join("\n- "));
@@ -63,6 +78,9 @@ export function resolveRef(ref: NodeRef) {
   const c = concepts.find((x) => x.slug === slug)!;
   return { type, slug, label: c.name, href: `/connections?focus=concept:${slug}` };
 }
+
+export const getUniverse = (slug: string) => universes.find((u) => u.slug === slug);
+export const teamsFor = (universe: string) => teams.filter((t) => t.universe === universe);
 
 export const connectionsFor = (ref: NodeRef) =>
   connections.filter((e) => e.from === ref || e.to === ref);

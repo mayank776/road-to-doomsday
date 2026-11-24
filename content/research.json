@@ -19,7 +19,7 @@
       "channel": "2POOL",
       "official": false,
       "reviewStatus": "pending",
-      "editorNote": "This is not an official Marvel channel. Treat any 'new post-credit scenes' as unverified until each one is matched to an official release. Do not publish them as canon."
+      "editorNote": "Avengers Endgame: Encore is a real, official re-release (marvel.com, 25 Sep 2026). This upload is not an official Marvel channel, so match each scene to the re-release itself before treating it as canon."
     },
     {
       "id": "ref-2",
@@ -50,9 +50,43 @@
       "official": false,
       "reviewStatus": "pending",
       "editorNote": "Useful for comics background. Anything taken from it belongs under 'Comics context', never under MCU facts."
+    },
+    {
+      "id": "ref-5",
+      "label": "Reference video 5",
+      "url": "https://youtu.be/Bh6U10OJdq8",
+      "title": "Every Universe That Will Appear in Avengers Doomsday!",
+      "channel": "ComicVerse",
+      "official": false,
+      "reviewStatus": "pending",
+      "editorNote": "Universe breakdown, used as a lead only. Universe assignments on this site come from on-screen designations and marvel.com. Anything else is labelled as interpretation."
     }
   ],
   "updates": [
+    {
+      "date": "2026-11-24",
+      "title": "Universe map: Earth-616, 828 and 10005",
+      "href": "/universes",
+      "source": "marvel.com; on-screen designations"
+    },
+    {
+      "date": "2026-11-24",
+      "title": "Final trailer facts added with evidence labels",
+      "href": "/timeline/avengers-doomsday",
+      "source": "marvel.com; Variety; The Hollywood Reporter"
+    },
+    {
+      "date": "2026-11-24",
+      "title": "Steve Rogers file: Endgame, Encore and the return",
+      "href": "/characters/steve-rogers",
+      "source": "Avengers: Endgame; Endgame Encore; final trailer"
+    },
+    {
+      "date": "2026-11-24",
+      "title": "Doctor Strange and Scarlet Witch: not in the official cast",
+      "href": "/characters/doctor-strange",
+      "source": "marvel.com cast list (5 Nov 2026)"
+    },
     {
       "date": "2026-11-23",
       "title": "Official Final Trailer added to the review queue",

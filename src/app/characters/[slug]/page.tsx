@@ -2,10 +2,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { Claim } from "@/lib/types";
-import { characters, cluesForCharacter, getCharacter, getProject } from "@/lib/content";
-import { ArtHero } from "@/components/visual/art-hero";
-import { SplitHeadline } from "@/components/visual/reveal";
-import { SigilStage } from "@/components/three/sigil-stage";
+import { characters, cluesForCharacter, getCharacter, getProject, getUniverse, teams } from "@/lib/content";
+import { mediaFor } from "@/lib/media";
+import { rosterCard, spotlight } from "@/lib/roster";
+import { CharacterHero } from "@/components/characters/character-hero";
+import { CharacterCard } from "@/components/characters/character-card";
+import { Gallery } from "@/components/characters/gallery";
+import { MediaImage } from "@/components/media/media-image";
+import { Portrait } from "@/components/universe/portrait";
+import { GenerativeArt } from "@/components/visual/generative-art";
 import { BasisTag, EvidenceBadge, STATUS_HEX, SupersededNote } from "@/components/evidence";
 import { FlipClue } from "@/components/clue-card";
 import { ConnectionList } from "@/components/connection-list";
@@ -23,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const LANES = [
-  { key: "mcu", title: "On screen", sub: "MCU & official Marvel", color: STATUS_HEX.confirmed },
-  { key: "comics", title: "In the comics", sub: "Not MCU canon", color: "#7dd3fc" },
+  { key: "mcu", title: "On screen", sub: "MCU & official Marvel", color: STATUS_HEX.canon },
+  { key: "comics", title: "In the comics", sub: "Not MCU canon", color: "#f472b6" },
   { key: "open", title: "Open readings", sub: "Interpretations & theories", color: STATUS_HEX.theory },
 ] as const;
 
@@ -60,42 +65,75 @@ export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
   const c = getCharacter(slug);
   if (!c) notFound();
-  const isDoom = slug === "doctor-doom";
+  const card = rosterCard(slug)!;
+  const gallery = mediaFor(c.media);
   const related = cluesForCharacter(slug);
   const lanes = LANES.map((l) => ({ ...l, claims: (c[l.key] ?? []) as Claim[] })).filter((l) => l.claims.length);
 
+  // teammates: every team this character is rostered on, minus themselves
+  const myTeams = teams.filter((t) => t.members.some((m) => m.character === slug));
+  const mates = myTeams.flatMap((t) => t.members.filter((m) => m.character !== slug).map((m) => ({ ...m, team: t.name, color: getUniverse(t.universe)?.color ?? "#7dffb0" })));
+  const mateCards = [...new Set(mates.map((m) => m.character).filter((x): x is string => !!x))].map(rosterCard).filter((x) => !!x);
+  const mateChips = mates.filter((m) => !m.character);
+
+  // previous / next, in spotlight order
+  const order = [...new Set([...spotlight().map((x) => x.slug), ...characters.map((x) => x.slug)])];
+  const idx = order.indexOf(slug);
+  const prev = rosterCard(order[(idx - 1 + order.length) % order.length])!;
+  const next = rosterCard(order[(idx + 1) % order.length])!;
+
   return (
     <>
-      {isDoom ? (
-        <section className="relative flex min-h-svh flex-col justify-end overflow-hidden">
-          <SigilStage />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
-          <div className="relative px-4 pb-14 pt-32 sm:px-8">
-            <Link href="/characters" className="pointer-events-auto font-mono text-[11px] uppercase tracking-[0.25em] text-white/60 hover:text-doom-bright">
-              ← Characters
-            </Link>
-            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-doom-bright">Dossier · The central threat</p>
-            <SplitHeadline as="h1" immediate className="mt-2 font-display text-[22vw] uppercase leading-[0.78] sm:text-[14vw]">
-              Doctor Doom
-            </SplitHeadline>
-            <p className="mt-4 font-mono text-sm uppercase tracking-[0.25em] text-white/60">{c.name}</p>
-          </div>
-        </section>
-      ) : (
-        <ArtHero seed={c.slug} art={c.art} back={{ href: "/characters", label: "Characters" }} kicker="Character file" title={c.name} subtitle={c.alias} />
-      )}
+      <CharacterHero c={c} card={card} />
 
-      <section className="px-4 py-16 sm:px-8">
-        <p className="max-w-4xl font-display text-3xl uppercase leading-tight sm:text-5xl">{c.summary}</p>
-      </section>
-
-      <section className="px-4 pb-20 sm:px-8">
-        <div className={`grid gap-4 ${lanes.length === 3 ? "lg:grid-cols-3" : lanes.length === 2 ? "lg:grid-cols-2" : ""}`}>
+      <section className="px-4 pb-20 pt-6 sm:px-8">
+        <Kicker>The evidence</Kicker>
+        <div className={`mt-6 grid gap-4 ${lanes.length === 3 ? "lg:grid-cols-3" : lanes.length === 2 ? "lg:grid-cols-2" : ""}`}>
           {lanes.map((l) => (
             <Lane key={l.key} title={l.title} sub={l.sub} color={l.color} claims={l.claims} />
           ))}
         </div>
       </section>
+
+      {gallery.length > 1 && (
+        <section className="border-t border-line px-4 py-20 sm:px-8">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <Kicker>Gallery</Kicker>
+              <h2 className="mt-2 font-display text-5xl uppercase leading-none sm:text-6xl">{gallery.length} artworks</h2>
+            </div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">Select an image to enlarge it · artwork, not official stills</p>
+          </div>
+          <Gallery items={gallery} accent={card.accent} />
+        </section>
+      )}
+
+      {(mateCards.length > 0 || mateChips.length > 0) && (
+        <section className="border-t border-line px-4 py-20 sm:px-8">
+          <Kicker>Fights alongside</Kicker>
+          <h2 className="mt-2 font-display text-5xl uppercase leading-none sm:text-6xl">{myTeams.map((t) => t.name).join(" · ")}</h2>
+          {mateCards.length > 0 && (
+            <div className="mt-8 grid auto-rows-[320px] grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {mateCards.map((m) => (
+                <CharacterCard key={m.slug} c={m} />
+              ))}
+            </div>
+          )}
+          {mateChips.length > 0 && (
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+              {mateChips.map((m) => (
+                <div key={m.name} className="flex items-center gap-3 border border-line p-2.5">
+                  <Portrait name={m.name} color={m.color} size={44} />
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold">{m.name.split("·")[0].trim()}</p>
+                    <p className="truncate font-mono text-[10px] text-white/40">{m.actor}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
 
       {c.openQuestions && c.openQuestions.length > 0 && (
         <section className="border-t border-line px-4 py-20 sm:px-8">
@@ -130,6 +168,26 @@ export default async function CharacterPage({ params }: Props) {
         </div>
         <ConnectionList refId={`character:${slug}`} />
       </section>
+
+      <nav className="grid border-t border-line sm:grid-cols-2" aria-label="More characters">
+        {[
+          { c: prev, label: "← Previous" },
+          { c: next, label: "Next →" },
+        ].map(({ c: o, label }) => (
+          <Link key={label} href={`/characters/${o.slug}`} className="group relative h-[42svh] min-h-[260px] overflow-hidden border-line sm:even:border-l">
+            <div className="absolute inset-0 opacity-50 transition duration-700 group-hover:scale-105 group-hover:opacity-80">
+              {o.portrait ? <MediaImage m={o.portrait} sizes="50vw" /> : <GenerativeArt seed={o.slug} art={o.art} className="h-full w-full" grain={false} />}
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
+            <div className={`absolute inset-x-0 bottom-0 p-6 sm:p-8 ${label.startsWith("Next") ? "sm:text-right" : ""}`}>
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em]" style={{ color: o.accent }}>
+                {label}
+              </p>
+              <p className="mt-2 font-display text-5xl uppercase leading-none sm:text-6xl">{o.name}</p>
+            </div>
+          </Link>
+        ))}
+      </nav>
     </>
   );
 }

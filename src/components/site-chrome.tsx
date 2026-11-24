@@ -5,12 +5,13 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 const NAV = [
-  { href: "/timeline", label: "Timeline", n: "01" },
-  { href: "/characters/doctor-doom", label: "Doom", n: "02" },
-  { href: "/connections", label: "Connections", n: "03" },
-  { href: "/clues", label: "Clues", n: "04" },
-  { href: "/trailer", label: "Trailer", n: "05" },
-  { href: "/sources", label: "Sources", n: "06" },
+  { href: "/universes", label: "Universes", n: "01" },
+  { href: "/timeline", label: "Timeline", n: "02" },
+  { href: "/characters", label: "Characters", n: "03" },
+  { href: "/connections", label: "Connections", n: "04" },
+  { href: "/clues", label: "Clues", n: "05" },
+  { href: "/trailer", label: "Trailer", n: "06" },
+  { href: "/sources", label: "Sources", n: "07" },
 ];
 
 export function SiteHeader() {

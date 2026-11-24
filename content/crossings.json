@@ -1,0 +1,84 @@
+[
+  {
+    "id": "f4-crossover",
+    "from": "earth-828",
+    "to": "earth-616",
+    "label": "The Fantastic Four cross over",
+    "short": "F4 cross over",
+    "evidence": [
+      {
+        "text": "A ship matching the Fantastic Four's enters Earth-616 from another dimension.",
+        "status": "supported",
+        "citation": "Thunderbolts* — post-credits scene"
+      },
+      {
+        "text": "The Fantastic Four reach Steve Rogers and bring him back to fight Doom.",
+        "status": "trailer",
+        "citation": "Avengers: Doomsday final trailer, as reported by Variety"
+      }
+    ]
+  },
+  {
+    "id": "x-men-avengers",
+    "from": "earth-10005",
+    "to": "earth-616",
+    "label": "X-Men and Avengers fight side by side",
+    "short": "X-Men × Avengers",
+    "evidence": [
+      {
+        "text": "The Avengers and X-Men battle Doom and his Sentinels.",
+        "status": "trailer",
+        "citation": "Avengers: Doomsday final trailer, as reported by Variety"
+      },
+      {
+        "text": "The X-Men come from Earth-10005.",
+        "status": "supported",
+        "citation": "Fox-era actors reprising their roles (marvel.com)",
+        "note": "Marvel has not stated the X-Men's Earth number."
+      }
+    ]
+  },
+  {
+    "id": "x-men-f4",
+    "from": "earth-10005",
+    "to": "earth-828",
+    "label": "Three teams, one fight",
+    "short": "Three teams, one fight",
+    "evidence": [
+      {
+        "text": "Heroes from three different Earths must band together or face extinction.",
+        "status": "official",
+        "citation": "marvel.com (23 Nov 2026)"
+      }
+    ]
+  },
+  {
+    "id": "reported-incursion",
+    "from": "earth-10005",
+    "to": "earth-1127",
+    "label": "Reported incursion",
+    "short": "Reported incursion",
+    "evidence": [
+      {
+        "text": "A TVA display reportedly shows Earth-10005 on a collision course with Earth-1127.",
+        "status": "supported",
+        "citation": "Avengers Endgame: Encore, as reported by TheWrap and Reactor",
+        "note": "Unverified by an editor. Reports differ."
+      }
+    ]
+  },
+  {
+    "id": "strange-838",
+    "from": "earth-616",
+    "to": "earth-838",
+    "label": "Strange learns what incursions are",
+    "short": "Illuminati",
+    "evidence": [
+      {
+        "text": "Doctor Strange is taken to Earth-838, where the Illuminati explain incursions.",
+        "status": "canon",
+        "citation": "Doctor Strange in the Multiverse of Madness"
+      }
+    ]
+  }
+]

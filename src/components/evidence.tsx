@@ -5,13 +5,29 @@ export const STATUS_META: Record<
   EvidenceStatus,
   { label: string; short: string; color: string; ring: string; dot: string; description: string }
 > = {
-  confirmed: {
-    label: "Confirmed",
-    short: "Confirmed",
-    color: "text-confirmed",
-    ring: "border-confirmed/40 bg-confirmed/10",
-    dot: "bg-confirmed",
-    description: "Explicitly established in an official MCU release or official Marvel source.",
+  official: {
+    label: "Official",
+    short: "Official",
+    color: "text-official",
+    ring: "border-official/40 bg-official/10",
+    dot: "bg-official",
+    description: "Stated by Marvel Studios or Disney: announcements, press releases, marvel.com.",
+  },
+  trailer: {
+    label: "Trailer-revealed",
+    short: "Trailer",
+    color: "text-trailer",
+    ring: "border-trailer/40 bg-trailer/10",
+    dot: "bg-trailer",
+    description: "Shown or said in an official trailer. Context may change in the finished film.",
+  },
+  canon: {
+    label: "Established canon",
+    short: "Canon",
+    color: "text-canon",
+    ring: "border-canon/40 bg-canon/10",
+    dot: "bg-canon",
+    description: "Established on screen in a released MCU film or series.",
   },
   supported: {
     label: "Supported interpretation",
@@ -19,7 +35,7 @@ export const STATUS_META: Record<
     color: "text-supported",
     ring: "border-supported/40 bg-supported/10",
     dot: "bg-supported",
-    description: "A reasonable reading backed by identifiable scenes or several clues, but not explicitly confirmed.",
+    description: "A strong reading of identifiable scenes or several clues, but not explicitly confirmed.",
   },
   theory: {
     label: "Fan theory",
@@ -32,10 +48,15 @@ export const STATUS_META: Record<
 };
 
 export const STATUS_HEX: Record<EvidenceStatus, string> = {
-  confirmed: "#34d399",
+  official: "#34d399",
+  trailer: "#22d3ee",
+  canon: "#8fb4ff",
   supported: "#fbbf24",
   theory: "#c4a1ff",
 };
+
+/** Statuses that count as established fact (as opposed to interpretation). */
+export const FACT_STATUSES: EvidenceStatus[] = ["official", "trailer", "canon"];
 
 export function EvidenceBadge({ status, short = false }: { status: EvidenceStatus; short?: boolean }) {
   const m = STATUS_META[status];

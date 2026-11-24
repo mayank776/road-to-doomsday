@@ -1,0 +1,211 @@
+[
+  {
+    "slug": "avengers",
+    "name": "The Avengers",
+    "universe": "earth-616",
+    "summary": "The originals return, alongside Sam Wilson's new Captain America.",
+    "members": [
+      {
+        "name": "Steve Rogers",
+        "actor": "Chris Evans",
+        "character": "steve-rogers"
+      },
+      {
+        "name": "Thor",
+        "actor": "Chris Hemsworth",
+        "character": "thor"
+      },
+      {
+        "name": "Sam Wilson · Captain America",
+        "actor": "Anthony Mackie",
+        "character": "sam-wilson"
+      },
+      {
+        "name": "Scott Lang · Ant-Man",
+        "actor": "Paul Rudd"
+      },
+      {
+        "name": "Cassie Lang",
+        "actor": "Kathryn Newton"
+      },
+      {
+        "name": "Joaquin Torres",
+        "actor": "Danny Ramirez"
+      },
+      {
+        "name": "Kate Bishop",
+        "actor": "Hailee Steinfeld"
+      },
+      {
+        "name": "Shang-Chi",
+        "actor": "Simu Liu"
+      }
+    ],
+    "media": [
+      "avengers-poster",
+      "avengers-team-up",
+      "avengers-tower",
+      "avengers-comic"
+    ]
+  },
+  {
+    "slug": "new-avengers",
+    "name": "The New Avengers",
+    "universe": "earth-616",
+    "summary": "The Thunderbolts, rebranded by Valentina Allegra de Fontaine.",
+    "members": [
+      {
+        "name": "Yelena Belova",
+        "actor": "Florence Pugh",
+        "character": "new-avengers"
+      },
+      {
+        "name": "Bucky Barnes",
+        "actor": "Sebastian Stan",
+        "character": "bucky-barnes"
+      },
+      {
+        "name": "Alexei Shostakov",
+        "actor": "David Harbour"
+      },
+      {
+        "name": "John Walker",
+        "actor": "Wyatt Russell"
+      },
+      {
+        "name": "Ava Starr · Ghost",
+        "actor": "Hannah John-Kamen"
+      },
+      {
+        "name": "Bob · Sentry",
+        "actor": "Lewis Pullman"
+      }
+    ],
+    "media": [
+      "new-avengers-poster",
+      "thunderbolts-poster",
+      "new-avengers-grey"
+    ]
+  },
+  {
+    "slug": "wakanda-talokan",
+    "name": "Wakanda & Talokan",
+    "universe": "earth-616",
+    "summary": "Two hidden nations, both in the fight.",
+    "members": [
+      {
+        "name": "Shuri · Black Panther",
+        "actor": "Letitia Wright"
+      },
+      {
+        "name": "M'Baku",
+        "actor": "Winston Duke"
+      },
+      {
+        "name": "Namor",
+        "actor": "Tenoch Huerta Mejía"
+      },
+      {
+        "name": "Namora",
+        "actor": "Mabel Cadena"
+      },
+      {
+        "name": "Attuma",
+        "actor": "Alex Livinalli"
+      }
+    ]
+  },
+  {
+    "slug": "legacy",
+    "name": "Also returning",
+    "universe": "earth-616",
+    "summary": "Steve's past, and the god who holds the timelines together.",
+    "members": [
+      {
+        "name": "Peggy Carter",
+        "actor": "Hayley Atwell"
+      },
+      {
+        "name": "Loki",
+        "actor": "Tom Hiddleston",
+        "character": "loki"
+      }
+    ]
+  },
+  {
+    "slug": "fantastic-four",
+    "name": "The Fantastic Four",
+    "universe": "earth-828",
+    "summary": "Marvel's First Family, crossing over from their own Earth.",
+    "members": [
+      {
+        "name": "Reed Richards · Mister Fantastic",
+        "actor": "Pedro Pascal",
+        "character": "reed-richards"
+      },
+      {
+        "name": "Sue Storm · Invisible Woman",
+        "actor": "Vanessa Kirby"
+      },
+      {
+        "name": "Johnny Storm · Human Torch",
+        "actor": "Joseph Quinn"
+      },
+      {
+        "name": "Ben Grimm · The Thing",
+        "actor": "Ebon Moss-Bachrach"
+      }
+    ],
+    "media": [
+      "f4-poster",
+      "f4-city",
+      "steve-f4"
+    ]
+  },
+  {
+    "slug": "x-men",
+    "name": "The X-Men",
+    "universe": "earth-10005",
+    "universeStatus": "supported",
+    "summary": "The 2000s film X-Men, together in the MCU for the first time.",
+    "members": [
+      {
+        "name": "Charles Xavier · Professor X",
+        "actor": "Patrick Stewart"
+      },
+      {
+        "name": "Magneto",
+        "actor": "Ian McKellen"
+      },
+      {
+        "name": "Cyclops",
+        "actor": "James Marsden",
+        "character": "cyclops"
+      },
+      {
+        "name": "Beast",
+        "actor": "Kelsey Grammer"
+      },
+      {
+        "name": "Nightcrawler",
+        "actor": "Alan Cumming"
+      },
+      {
+        "name": "Mystique",
+        "actor": "Rebecca Romijn"
+      },
+      {
+        "name": "Gambit",
+        "actor": "Channing Tatum",
+        "note": "First appeared in Deadpool & Wolverine, stranded in the Void. His universe is not stated.",
+        "character": "gambit"
+      }
+    ],
+    "media": [
+      "xmen-classic",
+      "wolverine-comic",
+      "cyclops-comic",
+      "xmen-logo"
+    ]
+  }
+]

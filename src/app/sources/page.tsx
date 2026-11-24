@@ -58,7 +58,7 @@ export default function SourcesPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
                   <div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-[0.2em]">
-                    <span className={s.official ? "text-confirmed" : "text-supported"}>{s.official ? "● Official" : "● Unofficial · lead only"}</span>
+                    <span className={s.official ? "text-official" : "text-supported"}>{s.official ? "● Official" : "● Unofficial · lead only"}</span>
                     <span className="text-white/50">· {s.reviewStatus === "pending" ? "Awaiting review" : s.reviewStatus}</span>
                   </div>
                   <p className="mt-2 font-display text-2xl uppercase leading-tight">{s.title}</p>

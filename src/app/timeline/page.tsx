@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { formatDate, projects } from "@/lib/content";
-import { GenerativeArt } from "@/components/visual/generative-art";
+import { coverFor } from "@/lib/media";
+import { Visual } from "@/components/media/visual";
 import { EvidenceDots } from "@/components/evidence";
 import { Kicker } from "@/components/site-chrome";
 import { SplitHeadline } from "@/components/visual/reveal";
@@ -24,7 +25,7 @@ export default function TimelinePage() {
               href={`/timeline/${p.slug}`}
               className={`group relative block h-[72svh] overflow-hidden border bg-ink ${p.upcoming ? "border-doom-bright/70" : "border-line"}`}
             >
-              <GenerativeArt seed={p.slug} art={p.art} className="absolute inset-0 h-full w-full transition duration-[1.4s] ease-out group-hover:scale-105" />
+              <Visual media={coverFor(p.slug)} seed={p.slug} art={p.art} sizes="100vw" className="transition duration-[1.4s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
 
               <div className="relative flex h-full flex-col justify-between p-5 sm:p-10">

@@ -1,0 +1,787 @@
+[
+  {
+    "id": "doomsday-poster",
+    "file": "Avengers-Doomsday.jpg",
+    "kind": "poster",
+    "alt": "Avengers: Doomsday poster: Doom looms in green fire over a crowd of heroes, dated December 18",
+    "subjects": [
+      "avengers-doomsday",
+      "doctor-doom",
+      "rdj-is-doom",
+      "cast-livestream"
+    ],
+    "focus": "50% 30%"
+  },
+  {
+    "id": "doomsday-poster-alt",
+    "file": "Avengers-doomsday 1.jpg",
+    "kind": "poster",
+    "alt": "Avengers: Doomsday art: Doom's mask fills a green sky above heroes from every team",
+    "subjects": [
+      "avengers-doomsday",
+      "doctor-doom"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "doomsday-title",
+    "file": "Doomsday-official thumbnail.png",
+    "kind": "still",
+    "alt": "The Avengers: Doomsday title in green-lit chrome",
+    "subjects": [
+      "avengers-doomsday"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "worlds-collide",
+    "file": "Doomsday world's collide.jpg",
+    "kind": "illustration",
+    "alt": "The X-Men, Fantastic Four and Avengers emblems colliding in a burst of light",
+    "subjects": [
+      "avengers-doomsday",
+      "avengers",
+      "x-men",
+      "fantastic-four"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "avengers-team-up",
+    "file": "Avengers team-up.png",
+    "kind": "still",
+    "alt": "Heroes charge across a dark battlefield: Steve Rogers, Thor and Sam Wilson with the shield among them",
+    "subjects": [
+      "avengers",
+      "avengers-doomsday",
+      "steve-rogers",
+      "thor",
+      "sam-wilson"
+    ],
+    "focus": "40% 40%"
+  },
+  {
+    "id": "doom-hooded",
+    "file": "Dr Doom.jpg",
+    "kind": "illustration",
+    "alt": "Doctor Doom in a green hooded cloak, framed by a glowing sigil",
+    "subjects": [
+      "doctor-doom"
+    ],
+    "focus": "50% 30%"
+  },
+  {
+    "id": "doom-stolen-lives",
+    "file": "Dr.Doom 1.jpg",
+    "kind": "poster",
+    "alt": "Doom's masked face over green lightning, with the line 'All of you have lived stolen lives'",
+    "subjects": [
+      "doctor-doom"
+    ],
+    "focus": "50% 25%"
+  },
+  {
+    "id": "doom-hell-answers",
+    "file": "Dr. Doom.jpg",
+    "kind": "poster",
+    "alt": "Typographic poster: 'Hell answers to him', with Doom in silhouette",
+    "subjects": [
+      "doctor-doom"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "thor-vs-doom",
+    "file": "thor v doom.jpg",
+    "kind": "illustration",
+    "alt": "Lightning crackles between Thor's hand and Doom's iron mask",
+    "subjects": [
+      "thor",
+      "doctor-doom"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "steve-rogers",
+    "file": "Steve Rogers.jpg",
+    "kind": "photo",
+    "alt": "Bearded Steve Rogers in a dark jacket",
+    "subjects": [
+      "steve-rogers"
+    ],
+    "focus": "50% 25%"
+  },
+  {
+    "id": "captain-america-flag",
+    "file": "Captain america.jpg",
+    "kind": "comic",
+    "alt": "Comic-style Captain America in front of the American flag",
+    "subjects": [
+      "steve-rogers"
+    ],
+    "focus": "50% 20%"
+  },
+  {
+    "id": "captain-america-leap",
+    "file": "Captain america 1.jpg",
+    "kind": "comic",
+    "alt": "Captain America leaping with his shield across a Marvel logo",
+    "subjects": [
+      "steve-rogers"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "thor-portrait",
+    "file": "thor 1.jpg",
+    "kind": "illustration",
+    "alt": "Thor portrait with war paint: God of Thunder",
+    "subjects": [
+      "thor"
+    ],
+    "focus": "50% 30%"
+  },
+  {
+    "id": "thor-storm",
+    "file": "thor 2.jpg",
+    "kind": "illustration",
+    "alt": "Thor raises his hammer into a lightning storm",
+    "subjects": [
+      "thor"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "thor-comic",
+    "file": "thor.jpg",
+    "kind": "comic",
+    "alt": "Classic comic-style Thor swinging Mjölnir",
+    "subjects": [
+      "thor"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "f4-poster",
+    "file": "F4.jpg",
+    "kind": "poster",
+    "alt": "The Fantastic Four poster: Reed, Sue, Johnny and Ben",
+    "subjects": [
+      "reed-richards",
+      "fantastic-four",
+      "fantastic-four-first-steps"
+    ],
+    "focus": "50% 55%"
+  },
+  {
+    "id": "franklin-comic",
+    "file": "Franklin richards.jpg",
+    "kind": "comic",
+    "alt": "Comic art of a young Franklin Richards",
+    "subjects": [
+      "franklin-richards"
+    ],
+    "focus": "50% 30%"
+  },
+  {
+    "id": "loki-poster",
+    "file": "LOKI.jpg",
+    "kind": "poster",
+    "alt": "Green Loki poster: Glorious Purpose, Season 2 Episode 6",
+    "subjects": [
+      "loki"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "kang-comic",
+    "file": "Kang.jpg",
+    "kind": "comic",
+    "alt": "Comic cover of Kang the Conqueror",
+    "subjects": [
+      "he-who-remains",
+      "council-of-kangs"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "bucky-poster",
+    "file": "Winter Soldier.jpg",
+    "kind": "poster",
+    "alt": "The Winter Soldier: Bucky Barnes in a mask with a metal arm",
+    "subjects": [
+      "bucky-barnes"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "hulk-comic",
+    "file": "hulk.jpg",
+    "kind": "comic",
+    "alt": "Classic Incredible Hulk comic cover",
+    "subjects": [
+      "bruce-banner"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "cyclops-render",
+    "file": "Cyclops.jpg",
+    "kind": "illustration",
+    "alt": "Battle-worn Cyclops with his visor, fire behind him",
+    "subjects": [
+      "cyclops",
+      "x-men"
+    ],
+    "focus": "50% 30%"
+  },
+  {
+    "id": "cyclops-blast",
+    "file": "Cyclops 1.jpg",
+    "kind": "illustration",
+    "alt": "Cyclops unleashes an optic blast across a burning landscape",
+    "subjects": [
+      "cyclops"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "cyclops-comic",
+    "file": "Cyclops 2.jpg",
+    "kind": "comic",
+    "alt": "Comic-style Cyclops under the X-Men logo",
+    "subjects": [
+      "cyclops",
+      "x-men"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "gambit-comic",
+    "file": "Gambit.jpg",
+    "kind": "comic",
+    "alt": "Gambit charging playing cards on an Uncanny X-Men cover",
+    "subjects": [
+      "gambit",
+      "x-men"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "xmen-classic",
+    "file": "X-men.jpg",
+    "kind": "comic",
+    "alt": "Classic X-Men comic cover: Wolverine, Cyclops, Rogue, Gambit and more",
+    "subjects": [
+      "x-men"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "xmen-cyclops-cover",
+    "file": "X-men 1.jpg",
+    "kind": "comic",
+    "alt": "X-Men comic cover with Cyclops front and centre",
+    "subjects": [
+      "x-men",
+      "cyclops"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "avengers-poster",
+    "file": "Avengers.jpg",
+    "kind": "poster",
+    "alt": "Minimalist Avengers poster made of shattered heroes' silhouettes",
+    "subjects": [
+      "avengers"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "avengers-comic",
+    "file": "Avengers_1.jpg",
+    "kind": "comic",
+    "alt": "Retro comic-style cover for The Avengers (2012)",
+    "subjects": [
+      "avengers"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "endgame-snap",
+    "file": "End-Game.jpg",
+    "kind": "illustration",
+    "alt": "Iron Man raises the Nano Gauntlet: Whatever it takes",
+    "subjects": [
+      "avengers-endgame"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "doom-still",
+    "file": "Doom.png",
+    "kind": "still",
+    "alt": "Doom, hooded and armoured, in a green-lit hall of stained glass",
+    "subjects": [
+      "doctor-doom",
+      "avengers-doomsday"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "doom-sentinels",
+    "file": "Doom with sentinels.png",
+    "kind": "still",
+    "alt": "Doom spreads his arms before towering robotic figures",
+    "subjects": [
+      "doctor-doom",
+      "avengers-doomsday"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "doom-court",
+    "file": "Doom Court.png",
+    "kind": "still",
+    "alt": "A cloaked figure crosses a vast green-lit hall lined with hooded figures",
+    "subjects": [
+      "doctor-doom",
+      "avengers-doomsday"
+    ],
+    "focus": "50% 60%"
+  },
+  {
+    "id": "doom-throne",
+    "file": "Dr_ Doom throne.jpg",
+    "kind": "illustration",
+    "alt": "A throne room bathed in green light",
+    "subjects": [
+      "doctor-doom"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "doom-wide",
+    "file": "dr Doom wide.jpg",
+    "kind": "illustration",
+    "alt": "Doom, cloaked, faces a ruined green landscape beneath his name",
+    "subjects": [
+      "doctor-doom"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "steve-peggy-dance",
+    "file": "Steve and Peggy dance.jpg",
+    "kind": "still",
+    "alt": "Steve Rogers and Peggy Carter dance in their living room at the end of Avengers: Endgame",
+    "subjects": [
+      "steve-rogers",
+      "avengers-endgame",
+      "endgame-encore"
+    ],
+    "focus": "45% 35%"
+  },
+  {
+    "id": "steve-peggy-lamplight",
+    "file": "the moment steve knew he fkd up.png",
+    "kind": "still",
+    "alt": "Peggy Carter and a bearded Steve Rogers, lit by warm lamplight, look towards something off screen",
+    "subjects": [
+      "steve-rogers",
+      "avengers-doomsday"
+    ],
+    "focus": "60% 40%"
+  },
+  {
+    "id": "steve-f4",
+    "file": "steve with F4.png",
+    "kind": "still",
+    "alt": "Steve Rogers stands across a lamplit room from the Fantastic Four in their blue suits",
+    "subjects": [
+      "steve-rogers",
+      "fantastic-four",
+      "reed-richards",
+      "avengers-doomsday"
+    ],
+    "focus": "60% 50%"
+  },
+  {
+    "id": "steve-mjolnir",
+    "file": "steve rogers with mjolnir.jpg",
+    "kind": "photo",
+    "alt": "A bearded Steve Rogers in a dark jacket, Mjölnir in the foreground",
+    "subjects": [
+      "steve-rogers"
+    ],
+    "focus": "50% 25%"
+  },
+  {
+    "id": "thor-doomsday",
+    "file": "Thor-doomsday.png",
+    "kind": "still",
+    "alt": "Thor in sleeveless armour leans on Stormbreaker",
+    "subjects": [
+      "thor",
+      "avengers-doomsday"
+    ],
+    "focus": "50% 25%"
+  },
+  {
+    "id": "strange-portrait",
+    "file": "Dr. Strange.jpg",
+    "kind": "illustration",
+    "alt": "Doctor Strange casts a ring of golden sigils",
+    "subjects": [
+      "doctor-strange"
+    ],
+    "focus": "50% 25%"
+  },
+  {
+    "id": "strange-illustration",
+    "file": "Doctor Strange.jpg",
+    "kind": "illustration",
+    "alt": "Illustrated Doctor Strange portrait with the Eye of Agamotto",
+    "subjects": [
+      "doctor-strange"
+    ],
+    "focus": "50% 30%"
+  },
+  {
+    "id": "mom-poster",
+    "file": "Doctor Strange in the Multiverse of Madness.jpg",
+    "kind": "poster",
+    "alt": "Doctor Strange in the Multiverse of Madness poster: many-armed Strange shatters across white",
+    "subjects": [
+      "doctor-strange",
+      "doctor-strange-multiverse-of-madness",
+      "earth-838",
+      "illuminati-reed"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "wanda-split",
+    "file": "wanda X scarlet.jpg",
+    "kind": "illustration",
+    "alt": "Half Wanda Maximoff, half the Scarlet Witch, in one painted face",
+    "subjects": [
+      "scarlet-witch"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "wanda-hex",
+    "file": "wanda maximoff.jpeg",
+    "kind": "still",
+    "alt": "Wanda Maximoff conjures red energy in a retro sitcom living room",
+    "subjects": [
+      "scarlet-witch"
+    ],
+    "focus": "35% 50%"
+  },
+  {
+    "id": "wanda-mom",
+    "file": "Wanda_Maximoff.webp",
+    "kind": "still",
+    "alt": "A bloodied Scarlet Witch in a burning temple",
+    "subjects": [
+      "scarlet-witch",
+      "doctor-strange-multiverse-of-madness"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "wanda-streak",
+    "file": "The scarlet witch.jpg",
+    "kind": "illustration",
+    "alt": "The Scarlet Witch in profile, dissolving into red streaks",
+    "subjects": [
+      "scarlet-witch"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "sam-wilson",
+    "file": "sam wilson.jpg",
+    "kind": "illustration",
+    "alt": "Sam Wilson's Captain America braces his shield against a giant red fist",
+    "subjects": [
+      "sam-wilson",
+      "captain-america-brave-new-world",
+      "sam-rebuilds"
+    ],
+    "focus": "40% 50%"
+  },
+  {
+    "id": "sam-wings",
+    "file": "Captain America_ Sam Wilson.jpg",
+    "kind": "poster",
+    "alt": "Sam Wilson as Captain America, red wings spread, shield raised",
+    "subjects": [
+      "sam-wilson"
+    ],
+    "focus": "50% 30%"
+  },
+  {
+    "id": "cyclops-still",
+    "file": "Cyclops.png",
+    "kind": "still",
+    "alt": "Cyclops touches his visor under a stormy sky",
+    "subjects": [
+      "cyclops",
+      "x-men",
+      "avengers-doomsday"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "cyclops-red",
+    "file": "x-men-cyclops.jpg",
+    "kind": "comic",
+    "alt": "Cyclops kneels as an optic blast erupts into a red sky",
+    "subjects": [
+      "cyclops"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "wolverine-comic",
+    "file": "X-men-wolverine.jpg",
+    "kind": "comic",
+    "alt": "Wolverine in yellow and blue on an Uncanny X-Men cover",
+    "subjects": [
+      "x-men"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "xmen-logo",
+    "file": "X-men universe earth 10005.jpg",
+    "kind": "illustration",
+    "alt": "The classic X-Men logo glowing on dark stone",
+    "subjects": [
+      "x-men",
+      "earth-10005"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "loki-tree",
+    "file": "Loki Poster 1.jpg",
+    "kind": "poster",
+    "alt": "Loki enthroned at the End of Time, timelines branching out of him in green",
+    "subjects": [
+      "loki",
+      "loki-season-2",
+      "loki-holds-the-tree"
+    ],
+    "focus": "50% 70%"
+  },
+  {
+    "id": "loki-clock",
+    "file": "loki poster.jpg",
+    "kind": "poster",
+    "alt": "Loki poster: a clock face above Loki's silhouette",
+    "subjects": [
+      "loki",
+      "loki-season-1"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "tva-poster",
+    "file": "Loki TVA.jpg",
+    "kind": "poster",
+    "alt": "TVA poster for Loki Season 2: Miss Minutes under the words \"Time is everything\"",
+    "subjects": [
+      "loki",
+      "loki-season-2"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "thunderbolts-poster",
+    "file": "thunderbolts.jpg",
+    "kind": "poster",
+    "alt": "Thunderbolts* poster: the team assembled on yellow, Bucky among them",
+    "subjects": [
+      "thunderbolts",
+      "new-avengers",
+      "bucky-barnes"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "new-avengers-poster",
+    "file": "THUNDERBOLTS 'NEW AVENEGERS'.jpg",
+    "kind": "poster",
+    "alt": "Thunderbolts* poster with the team, Yelena and Bucky in front",
+    "subjects": [
+      "thunderbolts",
+      "new-avengers",
+      "bucky-barnes",
+      "new-avengers-rebrand"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "new-avengers-grey",
+    "file": "thunderbolts - the  new avengers.jpg",
+    "kind": "poster",
+    "alt": "Thunderbolts* art: the team huddled over a yellow star",
+    "subjects": [
+      "new-avengers",
+      "thunderbolts"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "avengers-tower",
+    "file": "Avengers tower - earth 616.jpg",
+    "kind": "illustration",
+    "alt": "Avengers Tower rising over the New York skyline",
+    "subjects": [
+      "earth-616",
+      "avengers"
+    ],
+    "focus": "50% 55%"
+  },
+  {
+    "id": "earth-from-space",
+    "file": "earth 3d.jpg",
+    "kind": "photo",
+    "alt": "Earth from orbit, sunrise breaking over the horizon",
+    "subjects": [
+      "earth-616"
+    ],
+    "focus": "50% 45%"
+  },
+  {
+    "id": "f4-city",
+    "file": "f4-universe-earth 828.jpg",
+    "kind": "illustration",
+    "alt": "The Fantastic Four leap between retro-futurist towers",
+    "subjects": [
+      "earth-828",
+      "fantastic-four",
+      "fantastic-four-first-steps"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "incursion-sky",
+    "file": "Incursion.png",
+    "kind": "still",
+    "alt": "Two other Earths hang in the night sky over the New York skyline",
+    "subjects": [
+      "incursions",
+      "avengers-doomsday",
+      "earth-616"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "incursion-art",
+    "file": "Incursion.jpg",
+    "kind": "illustration",
+    "alt": "Two planets collide in a ring of fire",
+    "subjects": [
+      "incursions",
+      "clea-incursion"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "multiverse-planets",
+    "file": "multi planet.jpg",
+    "kind": "illustration",
+    "alt": "Planets scattered across a vivid cosmic sky",
+    "subjects": [
+      "multiverse"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "nwh-multiverse",
+    "file": "spider man multiverse.jpg",
+    "kind": "poster",
+    "alt": "Spider-Man: No Way Home poster: two webs fold into each other",
+    "subjects": [
+      "spider-man-no-way-home",
+      "multiverse"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "nwh-poster",
+    "file": "Spider man - no way home.jpg",
+    "kind": "poster",
+    "alt": "Spider-Man: No Way Home minimalist poster: three Spider-Men embrace",
+    "subjects": [
+      "spider-man-no-way-home"
+    ],
+    "focus": "50% 60%"
+  },
+  {
+    "id": "endgame-gauntlet",
+    "file": "Endgame.jpg",
+    "kind": "poster",
+    "alt": "The Infinity Gauntlet mid-snap against a cloudy sky",
+    "subjects": [
+      "avengers-endgame"
+    ],
+    "focus": "50% 60%"
+  },
+  {
+    "id": "secret-wars-1984",
+    "file": "Marvel Super Heroes Secret Wars.jpg",
+    "kind": "comic",
+    "alt": "Marvel Super Heroes Secret Wars #8 (1984): Spider-Man in the black suit",
+    "subjects": [
+      "comics"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "starfield-mono",
+    "file": "starfield.jpg",
+    "kind": "photo",
+    "alt": "Stars over black-and-white clouds",
+    "subjects": [
+      "texture"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "starfield-nebula",
+    "file": "starfield 1.jpg",
+    "kind": "illustration",
+    "alt": "A pink and blue nebula",
+    "subjects": [
+      "texture"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "space-clouds",
+    "file": "Space Clouds.jpg",
+    "kind": "illustration",
+    "alt": "Swirling red and blue cosmic clouds",
+    "subjects": [
+      "texture"
+    ],
+    "focus": "50% 50%"
+  },
+  {
+    "id": "doomsday-art",
+    "file": "Doomsday.jpg",
+    "kind": "poster",
+    "alt": "Fan poster: lightning strikes as a cloaked figure watches, Avengers: Doomsday title",
+    "subjects": [
+      "avengers-doomsday"
+    ],
+    "focus": "50% 40%"
+  }
+]

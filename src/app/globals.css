@@ -10,14 +10,23 @@
   --color-faint: #5b685f;
   --color-doom: #3fae6a;
   --color-doom-bright: #7dffb0;
-  --color-confirmed: #34d399;
+  --color-official: #34d399;
+  --color-trailer: #22d3ee;
+  --color-canon: #8fb4ff;
   --color-supported: #fbbf24;
   --color-theory: #c4a1ff;
-  --color-comics: #7dd3fc;
+  --color-comics: #f472b6;
 
   --animate-marquee: marquee 40s linear infinite;
   --animate-pulse-slow: pulse 4s ease-in-out infinite;
 
+  @keyframes dashflow {
+    to { stroke-dashoffset: -48; }
+  }
+  @keyframes scrollcue {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }

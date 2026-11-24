@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { trailers } from "@/lib/content";
+import { mediaAbout } from "@/lib/media";
+import { Gallery } from "@/components/characters/gallery";
 import { EvidenceBadge } from "@/components/evidence";
 import { Kicker } from "@/components/site-chrome";
 import { SplitHeadline } from "@/components/visual/reveal";
@@ -14,6 +16,7 @@ const toSeconds = (ts: string) => {
 const REVIEW_LABEL = { pending: "Awaiting frame-by-frame review", "in-review": "In review", reviewed: "Reviewed" } as const;
 
 export default function TrailerPage() {
+  const stills = mediaAbout("avengers-doomsday", "still");
   return (
     <div className="pt-32">
       <div className="px-4 sm:px-8">
@@ -39,7 +42,7 @@ export default function TrailerPage() {
             </div>
             <div className="mx-auto mt-3 flex max-w-[1400px] flex-wrap justify-between gap-2 px-4 font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 sm:w-[92vw] sm:px-0">
               <span>
-                {t.official && <span className="text-confirmed">● Official · </span>}
+                {t.official && <span className="text-official">● Official · </span>}
                 {t.publisher}
               </span>
               <span>REC ▸ {t.title}</span>
@@ -100,6 +103,21 @@ export default function TrailerPage() {
           </div>
         </section>
       ))}
+
+      {stills.length > 0 && (
+        <section className="border-t border-line px-4 py-20 sm:px-8">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <Kicker>Stills · {stills.length}</Kicker>
+              <h2 className="mt-2 font-display text-5xl uppercase leading-none sm:text-7xl">From the footage</h2>
+            </div>
+            <p className="max-w-sm font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-faint">
+              Frames gathered for this guide. Not yet matched to trailer timestamps, so nothing here is read as evidence.
+            </p>
+          </div>
+          <Gallery items={stills} accent="#7dffb0" />
+        </section>
+      )}
     </div>
   );
 }

@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
-import type { Art, Clue } from "@/lib/types";
-import { GenerativeArt } from "@/components/visual/generative-art";
+import type { Art, Clue, Media } from "@/lib/types";
+import { Visual } from "@/components/media/visual";
 import { EvidenceBadge, STATUS_HEX } from "@/components/evidence";
 
 export const KIND_LABEL: Record<Clue["kind"], string> = {
@@ -68,7 +68,7 @@ export function KindGlyph({ kind, className = "h-10 w-10" }: { kind: Clue["kind"
   );
 }
 
-export function FlipClue({ clue, art }: { clue: Clue; art: Art }) {
+export function FlipClue({ clue, art, cover }: { clue: Clue; art: Art; cover?: Media }) {
   const [flipped, setFlipped] = useState(false);
   const glow = STATUS_HEX[clue.status];
 
@@ -89,7 +89,7 @@ export function FlipClue({ clue, art }: { clue: Clue; art: Art }) {
           className="absolute inset-0 overflow-hidden border border-line text-left [backface-visibility:hidden]"
           aria-label={`${clue.title}: show evidence`}
         >
-          <GenerativeArt seed={clue.slug} art={art} className="absolute inset-0 h-full w-full" grain={false} />
+          <Visual media={cover} seed={clue.slug} art={art} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" grain={false} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
           <div className="absolute left-5 top-5 text-white/90" style={{ filter: `drop-shadow(0 0 12px ${glow})` }}>
             <KindGlyph kind={clue.kind} className="h-12 w-12" />

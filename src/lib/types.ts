@@ -7,7 +7,15 @@
  */
 
 /** Evidence status — required on every important claim and connection. */
-export type EvidenceStatus = "confirmed" | "supported" | "theory";
+/**
+ * Evidence tiers, strongest first.
+ * official  – stated by Marvel Studios / Disney (announcements, marvel.com)
+ * trailer   – shown or said in an official trailer
+ * canon     – established on screen in a released MCU film or series
+ * supported – a strong reading of identifiable scenes or clues, not explicitly confirmed
+ * theory    – speculation; never presented as fact
+ */
+export type EvidenceStatus = "official" | "trailer" | "canon" | "supported" | "theory";
 
 /** Where a claim comes from. Comics context must never be presented as MCU canon. */
 export type Basis = "mcu" | "comics" | "official-announcement";
@@ -64,6 +72,13 @@ export interface Character {
   alias?: string;
   summary: string;
   art: Art;
+  /** Home universe slug, only when it is established. */
+  universe?: string;
+  actor?: string;
+  /** Whether Marvel's official Doomsday cast list includes this character. */
+  castStatus?: "official" | "not-announced";
+  /** Media ids from content/media.json; the first is the portrait. */
+  media?: string[];
   /** What the MCU has shown or officially stated. */
   mcu: Claim[];
   /** Comic-book background — always rendered separately from MCU material. */
@@ -144,6 +159,71 @@ export interface ResearchSource {
   official: boolean;
   reviewStatus: "pending" | "in-review" | "reviewed";
   editorNote: string;
+}
+
+export interface Universe {
+  slug: string;
+  designation: string; // "Earth-616"
+  name: string;
+  /** central = one of Doomsday's three universes; peripheral = relevant but not presented as one. */
+  role: "central" | "peripheral";
+  tagline: string;
+  color: string;
+  /** How well the Earth number itself is established. */
+  designationStatus: EvidenceStatus;
+  designationSource: string;
+  teams: string[];
+  projects: string[];
+  facts: Claim[];
+  unknowns: string[];
+}
+
+export interface TeamMember {
+  name: string;
+  actor: string;
+  /** Character file slug, when one exists. */
+  character?: string;
+  note?: string;
+}
+
+export interface Team {
+  slug: string;
+  name: string;
+  universe: string;
+  /** Set when the team's universe is not established fact (e.g. the X-Men). */
+  universeStatus?: EvidenceStatus;
+  summary: string;
+  members: TeamMember[];
+  media?: string[];
+}
+
+/** A documented link between two universes, drawn on the universe map. */
+export interface Crossing {
+  id: string;
+  from: string; // universe slug
+  to: string;
+  label: string;
+  /** Short label drawn on the map; the full label titles the detail panel. */
+  short?: string;
+  evidence: Claim[];
+}
+
+export type MediaKind = "illustration" | "poster" | "comic" | "photo" | "still";
+
+/** An image supplied by the site owner, processed by `npm run media`. */
+export interface Media {
+  id: string;
+  kind: MediaKind;
+  alt: string;
+  /** CSS object-position keeping the subject in frame when cropped. */
+  focus: string;
+  subjects: string[];
+  src: string;
+  width: number;
+  height: number;
+  blur: string;
+  /** Accent colour sampled from the artwork. */
+  color: string;
 }
 
 export interface Update {

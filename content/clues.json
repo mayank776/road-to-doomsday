@@ -7,8 +7,11 @@
     "citation": "The Fantastic Four: First Steps — post-credits scene",
     "observation": "Sue Storm finds a hooded figure sitting with young Franklin. A Doom mask is visible; the figure's face is not shown.",
     "relevance": "This is Doctor Doom's first on-screen appearance in the MCU. It places him on Earth-828, focused on Franklin, before Doomsday begins.",
-    "status": "confirmed",
-    "characters": ["doctor-doom", "franklin-richards"]
+    "status": "canon",
+    "characters": [
+      "doctor-doom",
+      "franklin-richards"
+    ]
   },
   {
     "slug": "f4-return-card",
@@ -18,8 +21,10 @@
     "citation": "The Fantastic Four: First Steps — end credits",
     "observation": "An end card says the Fantastic Four will return in Avengers: Doomsday.",
     "relevance": "It directly confirms that the Earth-828 family carries into Doomsday.",
-    "status": "confirmed",
-    "characters": ["reed-richards"]
+    "status": "canon",
+    "characters": [
+      "reed-richards"
+    ]
   },
   {
     "slug": "ship-from-another-dimension",
@@ -30,7 +35,9 @@
     "observation": "The New Avengers detect an unidentified spacecraft entering Earth's atmosphere from another dimension.",
     "relevance": "It suggests the Fantastic Four cross from Earth-828 into the main MCU universe. The ship matches the one in First Steps, but its occupants are never named.",
     "status": "supported",
-    "characters": ["new-avengers"]
+    "characters": [
+      "new-avengers"
+    ]
   },
   {
     "slug": "new-avengers-rebrand",
@@ -40,8 +47,11 @@
     "citation": "Thunderbolts* — closing scene",
     "observation": "Valentina publicly introduces the Thunderbolts as the New Avengers.",
     "relevance": "Earth-616 now has two competing claims to the Avengers name going into Doomsday.",
-    "status": "confirmed",
-    "characters": ["new-avengers", "sam-wilson"]
+    "status": "canon",
+    "characters": [
+      "new-avengers",
+      "sam-wilson"
+    ]
   },
   {
     "slug": "sam-rebuilds",
@@ -51,8 +61,10 @@
     "citation": "Captain America: Brave New World — closing act",
     "observation": "Sam Wilson commits to reassembling the Avengers.",
     "relevance": "It sets up a 'real' Avengers team under Captain America to stand alongside, or against, the New Avengers.",
-    "status": "confirmed",
-    "characters": ["sam-wilson"]
+    "status": "canon",
+    "characters": [
+      "sam-wilson"
+    ]
   },
   {
     "slug": "clea-incursion",
@@ -62,7 +74,7 @@
     "citation": "Doctor Strange in the Multiverse of Madness — mid-credits scene",
     "observation": "Clea tells Strange that he caused an incursion and recruits him to help.",
     "relevance": "This leaves an unresolved incursion in MCU continuity. In the comics, incursions lead directly to Doom's Secret Wars.",
-    "status": "confirmed"
+    "status": "canon"
   },
   {
     "slug": "illuminati-reed",
@@ -72,8 +84,10 @@
     "citation": "Doctor Strange in the Multiverse of Madness — Illuminati sequence",
     "observation": "Earth-838's Reed Richards, played by John Krasinski, is killed by Wanda.",
     "relevance": "It establishes that Reed Richards variants exist across the multiverse. The MCU's main Reed is now the Earth-828 version.",
-    "status": "confirmed",
-    "characters": ["reed-richards"]
+    "status": "canon",
+    "characters": [
+      "reed-richards"
+    ]
   },
   {
     "slug": "he-who-remains-warning",
@@ -83,12 +97,14 @@
     "citation": "Loki S1 E6, \"For All Time. Always.\"",
     "observation": "He Who Remains warns that his variants will come once he is gone.",
     "relevance": "It started the multiverse saga's original villain thread.",
-    "status": "confirmed",
+    "status": "canon",
     "superseded": {
       "date": "2024-07-27",
       "note": "That thread was retired when Doom replaced Kang as the saga's central villain."
     },
-    "characters": ["he-who-remains"]
+    "characters": [
+      "he-who-remains"
+    ]
   },
   {
     "slug": "council-of-kangs",
@@ -98,12 +114,14 @@
     "citation": "Ant-Man and the Wasp: Quantumania — mid-credits scene",
     "observation": "Many Kang variants convene and prepare for war across the multiverse.",
     "relevance": "It was set up as the threat for the next Avengers film, before the plan changed.",
-    "status": "confirmed",
+    "status": "canon",
     "superseded": {
       "date": "2024-07-27",
       "note": "Avengers: The Kang Dynasty was retitled Avengers: Doomsday."
     },
-    "characters": ["he-who-remains"]
+    "characters": [
+      "he-who-remains"
+    ]
   },
   {
     "slug": "loki-holds-the-tree",
@@ -113,8 +131,10 @@
     "citation": "Loki S2 E6, \"Glorious Purpose\"",
     "observation": "Loki gathers the dying timelines and holds them together.",
     "relevance": "The multiverse now depends on Loki, which makes him central to any multiversal threat.",
-    "status": "confirmed",
-    "characters": ["loki"]
+    "status": "canon",
+    "characters": [
+      "loki"
+    ]
   },
   {
     "slug": "anchor-being",
@@ -124,7 +144,7 @@
     "citation": "Deadpool & Wolverine — TVA sequence",
     "observation": "The TVA explains that a universe begins to die once its anchor being is gone.",
     "relevance": "It gives the MCU a second on-screen way for universes to end, alongside incursions.",
-    "status": "confirmed"
+    "status": "canon"
   },
   {
     "slug": "rdj-is-doom",
@@ -134,9 +154,11 @@
     "citation": "Marvel Studios Hall H panel, San Diego Comic-Con, 27 July 2024",
     "observation": "Robert Downey Jr. is revealed as Victor von Doom. The Kang Dynasty is retitled Avengers: Doomsday, with the Russo brothers directing.",
     "relevance": "This officially names Doom as the villain and replaces the Kang storyline.",
-    "status": "confirmed",
+    "status": "official",
     "basis": "official-announcement",
-    "characters": ["doctor-doom"]
+    "characters": [
+      "doctor-doom"
+    ]
   },
   {
     "slug": "cast-livestream",
@@ -146,8 +168,13 @@
     "citation": "Marvel Studios cast announcement livestream, 26 March 2025",
     "observation": "Marvel reveals the Doomsday cast one name at a time, including Avengers, Thunderbolts, Fantastic Four and Fox-era X-Men actors.",
     "relevance": "This is the official record of who appears. Characters from several universes appearing together points to a multiversal story.",
-    "status": "confirmed",
+    "status": "official",
     "basis": "official-announcement",
-    "characters": ["loki", "sam-wilson", "reed-richards", "new-avengers"]
+    "characters": [
+      "loki",
+      "sam-wilson",
+      "reed-richards",
+      "new-avengers"
+    ]
   }
 ]

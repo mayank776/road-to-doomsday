@@ -6,23 +6,26 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import type { Media } from "@/lib/types";
+import { MediaImage } from "@/components/media/media-image";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const IronSigil = dynamic(() => import("@/components/three/iron-sigil"), { ssr: false });
 
-export type DossierStat = { label: string; value: string; tone: "confirmed" | "supported" | "theory" | "comics" | "muted" };
+export type DossierStat = { label: string; value: string; tone: "official" | "canon" | "supported" | "theory" | "comics" | "muted" };
 export type Lane = { label: string; count: number; color: string };
 
 const TONE: Record<DossierStat["tone"], string> = {
-  confirmed: "text-confirmed",
+  official: "text-official",
+  canon: "text-canon",
   supported: "text-supported",
   theory: "text-theory",
   comics: "text-comics",
   muted: "text-white/40",
 };
 
-export function DoomSection({ stats, lanes }: { stats: DossierStat[]; lanes: Lane[] }) {
+export function DoomSection({ stats, lanes, backdrop }: { stats: DossierStat[]; lanes: Lane[]; backdrop?: Media }) {
   const root = useRef<HTMLElement>(null);
   const progress = useRef(0);
   const max = Math.max(...lanes.map((l) => l.count));
@@ -37,14 +40,21 @@ export function DoomSection({ stats, lanes }: { stats: DossierStat[]; lanes: Lan
         onUpdate: (s) => (progress.current = s.progress),
       });
       gsap.fromTo(".doom-word", { xPercent: 15 }, { xPercent: -25, ease: "none", scrollTrigger: { trigger: root.current, start: "top bottom", end: "bottom top", scrub: true } });
-      gsap.from(".lane-bar", { scaleX: 0, duration: 1.4, ease: "expo.out", stagger: 0.15, scrollTrigger: { trigger: ".lanes", start: "top 85%" } });
-      gsap.from(".stat", { opacity: 0, y: 30, stagger: 0.08, duration: 1, ease: "expo.out", scrollTrigger: { trigger: ".stats", start: "top 85%" } });
+      gsap.fromTo(".lane-bar", { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "expo.out", stagger: 0.15, scrollTrigger: { trigger: ".lanes", start: "top 85%" } });
+      gsap.fromTo(".stat", { opacity: 0, y: 30 }, { opacity: 1, y: 0, stagger: 0.08, duration: 1, ease: "expo.out", scrollTrigger: { trigger: ".stats", start: "top 85%" } });
     },
     { scope: root },
   );
 
   return (
-    <section ref={root} className="relative overflow-hidden border-y border-line bg-[radial-gradient(circle_at_50%_40%,#0c2417,#040605_65%)]">
+    <section ref={root} className="relative isolate overflow-hidden border-y border-line bg-[radial-gradient(circle_at_50%_40%,#0c2417,#040605_65%)]">
+      {backdrop && (
+        <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
+          <MediaImage m={backdrop} sizes="100vw" className="opacity-70" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_50%,transparent_20%,#040605cc_90%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#040605] via-transparent via-60% to-[#040605]" />
+        </div>
+      )}
       <div className="doom-word pointer-events-none absolute left-0 top-[8%] whitespace-nowrap font-display text-[34vw] uppercase leading-none text-outline-doom opacity-30 select-none" aria-hidden>
         Victor von Doom
       </div>

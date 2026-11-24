@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import type { Art, Clue, EvidenceStatus } from "@/lib/types";
+import type { Art, Clue, EvidenceStatus, Media } from "@/lib/types";
 import { FlipClue, KindGlyph, KIND_LABEL } from "@/components/clue-card";
 import { STATUS_HEX, STATUS_META } from "@/components/evidence";
 
@@ -11,7 +11,7 @@ const chip = (on: boolean) =>
     on ? "border-doom-bright/60 bg-doom-bright/10 text-white" : "border-line text-white/50 hover:text-white"
   }`;
 
-export function ClueWall({ items }: { items: { clue: Clue; art: Art }[] }) {
+export function ClueWall({ items }: { items: { clue: Clue; art: Art; cover?: Media }[] }) {
   const [status, setStatus] = useState<EvidenceStatus | "all">("all");
   const [kind, setKind] = useState<Clue["kind"] | "all">("all");
   const shown = useMemo(
@@ -48,7 +48,7 @@ export function ClueWall({ items }: { items: { clue: Clue; art: Art }[] }) {
 
       <motion.div layout className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <AnimatePresence mode="popLayout">
-          {shown.map(({ clue, art }) => (
+          {shown.map(({ clue, art, cover }) => (
             <motion.div
               key={clue.slug}
               layout
@@ -57,7 +57,7 @@ export function ClueWall({ items }: { items: { clue: Clue; art: Art }[] }) {
               exit={{ opacity: 0, scale: 0.92 }}
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             >
-              <FlipClue clue={clue} art={art} />
+              <FlipClue clue={clue} art={art} cover={cover} />
             </motion.div>
           ))}
         </AnimatePresence>

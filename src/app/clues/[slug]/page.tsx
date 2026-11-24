@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { clues, getCharacter, getClue, getProject } from "@/lib/content";
 import { ArtHero } from "@/components/visual/art-hero";
+import { coverFor } from "@/lib/media";
 import { BasisTag, EvidenceBadge, STATUS_HEX, STATUS_META, SupersededNote } from "@/components/evidence";
 import { KindGlyph, KIND_LABEL } from "@/components/clue-card";
 import { Kicker } from "@/components/site-chrome";
@@ -29,6 +30,7 @@ export default async function CluePage({ params }: Props) {
     <>
       <ArtHero
         seed={c.slug}
+        media={coverFor(c.slug, c.project)}
         art={project?.art ?? { hue: 140, motif: "eclipse" }}
         back={{ href: "/clues", label: "All clues" }}
         kicker={`${KIND_LABEL[c.kind]}${project ? ` · ${project.title}` : ""}`}

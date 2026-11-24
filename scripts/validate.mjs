@@ -14,6 +14,11 @@ const errors = validateContent({
   clues: load("clues.json"),
   connections: load("connections.json"),
   research: load("research.json"),
+  universes: load("universes.json"),
+  teams: load("teams.json"),
+  crossings: load("crossings.json"),
+  mediaIds: new Set(Object.keys(load("media.generated.json"))),
+  mediaSubjects: load("media.json"),
 });
 
 if (errors.length) {

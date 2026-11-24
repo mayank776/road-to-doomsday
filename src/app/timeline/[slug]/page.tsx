@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { cluesForProject, formatDate, getProject, projects } from "@/lib/content";
 import { ArtHero } from "@/components/visual/art-hero";
-import { GenerativeArt } from "@/components/visual/generative-art";
+import { coverFor, mediaAbout } from "@/lib/media";
+import { Visual } from "@/components/media/visual";
+import { Gallery } from "@/components/characters/gallery";
 import { ClaimStack } from "@/components/claim-stack";
 import { FlipClue } from "@/components/clue-card";
 import { ConnectionList } from "@/components/connection-list";
@@ -28,12 +30,15 @@ export default async function ProjectPage({ params }: Props) {
   const idx = projects.findIndex((x) => x.slug === slug);
   const next = projects[idx + 1];
   const projectClues = cluesForProject(slug);
+  const cover = coverFor(slug);
+  const images = mediaAbout(slug);
 
   return (
     <>
       <ArtHero
         seed={p.slug}
         art={p.art}
+        media={cover}
         back={{ href: "/timeline", label: "Timeline" }}
         kicker={`Stop ${String(idx + 1).padStart(2, "0")} · ${p.kind}${p.detail ? ` · ${p.detail}` : ""} · ${formatDate(p.releaseDate)}`}
         title={p.title}
@@ -55,12 +60,21 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
+      {images.length > 1 && (
+        <section className="border-t border-line px-4 py-20 sm:px-8">
+          <Kicker>In pictures · {images.length}</Kicker>
+          <div className="mt-8">
+            <Gallery items={images} accent={cover?.color ?? "#7dffb0"} />
+          </div>
+        </section>
+      )}
+
       {projectClues.length > 0 && (
         <section className="border-t border-line px-4 py-20 sm:px-8">
           <Kicker>Clues from this stop</Kicker>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {projectClues.map((c) => (
-              <FlipClue key={c.slug} clue={c} art={p.art} />
+              <FlipClue key={c.slug} clue={c} art={p.art} cover={coverFor(c.slug, slug)} />
             ))}
           </div>
         </section>
@@ -78,7 +92,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {next && (
         <Link href={`/timeline/${next.slug}`} className="group relative block h-[60svh] overflow-hidden border-t border-line">
-          <GenerativeArt seed={next.slug} art={next.art} className="absolute inset-0 h-full w-full opacity-60 transition duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+          <Visual media={coverFor(next.slug)} seed={next.slug} art={next.art} sizes="100vw" className="opacity-60 transition duration-1000 group-hover:scale-105 group-hover:opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink to-transparent" />
           <div className="absolute inset-x-0 bottom-0 px-4 pb-12 sm:px-8">
             <Kicker>Next stop →</Kicker>

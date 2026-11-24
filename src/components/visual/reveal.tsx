@@ -25,9 +25,9 @@ export function SplitHeadline({
     () => {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       const split = SplitText.create(ref.current!, { type: "lines,chars", linesClass: "split-line", mask: "lines" });
-      gsap.from(split.chars, {
-        yPercent: 110,
-        rotate: 6,
+      gsap.fromTo(split.chars, { yPercent: 110, rotate: 6 }, {
+        yPercent: 0,
+        rotate: 0,
         duration: 1.1,
         ease: "expo.out",
         stagger: 0.025,
@@ -51,9 +51,10 @@ export function Reveal({ children, className = "", stagger = 0.08 }: { children:
   useGSAP(
     () => {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      gsap.from(ref.current!.children, {
-        y: 60,
-        opacity: 0,
+      // fromTo (not from): explicit end values, so a re-run can never "end" at opacity 0
+      gsap.fromTo(ref.current!.children, { y: 60, opacity: 0 }, {
+        y: 0,
+        opacity: 1,
         duration: 1,
         ease: "expo.out",
         stagger,

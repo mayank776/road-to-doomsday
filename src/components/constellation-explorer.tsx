@@ -25,7 +25,7 @@ export function ConstellationExplorer({
   full?: boolean;
 }) {
   const [selected, setSelected] = useState<string | null>(initialFocus && nodes.some((n) => n.id === initialFocus) ? initialFocus : null);
-  const [visible, setVisible] = useState<Record<EvidenceStatus, boolean>>({ confirmed: true, supported: true, theory: true });
+  const [visible, setVisible] = useState<Record<EvidenceStatus, boolean>>({ official: true, trailer: true, canon: true, supported: true, theory: true });
   const shown = useMemo(() => edges.filter((e) => visible[e.status]), [edges, visible]);
   const byId = useMemo(() => new Map(nodes.map((n) => [n.id, n])), [nodes]);
   const sel = selected ? byId.get(selected) : null;
