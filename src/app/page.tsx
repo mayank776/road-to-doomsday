@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { clues, getCharacter, getProject, projects, teams, universes, updates, formatDate } from "@/lib/content";
 import { buildAtlas } from "@/lib/atlas";
-import { coverFor, getMedia } from "@/lib/media";
+import { coverFor, getMedia, mediaFor } from "@/lib/media";
 import { Hero } from "@/components/home/hero";
 import { HorizontalPin } from "@/components/home/horizontal-pin";
 import { RoadPanel } from "@/components/home/road-panel";
@@ -15,6 +15,8 @@ import { Reveal, SplitHeadline } from "@/components/visual/reveal";
 import { Kicker } from "@/components/site-chrome";
 import { STATUS_HEX, STATUS_META } from "@/components/evidence";
 
+// the landing's cut: open in Doom's hall, end on two Earths in our sky
+const HERO_FRAMES = ["doom-court", "avengers-team-up", "doom-still", "steve-f4", "cyclops-still", "doom-sentinels", "steve-peggy-lamplight", "incursion-sky"];
 const KEY_CLUES = ["doom-mask-with-franklin", "ship-from-another-dimension", "clea-incursion", "loki-holds-the-tree", "council-of-kangs", "rdj-is-doom"];
 
 export default function Home() {
@@ -36,6 +38,8 @@ export default function Home() {
           { label: "Official cast", value: officialCast },
           { label: "Projects", value: projects.length },
         ]}
+        slides={mediaFor(HERO_FRAMES)}
+        poster={getMedia("doomsday-official-poster")}
       />
 
       <Marquee items={(Object.keys(STATUS_META) as (keyof typeof STATUS_META)[]).map((s) => ({ text: STATUS_META[s].label, color: STATUS_HEX[s] }))} />
@@ -54,7 +58,7 @@ export default function Home() {
         <UniverseMap atlas={atlas} />
         <div className="mt-6 flex flex-wrap gap-6 font-mono text-[11px] uppercase tracking-[0.25em]">
           <Link href="/universes" className="text-doom-bright hover:text-white">Open the full map →</Link>
-          <Link href="/connections" className="text-white/50 hover:text-white">Every thread, in 3D →</Link>
+          <Link href="/connections" className="text-white/50 hover:text-white">Follow every thread →</Link>
         </div>
       </section>
 

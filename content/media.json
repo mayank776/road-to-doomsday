@@ -1,5 +1,16 @@
 [
   {
+    "id": "doomsday-official-poster",
+    "file": "Avengers_ Doomsday-official poster.jpg",
+    "kind": "poster",
+    "alt": "Avengers: Doomsday poster: Doom, hooded, before green stained glass, \"12.18.26 is Doomsday\"",
+    "subjects": [
+      "avengers-doomsday",
+      "doctor-doom"
+    ],
+    "focus": "50% 30%"
+  },
+  {
     "id": "doomsday-poster",
     "file": "Avengers-Doomsday.jpg",
     "kind": "poster",
@@ -532,7 +543,8 @@
     "subjects": [
       "cyclops",
       "x-men",
-      "avengers-doomsday"
+      "avengers-doomsday",
+      "earth-10005"
     ],
     "focus": "50% 35%"
   },
@@ -597,7 +609,8 @@
     "alt": "TVA poster for Loki Season 2: Miss Minutes under the words \"Time is everything\"",
     "subjects": [
       "loki",
-      "loki-season-2"
+      "loki-season-2",
+      "earth-1127"
     ],
     "focus": "50% 50%"
   },
@@ -781,6 +794,194 @@
     "alt": "Fan poster: lightning strikes as a cloaked figure watches, Avengers: Doomsday title",
     "subjects": [
       "avengers-doomsday"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "quantumania-poster",
+    "file": "quantumania-poster.jpg",
+    "kind": "poster",
+    "alt": "Ant-Man and the Wasp: Quantumania poster: Kang looms over the Lang and Van Dyne family",
+    "subjects": [
+      "ant-man-quantumania"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "deadpool-wolverine-poster",
+    "file": "deadpool & wolverine poster.jpg",
+    "kind": "poster",
+    "alt": "Deadpool & Wolverine poster: a \"Best Bubs\" instant photo of the pair",
+    "subjects": [
+      "deadpool-and-wolverine"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "reed-portrait",
+    "file": "Reed richards.jpg",
+    "kind": "photo",
+    "alt": "Pedro Pascal as Reed Richards in a blue Fantastic Four turtleneck",
+    "subjects": [
+      "reed-richards",
+      "fantastic-four"
+    ],
+    "focus": "50% 30%",
+    "crop": [
+      0.4,
+      0.3,
+      0.46,
+      0.42
+    ]
+  },
+  {
+    "id": "cast-sue",
+    "file": "sue-storm.jpg",
+    "kind": "photo",
+    "alt": "Sue Storm in her blue Fantastic Four suit on a beach",
+    "subjects": [
+      "fantastic-four"
+    ],
+    "focus": "50% 25%"
+  },
+  {
+    "id": "cast-johnny",
+    "file": "johnny-storm.jpg",
+    "kind": "illustration",
+    "alt": "The Human Torch streaks across the sky trailing a flaming 4",
+    "subjects": [
+      "fantastic-four"
+    ],
+    "focus": "50% 40%"
+  },
+  {
+    "id": "cast-thing",
+    "file": "ben-grimm-thing.jpg",
+    "kind": "photo",
+    "alt": "Ben Grimm, the Thing, in close-up",
+    "subjects": [
+      "fantastic-four"
+    ],
+    "focus": "50% 35%",
+    "crop": [
+      0.46,
+      0.28,
+      0.52,
+      0.52
+    ]
+  },
+  {
+    "id": "cast-professor-x",
+    "file": "professor-x.jpg",
+    "kind": "illustration",
+    "alt": "Professor X, fingers to his temple, in a yellow-lit cockpit",
+    "subjects": [
+      "x-men"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "cast-magneto",
+    "file": "magneto.jpg",
+    "kind": "illustration",
+    "alt": "Magneto in his helmet, a chess piece floating above his hand",
+    "subjects": [
+      "x-men"
+    ],
+    "focus": "50% 25%"
+  },
+  {
+    "id": "peggy-carter",
+    "file": "peggy-carter.jpg",
+    "kind": "poster",
+    "alt": "Agent Carter One-Shot poster: Peggy Carter, pistol raised",
+    "subjects": [
+      "legacy",
+      "steve-rogers"
+    ],
+    "focus": "45% 65%"
+  },
+  {
+    "id": "wakanda-forever-poster",
+    "file": "team-wakanda.jpg",
+    "kind": "poster",
+    "alt": "Black Panther: Wakanda Forever poster: Shuri above Namor and the warriors of Wakanda and Talokan",
+    "subjects": [
+      "wakanda-talokan"
+    ],
+    "focus": "50% 35%"
+  },
+  {
+    "id": "cast-shuri",
+    "file": "team-wakanda.jpg",
+    "kind": "poster",
+    "alt": "Shuri, eyes closed",
+    "subjects": [
+      "wakanda-talokan"
+    ],
+    "focus": "50% 40%",
+    "crop": [
+      0.3,
+      0,
+      0.32,
+      0.26
+    ]
+  },
+  {
+    "id": "cast-namor",
+    "file": "team-wakanda.jpg",
+    "kind": "poster",
+    "alt": "Namor",
+    "subjects": [
+      "wakanda-talokan"
+    ],
+    "focus": "50% 35%",
+    "crop": [
+      0.36,
+      0.34,
+      0.32,
+      0.26
+    ]
+  },
+  {
+    "id": "cast-scott",
+    "file": "quantumania-poster.jpg",
+    "kind": "poster",
+    "alt": "Scott Lang",
+    "subjects": [
+      "avengers"
+    ],
+    "focus": "50% 40%",
+    "crop": [
+      0.4,
+      0.24,
+      0.16,
+      0.14
+    ]
+  },
+  {
+    "id": "cast-cassie",
+    "file": "quantumania-poster.jpg",
+    "kind": "poster",
+    "alt": "Cassie Lang",
+    "subjects": [
+      "avengers"
+    ],
+    "focus": "50% 35%",
+    "crop": [
+      0.56,
+      0.29,
+      0.14,
+      0.12
+    ]
+  },
+  {
+    "id": "loki-green",
+    "file": "loki-wide.jpg",
+    "kind": "illustration",
+    "alt": "Loki in his horned helmet, painted in green and gold strokes",
+    "subjects": [
+      "loki"
     ],
     "focus": "50% 40%"
   }

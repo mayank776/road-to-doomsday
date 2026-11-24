@@ -108,7 +108,8 @@
       "doom-throne",
       "doom-stolen-lives",
       "doom-hell-answers",
-      "thor-vs-doom"
+      "thor-vs-doom",
+      "doomsday-official-poster"
     ]
   },
   {
@@ -144,6 +145,7 @@
     "castStatus": "official",
     "actor": "Pedro Pascal",
     "media": [
+      "reed-portrait",
       "f4-poster",
       "steve-f4",
       "f4-city"
@@ -213,6 +215,7 @@
     "actor": "Tom Hiddleston",
     "media": [
       "loki-poster",
+      "loki-green",
       "loki-tree",
       "loki-clock",
       "tva-poster"

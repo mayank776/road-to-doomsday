@@ -33,6 +33,17 @@
   }
 }
 
+/* slow cinematic push-in on the active hero frame */
+@keyframes kenburns {
+  from { transform: scale(1.14) translate3d(1.5%, 1%, 0); }
+  to { transform: scale(1) translate3d(0, 0, 0); }
+}
+/* the hero progress bar for the frame on screen */
+@keyframes fillbar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 /* inline: next/font defines these variables on <body>, so they must resolve at use-site, not on :root */
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -112,4 +123,15 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .grain::after { animation: none; }
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Hero title: brushed white fading into doom green. Applied per character once
+   SplitText runs (so rising letters carry their own fill), and to the whole
+   heading before it does. */
+.hero-title:not(:has(.hero-char)),
+.hero-title .hero-char {
+  background: linear-gradient(180deg, #ffffff 0%, #f1fff6 45%, #9dffc6 85%, #5fe39a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

@@ -55,7 +55,15 @@ for (const m of list) {
     continue;
   }
   // honour EXIF orientation, cap the long edge, flatten transparency onto the page colour
-  const img = sharp(src).rotate().resize(MAX, MAX, { fit: "inside", withoutEnlargement: true }).flatten({ background: "#050807" });
+  // optional crop [x, y, w, h] as fractions: lets one source supply several images (or drop a masthead)
+  let input = src;
+  if (m.crop) {
+    const meta = await sharp(src).rotate().toBuffer({ resolveWithObject: true });
+    const { width: W, height: H } = meta.info;
+    const [x, y, w, h] = m.crop;
+    input = await sharp(meta.data).extract({ left: Math.round(x * W), top: Math.round(y * H), width: Math.round(w * W), height: Math.round(h * H) }).toBuffer();
+  }
+  const img = sharp(input).rotate().resize(MAX, MAX, { fit: "inside", withoutEnlargement: true }).flatten({ background: "#050807" });
   const { data: jpg, info } = await img.clone().jpeg({ quality: 86, mozjpeg: true }).toBuffer({ resolveWithObject: true });
   writeFileSync(join(outDir, `${m.id}.jpg`), jpg);
   const { width, height } = info; // post-rotation, post-resize dimensions

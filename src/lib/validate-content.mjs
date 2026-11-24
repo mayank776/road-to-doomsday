@@ -113,6 +113,7 @@ export function validateContent({ projects, characters, concepts, clues, connect
   if (mediaIds) {
     for (const x of [...characters, ...teams])
       for (const id of x.media ?? []) if (!mediaIds.has(id)) err(`${x.slug}`, `unknown or unprocessed media "${id}" (run npm run media)`);
+    for (const t of teams) for (const m of t.members ?? []) if (m.portrait && !mediaIds.has(m.portrait)) err(`team ${t.slug}`, `unknown portrait "${m.portrait}"`);
   }
   // every image tag must name real content (or a reserved tag), so a typo cannot silently hide an image
   const TAGS = new Set(["comics", "texture", ...projectSlugs, ...characterSlugs, ...conceptSlugs, ...clues.map((c) => c.slug), ...universeSlugs, ...teams.map((t) => t.slug)]);

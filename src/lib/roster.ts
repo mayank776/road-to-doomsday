@@ -76,7 +76,7 @@ export function castByUniverse() {
               actor: m.actor,
               note: m.note,
               href: m.character ? `/characters/${m.character}` : null,
-              portrait: c ? getMedia(c.media?.[0]) : undefined,
+              portrait: getMedia(m.portrait) ?? (c ? getMedia(c.media?.[0]) : undefined),
             };
           }),
         })),

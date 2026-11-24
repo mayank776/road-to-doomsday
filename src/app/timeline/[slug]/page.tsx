@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }: Props) {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <Kicker>Threads</Kicker>
           <Link href={`/connections?focus=project:${slug}`} className="font-mono text-[11px] uppercase tracking-[0.25em] text-doom-bright hover:text-white">
-            See it in the constellation →
+            Follow its threads →
           </Link>
         </div>
         <ConnectionList refId={`project:${slug}`} />

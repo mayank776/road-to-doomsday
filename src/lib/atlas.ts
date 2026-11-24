@@ -27,7 +27,7 @@ export function buildAtlas(): Atlas {
           actor: m.actor,
           note: m.note,
           href: m.character ? `/characters/${m.character}` : null,
-          portrait: m.character ? getMedia(getCharacter(m.character)?.media?.[0]) : undefined,
+          portrait: getMedia(m.portrait) ?? (m.character ? getMedia(getCharacter(m.character)?.media?.[0]) : undefined),
         })),
       }));
       return {

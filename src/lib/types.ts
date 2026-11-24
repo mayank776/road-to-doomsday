@@ -181,6 +181,8 @@ export interface Universe {
 export interface TeamMember {
   name: string;
   actor: string;
+  /** Media id for a roster portrait when the member has no character file. */
+  portrait?: string;
   /** Character file slug, when one exists. */
   character?: string;
   note?: string;
