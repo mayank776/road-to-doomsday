@@ -176,6 +176,7 @@ doomsday/
     │   ├── clues.json              post-credit scenes, lines, announcements
     │   ├── connections.json        threads between films/characters/ideas
     │   ├── concepts.json           ideas: multiverse, incursions…
+    │   ├── theories.json           fan theories for the Theory Vault (opt-in)
     │   ├── research.json           trailers, research sources, update feed
     │   ├── media.json              image catalogue (you edit)
     │   └── media.generated.json    image sizes/colours (generated, don't edit)
@@ -229,6 +230,7 @@ Most facts are written as a **claim**, used in many files:
 | `clues.json` | a clue | `slug`, `title`, `kind` (`post-credit`/`scene`/`dialogue`/`reference`/`announcement`), `project`, `citation`, `observation` (*what is shown*), `relevance` (*why it matters*), `status`, `characters` |
 | `connections.json` | a thread | `id`, `from`, `to` (written `project:slug`, `character:slug` or `concept:slug`), `reason`, `status`, `citation`, `superseded` |
 | `concepts.json` | an idea | `slug`, `name`, `summary`, `status`, `citation` |
+| `theories.json` | a fan theory (Theory Vault) | `slug`, `file` ("07"), `codename`, `title`, `claim`, `evidence` (claims: the **real** facts fans point to, each with its true label), `against`, `plausibility` (1–5, the editor's read), `characters`, `projects`, `image`, `sources` (`{ label, url }`, https only). The theory itself is always speculation. |
 | `research.json` | trailers, sources, updates | `trailers[]` (YouTube id, observations with timestamps), `sources[]`, `updates[]` (the "Latest additions" list on the homepage) |
 
 ### How files point at each other
@@ -291,6 +293,7 @@ These files contain **no page design**, only data. They run at build time.
 | `cast-roster.ts` | Builds what the Characters page needs: `rosterCard(slug)` (name, actor, universe, team, portrait, accent colour), `spotlight()` (the main cards, in story order), `castByUniverse()` (Earth → team → members with portraits), `filmstrip()` (all character art for the header). |
 | `universe-map-data.ts` | `buildUniverseMapData()`: everything the universe map draws, flattened into simple data: each Earth with its teams, members, portraits, banner image, projects and posters, plus the crossings and Doom's key facts. |
 | `connection-threads.ts` | `buildConnectionThreads()`: the nodes (each film, character or concept that has a connection, with its image) and edges (the connections) for the Connections page. |
+| `content.ts` → `theories`, `theoriesAbout(slug)` | Theories sorted most plausible first, and the ones mentioning a character or film. |
 | `site-map.ts` | **The list of every page**, in reading order, with a one-line description and tile image. The header, mobile menu, footer, homepage "What's inside" tiles and the previous/next links all read it. `neighbours(path)` gives the page before and after. |
 | `format-date.ts` | `formatDate("2026-12-18")` → "18 Dec 2026". |
 
@@ -315,6 +318,8 @@ In Next.js **the folder path is the web address**. Each `page.tsx` is one page. 
 | `clues/clue-wall.tsx` | (part of `/clues`) | The interactive filter + card grid. Lives beside its page because nothing else uses it. |
 | `clues/[slug]/page.tsx` | `/clues/rdj-is-doom` … | One clue: what's shown vs why it matters, characters involved, related items. |
 | `trailer/page.tsx` | `/trailer` | The official trailer (YouTube embed), timestamped observations once reviewed, and a gallery of stills. |
+| `theories/page.tsx` | `/theories` | **The Theory Vault**: a sealed door you choose to open, then the fan-theory files. Each starts redacted and opens with **Declassify**. `/theories#<slug>` opens one file directly (used by the homepage teaser and character pages). |
+| `template.tsx` | (every page change) | The **page transition**: Next.js re-creates this on each navigation, so it shows a curtain with the section's name that wipes upward. Skipped on the very first load (the hero has its own intro). |
 | `sources/page.tsx` | `/sources` | The editorial rules (what each label means) and the research sources. |
 | `opengraph-image.jpg` + `.alt.txt` | (link previews) | The picture shown when the site's link is shared. Generated, don't edit by hand. |
 
@@ -342,6 +347,7 @@ Files marked **(browser)** start with `"use client"` because they're interactive
 | `story-panels.tsx` | `StoryPanels` | Steve's four-beat story. Each panel is a link. |
 | `horizontal-scroll-section.tsx` **(browser)** | `HorizontalScrollSection` | "The road": desktop turns vertical scrolling into sideways travel; phones get a normal swipeable row that snaps card by card. |
 | `road-project-card.tsx` | `RoadProjectCard` | One project card inside the road. |
+| `vault-teaser.tsx` | `VaultTeaser` | The optional "Want the conspiracies?" band: three sealed files linking into the vault. Reveals nothing itself. |
 | `doom-dossier.tsx` **(browser)** | `DoomDossier` | Doom's section: his throne-hall backdrop, 3D sigil, key stats and evidence bars. |
 
 ### `characters/`
@@ -353,6 +359,13 @@ Files marked **(browser)** start with `"use client"` because they're interactive
 | `character-hero.tsx` | The top of a character page: portrait in a tilting frame, identity, cast status, evidence tally. |
 | `tilt-frame.tsx` **(browser)** | The tilting picture frame used by the hero. |
 | `gallery.tsx` **(browser)** | Swipeable image strip; tap to open a full-screen viewer (arrow keys and Esc work). |
+
+### `theories/`
+
+| File | Role |
+|---|---|
+| `theory-vault.tsx` **(browser)** | The door, the "Declassify all" switch and the grid of files. Reads `#slug` from the address to open a linked file. |
+| `theory-file.tsx` **(browser)** | One dossier: file number and code name, plausibility meter, image drained of colour while sealed, a "Classified" stamp, redaction bars over the title. Declassify wipes the bars, decodes the title and opens the claim, evidence, case against, related links and sources. Also exports `PlausibilityMeter`. |
 
 ### `universe/`
 
@@ -379,11 +392,13 @@ Files marked **(browser)** start with `"use client"` because they're interactive
 | File | Role |
 |---|---|
 | `smooth-scroll.tsx` **(browser)** | Starts Lenis (smooth mouse-wheel scrolling) and exports `scrollToTop()`. Always scroll through this helper: a plain `window.scrollTo` gets undone by Lenis. |
-| `scroll-reveal.tsx` **(browser)** | `SplitHeadline` (letters rise into place) and `Reveal` (children fade up one after another) when scrolled into view. |
+| `scroll-reveal.tsx` **(browser)** | `SplitHeadline` (letters rise into place), `Reveal` (children fade up one after another) and `MaskReveal` (children are uncovered by a mask wiping upward) when scrolled into view. |
+| `scramble-text.tsx` **(browser)** | `ScrambleText`: text that decodes from random glyphs into the real words. Used by every `SectionLabel` and by declassified theory titles. Screen readers always get the real text. |
+| `variant-filter.tsx` | The invisible SVG filter behind the "variant split" hover (see section 11). |
 | `generative-art.tsx` | Draws the fallback abstract posters from `art: { hue, motif }`. |
 | `countdown.tsx` **(browser)** | Live days/hours/minutes/seconds to release. Shows `--` until the browser takes over, to avoid a hydration mismatch. |
 | `marquee.tsx` | The endlessly scrolling band of evidence labels. |
-| `custom-cursor.tsx` **(browser)** | The green ring cursor (mouse only). |
+| `custom-cursor.tsx` **(browser)** | The green ring cursor (mouse only). Add `data-cursor="Open"` to any element and the ring becomes a pill saying "Open" over it. Add `data-magnetic` and the element leans towards the pointer. |
 
 ### `three-d/`
 
@@ -435,6 +450,8 @@ Files marked **(browser)** start with `"use client"` because they're interactive
 - `.hud`: corner brackets.
 - `.hero-title`: the white-to-green gradient on the landing title.
 - `@keyframes kenburns` / `fillbar`: the hero's slow zoom and progress bars.
+- `.skew-on-scroll`: the element leans with scroll speed (smooth-scroll sets the `--scroll-skew` variable).
+- `.variant-hover`: on hover, images inside split into red/green/blue copies and jitter, like a variant bleeding in from another universe. Put it on any card that holds an image.
 
 ---
 
@@ -493,6 +510,9 @@ Add `"portrait": "<image id>"` to their entry in `content/teams.json`. To cut a 
 
 ### Add a clue
 Add an entry to `content/clues.json` (`slug`, `title`, `kind`, `project`, `citation`, `observation`, `relevance`, `status`, `characters`). It appears on `/clues`, on its film's page and at `/clues/<slug>`. To feature it on the homepage, add its slug to `KEY_CLUES` in `src/app/page.tsx`.
+
+### Add a fan theory
+Add an entry to `content/theories.json`. Its `evidence` must be real facts, each with its true label: the theory itself is the speculation. Add `sources` (https links to where it's discussed) and run `npm run check-content`. It appears in the vault, sorted by `plausibility`, and on the pages of the characters it names.
 
 ### Add a connection (thread)
 Add to `content/connections.json`: `{ "id": "…", "from": "project:…", "to": "character:…", "reason": "…", "status": "canon", "citation": "…" }`.

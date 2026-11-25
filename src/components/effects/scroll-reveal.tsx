@@ -69,3 +69,34 @@ export function Reveal({ children, className = "", stagger = 0.08 }: { children:
     </div>
   );
 }
+
+/**
+ * Each child is uncovered by a mask wiping upward (and settles from a slight
+ * zoom) as it scrolls into view, one after another. Good for image tiles.
+ */
+export function MaskReveal({ children, className = "", stagger = 0.09 }: { children: React.ReactNode; className?: string; stagger?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      gsap.fromTo(
+        ref.current!.children,
+        { clipPath: "inset(100% 0% 0% 0%)", scale: 1.06 },
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+          scale: 1,
+          duration: 1.2,
+          ease: "expo.out",
+          stagger,
+          scrollTrigger: { trigger: ref.current, start: "top 85%" },
+        },
+      );
+    },
+    { scope: ref },
+  );
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
+}

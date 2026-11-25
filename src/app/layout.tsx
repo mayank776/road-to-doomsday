@@ -3,6 +3,7 @@ import { Anton, Inter, JetBrains_Mono } from "next/font/google";
 import { BackToTop, SiteFooter, SiteHeader } from "@/components/layout/site-header-footer";
 import { SmoothScroll } from "@/components/effects/smooth-scroll";
 import { CustomCursor } from "@/components/effects/custom-cursor";
+import { VariantFilter } from "@/components/effects/variant-filter";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </a>
         <SmoothScroll />
         <CustomCursor />
+        <VariantFilter />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />

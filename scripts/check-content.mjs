@@ -17,6 +17,7 @@ const errors = validateContent({
   universes: load("universes.json"),
   teams: load("teams.json"),
   crossings: load("crossings.json"),
+  theories: load("theories.json"),
   mediaIds: new Set(Object.keys(load("media.generated.json"))),
   mediaSubjects: load("media.json"),
 });

@@ -86,7 +86,7 @@ export function FlipClue({ clue, art, cover }: { clue: Clue; art: Art; cover?: M
         {/* front: the card opens the clue; only the Evidence button flips it, so a
             touch that starts a scroll on the card can never spin it by accident */}
         <div className="absolute inset-0 overflow-hidden border border-line [backface-visibility:hidden]">
-          <Link href={`/clues/${clue.slug}`} className="absolute inset-0 text-left" aria-label={`Open clue: ${clue.title}`}>
+          <Link href={`/clues/${clue.slug}`} data-cursor="Open" className="variant-hover absolute inset-0 text-left" aria-label={`Open clue: ${clue.title}`}>
           <ImageOrArt media={cover} seed={clue.slug} art={art} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" grain={false} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
           <div className="absolute left-5 top-5 text-white/90" style={{ filter: `drop-shadow(0 0 12px ${glow})` }}>

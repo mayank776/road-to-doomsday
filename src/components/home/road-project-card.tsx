@@ -7,7 +7,8 @@ export function RoadProjectCard({ p, i, total, cover }: { p: Project; i: number;
   return (
     <Link
       href={`/timeline/${p.slug}`}
-      className={`group relative h-full min-h-[420px] w-[82vw] shrink-0 snap-center motion-reduce:h-[70svh] overflow-hidden border sm:w-[52vw] lg:w-[36vw] motion-reduce:w-full ${
+      data-cursor="Open"
+      className={`variant-hover group relative h-full min-h-[420px] w-[82vw] shrink-0 snap-center motion-reduce:h-[70svh] overflow-hidden border sm:w-[52vw] lg:w-[36vw] motion-reduce:w-full ${
         p.upcoming ? "border-doom-bright/70" : "border-line"
       }`}
     >

@@ -39,7 +39,8 @@ export function Gallery({ items, accent }: { items: Media[]; accent: string }) {
           <button
             key={it.id}
             onClick={() => setOpen(i)}
-            className="group relative h-[58vh] max-h-[520px] min-h-[340px] shrink-0 snap-start overflow-hidden border border-white/10 transition hover:border-[var(--accent)]"
+            data-cursor="View"
+            className="variant-hover group relative h-[58vh] max-h-[520px] min-h-[340px] shrink-0 snap-start overflow-hidden border border-white/10 transition hover:border-[var(--accent)]"
             style={{ aspectRatio: `${it.width} / ${it.height}`, "--accent": accent } as React.CSSProperties}
             aria-label={`View larger: ${it.alt}`}
           >

@@ -1,0 +1,319 @@
+[
+  {
+    "slug": "doom-is-a-stark",
+    "file": "01",
+    "codename": "Iron Mask",
+    "title": "Doom is a Tony Stark variant",
+    "claim": "Robert Downey Jr.'s Doom is Tony Stark from another universe: a Tony who never had the cave, Pepper or Morgan, and turned his genius toward control instead.",
+    "evidence": [
+      { "text": "Robert Downey Jr., who played Tony Stark, is announced as Victor von Doom.", "status": "official", "basis": "official-announcement", "citation": "San Diego Comic-Con, Hall H, 27 July 2024" },
+      { "text": "Tony Stark dies in the 616 universe.", "status": "canon", "citation": "Avengers: Endgame" },
+      { "text": "Variants of one person can look identical yet live completely different lives.", "status": "canon", "citation": "Loki, Season 1" }
+    ],
+    "against": [
+      "Marvel announced him as Victor von Doom, not as a Stark.",
+      "Many fans want a classic Doom; a Stark twist would undercut the character."
+    ],
+    "plausibility": 3,
+    "characters": ["doctor-doom"],
+    "projects": ["avengers-endgame", "avengers-doomsday"],
+    "image": "doom-still",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" },
+      { "label": "Bamfuzzle", "url": "https://bamfuzzle.com/blog/avengers-doomsday-theories/" },
+      { "label": "Yahoo / Tom's Guide", "url": "https://www.yahoo.com/entertainment/movies/articles/5-best-avengers-doomsday-theories-073000234.html" }
+    ]
+  },
+  {
+    "slug": "the-anchor-hijack",
+    "file": "02",
+    "codename": "Dead Anchor",
+    "title": "Doom is holding 616 together with Tony",
+    "claim": "Tony Stark was the anchor that held the main universe together. Since his death, Doom has used science and sorcery to keep that anchor 'alive', and so keep Earth-616 from fading.",
+    "evidence": [
+      { "text": "Some people are anchor beings: when they die, their universe slowly dies too.", "status": "canon", "citation": "Deadpool & Wolverine" },
+      { "text": "Tony Stark dies after the snap.", "status": "canon", "citation": "Avengers: Endgame" }
+    ],
+    "against": [
+      "Nothing on screen links Doom to Tony's body.",
+      "No film has said who Earth-616's anchor is."
+    ],
+    "plausibility": 1,
+    "characters": ["doctor-doom"],
+    "projects": ["deadpool-and-wolverine", "avengers-endgame"],
+    "image": "doom-court",
+    "sources": [
+      { "label": "Yahoo / Tom's Guide", "url": "https://www.yahoo.com/entertainment/movies/articles/5-best-avengers-doomsday-theories-073000234.html" }
+    ]
+  },
+  {
+    "slug": "steve-broke-time",
+    "file": "03",
+    "codename": "Last Dance",
+    "title": "Steve's happy ending broke the timeline",
+    "claim": "When Steve stayed in the past with Peggy, he didn't just retire: he cracked reality. That fracture is what lets Doom in, and why Steve is pulled back now.",
+    "evidence": [
+      { "text": "Steve stays in the past and lives his life with Peggy.", "status": "canon", "citation": "Avengers: Endgame" },
+      { "text": "Chris Evans returns as Steve Rogers.", "status": "official", "basis": "official-announcement", "citation": "marvel.com cast list" }
+    ],
+    "against": [
+      "Endgame explains that changing the past creates a new branch rather than breaking the old one.",
+      "Marvel hasn't connected Steve's choice to the incursions."
+    ],
+    "plausibility": 2,
+    "characters": ["steve-rogers"],
+    "projects": ["avengers-endgame", "endgame-encore"],
+    "image": "steve-peggy-dance",
+    "sources": [
+      { "label": "Yahoo / Tom's Guide", "url": "https://www.yahoo.com/entertainment/movies/articles/5-best-avengers-doomsday-theories-073000234.html" }
+    ]
+  },
+  {
+    "slug": "franklin-gave-doom-a-face",
+    "file": "04",
+    "codename": "Borrowed Face",
+    "title": "Franklin gave Doom his face",
+    "claim": "In the nursery, Doom has the infant Franklin touch his scarred face. Franklin's reality-bending power remakes it, and Doom chooses a face the heroes already trust.",
+    "evidence": [
+      { "text": "A hooded figure with a Doom mask sits with young Franklin; the face is never shown.", "status": "canon", "citation": "The Fantastic Four: First Steps, post-credits scene" },
+      { "text": "In the comics, Franklin Richards can reshape reality.", "status": "canon", "basis": "comics", "citation": "Fantastic Four comics" }
+    ],
+    "against": [
+      "The scene shows no powers being used.",
+      "It's a large leap from one quiet scene."
+    ],
+    "plausibility": 2,
+    "characters": ["franklin-richards", "doctor-doom"],
+    "projects": ["fantastic-four-first-steps"],
+    "image": "doom-hooded",
+    "sources": [
+      { "label": "Yahoo / Tom's Guide", "url": "https://www.yahoo.com/entertainment/movies/articles/5-best-avengers-doomsday-theories-073000234.html" }
+    ]
+  },
+  {
+    "slug": "franklin-is-the-reset",
+    "file": "05",
+    "codename": "Reset Button",
+    "title": "Franklin is the key to everything",
+    "claim": "Doom isn't after the heroes; he's after Franklin. And in the end, Franklin could be the one who rebuilds the multiverse, giving the MCU a fresh start after Secret Wars.",
+    "evidence": [
+      { "text": "Franklin is born, and Galactus wants him for his power.", "status": "canon", "citation": "The Fantastic Four: First Steps" },
+      { "text": "Doom is seen with Franklin.", "status": "canon", "citation": "The Fantastic Four: First Steps, post-credits scene" }
+    ],
+    "against": [
+      "A full reset seems more likely in Secret Wars than in Doomsday.",
+      "Franklin's role in Doomsday hasn't been revealed."
+    ],
+    "plausibility": 3,
+    "characters": ["franklin-richards", "doctor-doom"],
+    "projects": ["fantastic-four-first-steps"],
+    "image": "f4-city",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" },
+      { "label": "Bamfuzzle", "url": "https://bamfuzzle.com/blog/avengers-doomsday-theories/" }
+    ]
+  },
+  {
+    "slug": "who-flew-the-ship",
+    "file": "06",
+    "codename": "Passenger",
+    "title": "Doom, not the Fantastic Four, flew that ship",
+    "claim": "The ship bearing the Fantastic Four's emblem that arrives on Earth-616 may not carry the family at all, but Doom in a stolen ship, or Franklin sent away for safety.",
+    "evidence": [
+      { "text": "A ship from another dimension, matching the Fantastic Four's, arrives on Earth-616 as the New Avengers watch.", "status": "canon", "citation": "Thunderbolts*, post-credits scene" },
+      { "text": "The Fantastic Four meet Steve Rogers.", "status": "trailer", "citation": "Final trailer, as reported by Variety" }
+    ],
+    "against": [
+      "The trailer puts the Fantastic Four themselves on Earth-616.",
+      "First Steps ends with the family together at home."
+    ],
+    "plausibility": 2,
+    "characters": ["reed-richards", "franklin-richards", "doctor-doom"],
+    "projects": ["thunderbolts", "fantastic-four-first-steps"],
+    "image": "steve-f4",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" }
+    ]
+  },
+  {
+    "slug": "doom-the-saviour",
+    "file": "07",
+    "codename": "Three Moves Ahead",
+    "title": "Doom thinks he's the hero",
+    "claim": "Like Thanos in Infinity War, Doom drives the story. He believes the universes must be saved, even if that means ruling them, and he'll make the heroes look like the problem.",
+    "evidence": [
+      { "text": "Doom tells the heroes they have all lived 'stolen lives'.", "status": "trailer", "citation": "Final trailer, as reported by The Hollywood Reporter" },
+      { "text": "The directors' last villain, Thanos, was the protagonist of his film.", "status": "canon", "citation": "Avengers: Infinity War" }
+    ],
+    "against": [
+      "Doom is still pitched as the threat to all three universes.",
+      "A Thanos rerun risks feeling familiar."
+    ],
+    "plausibility": 4,
+    "characters": ["doctor-doom"],
+    "projects": ["avengers-doomsday"],
+    "image": "doom-sentinels",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" },
+      { "label": "Bamfuzzle", "url": "https://bamfuzzle.com/blog/avengers-doomsday-theories/" }
+    ]
+  },
+  {
+    "slug": "the-rings-are-calling",
+    "file": "08",
+    "codename": "Beacon",
+    "title": "The Ten Rings are a door to the Beyonders",
+    "claim": "The Ten Rings are signalling something far away. In the comics, Doom gains godlike power from the cosmic Beyonders, and the rings may be how he finds them.",
+    "evidence": [
+      { "text": "The Ten Rings send a signal to somewhere unknown.", "status": "canon", "citation": "Shang-Chi and the Legend of the Ten Rings, mid-credits scene" },
+      { "text": "Simu Liu's Shang-Chi is in the Doomsday cast.", "status": "official", "basis": "official-announcement", "citation": "marvel.com cast list" },
+      { "text": "Doom takes the Beyonders' power to build Battleworld.", "status": "canon", "basis": "comics", "citation": "Secret Wars (2015)" }
+    ],
+    "against": [
+      "Marvel has never said what the signal reaches.",
+      "The Beyonders haven't appeared in the MCU."
+    ],
+    "plausibility": 3,
+    "characters": ["doctor-doom"],
+    "projects": ["avengers-doomsday"],
+    "image": "avengers-team-up",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" }
+    ]
+  },
+  {
+    "slug": "battleworld-starts-now",
+    "file": "09",
+    "codename": "Patchwork Earth",
+    "title": "Battleworld begins in Doomsday",
+    "claim": "As the universes collide, Doom stitches the survivors into one patchwork planet with himself as god-emperor. Some fans think he uses the Scarlet Witch's chaos magic to do it.",
+    "evidence": [
+      { "text": "When universes collide, one is destroyed.", "status": "canon", "citation": "Doctor Strange in the Multiverse of Madness" },
+      { "text": "Doomsday's heroes come from three distinct universes.", "status": "official", "basis": "official-announcement", "citation": "marvel.com" },
+      { "text": "Doom rules Battleworld, built from the remains of dead universes.", "status": "canon", "basis": "comics", "citation": "Secret Wars (2015)" }
+    ],
+    "against": [
+      "The Scarlet Witch isn't in Marvel's official cast list.",
+      "Battleworld may be saved for Secret Wars."
+    ],
+    "plausibility": 2,
+    "characters": ["doctor-doom", "scarlet-witch"],
+    "projects": ["doctor-strange-multiverse-of-madness", "avengers-doomsday"],
+    "image": "incursion-sky",
+    "sources": [
+      { "label": "Bamfuzzle", "url": "https://bamfuzzle.com/blog/avengers-doomsday-theories/" },
+      { "label": "Yahoo / Tom's Guide", "url": "https://www.yahoo.com/entertainment/movies/articles/5-best-avengers-doomsday-theories-073000234.html" }
+    ]
+  },
+  {
+    "slug": "the-secret-council",
+    "file": "10",
+    "codename": "Illuminati",
+    "title": "Earth-616 has its own secret council",
+    "claim": "Somewhere on our Earth, a hidden group of geniuses has been making universe-sized decisions without telling anyone, and Doomsday drags them into the light. Some go further: a council of Reed Richards variants.",
+    "evidence": [
+      { "text": "Earth-838 is run by a secret council, the Illuminati, including a Reed Richards.", "status": "canon", "citation": "Doctor Strange in the Multiverse of Madness" },
+      { "text": "Pedro Pascal's Reed Richards is in Doomsday.", "status": "official", "basis": "official-announcement", "citation": "marvel.com cast list" }
+    ],
+    "against": [
+      "No 616 Illuminati has been teased.",
+      "The 838 Illuminati were wiped out by Wanda."
+    ],
+    "plausibility": 3,
+    "characters": ["reed-richards", "doctor-strange"],
+    "projects": ["doctor-strange-multiverse-of-madness"],
+    "image": "mom-poster",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" },
+      { "label": "Bamfuzzle", "url": "https://bamfuzzle.com/blog/avengers-doomsday-theories/" }
+    ]
+  },
+  {
+    "slug": "captain-hydra",
+    "file": "11",
+    "codename": "Hail",
+    "title": "This Steve isn't on our side",
+    "claim": "The Steve Rogers who returns could be a dark variant (even a Hydra Captain America) in a team of evil Avengers that Doom leads against the heroes.",
+    "evidence": [
+      { "text": "Chris Evans returns as Steve Rogers.", "status": "official", "basis": "official-announcement", "citation": "marvel.com cast list" },
+      { "text": "In the comics, a reality-altered Steve Rogers is revealed as a Hydra agent.", "status": "canon", "basis": "comics", "citation": "Captain America: Steve Rogers #1 (2016)" }
+    ],
+    "against": [
+      "Everything shown so far is about Steve's family, not betrayal.",
+      "The Fantastic Four seek him out for help."
+    ],
+    "plausibility": 1,
+    "characters": ["steve-rogers"],
+    "projects": ["avengers-doomsday"],
+    "image": "steve-mjolnir",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" },
+      { "label": "Fiction Horizon", "url": "https://fictionhorizon.com/the-fan-theories-swirling-around-avengers-doomsday-range-from-brilliant-to-absolutely-wild/" }
+    ]
+  },
+  {
+    "slug": "the-missing-heroes",
+    "file": "12",
+    "codename": "Empty Chairs",
+    "title": "The missing heroes are hidden, not gone",
+    "claim": "Doctor Strange, the Scarlet Witch, the Hulk and Spider-Man aren't on the cast list because Marvel is hiding them, either as surprise returns or because they've already fallen before the film begins.",
+    "evidence": [
+      { "text": "Doctor Strange, the Scarlet Witch and the Hulk are not in Marvel's official Doomsday cast list.", "status": "official", "basis": "official-announcement", "citation": "marvel.com cast list, 5 Nov 2026" },
+      { "text": "Marvel has kept major returns off cast lists before.", "status": "canon", "citation": "Spider-Man: No Way Home" }
+    ],
+    "against": [
+      "Absent from a cast list may simply mean absent from the film."
+    ],
+    "plausibility": 4,
+    "characters": ["doctor-strange", "scarlet-witch", "bruce-banner"],
+    "projects": ["spider-man-no-way-home", "avengers-doomsday"],
+    "image": "nwh-multiverse",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" },
+      { "label": "Bamfuzzle", "url": "https://bamfuzzle.com/blog/avengers-doomsday-theories/" }
+    ]
+  },
+  {
+    "slug": "mutants-vs-avengers",
+    "file": "13",
+    "codename": "Two Teams",
+    "title": "The X-Men and Avengers fight first",
+    "claim": "The first meeting of the Fox X-Men and the Avengers won't be friendly. Two worlds on a collision course means two teams with every reason to fight, just as in the comics' Secret Wars.",
+    "evidence": [
+      { "text": "The Avengers, X-Men and Fantastic Four appear together for the first time.", "status": "official", "basis": "official-announcement", "citation": "marvel.com" },
+      { "text": "Patrick Stewart, Ian McKellen and James Marsden return as Xavier, Magneto and Cyclops.", "status": "official", "basis": "official-announcement", "citation": "Doomsday cast livestream" }
+    ],
+    "against": [
+      "Doom is a shared enemy, which pushes the teams together.",
+      "A House of M version is probably too much for one film."
+    ],
+    "plausibility": 3,
+    "characters": ["cyclops"],
+    "projects": ["avengers-doomsday"],
+    "image": "worlds-collide",
+    "sources": [
+      { "label": "CBR", "url": "https://www.cbr.com/avengers-doomsday-fan-theories-ranked-by-likeliness/" }
+    ]
+  },
+  {
+    "slug": "the-heroes-let-him-win",
+    "file": "14",
+    "codename": "Checkmate",
+    "title": "The Avengers lose on purpose",
+    "claim": "The wildest one: one of the smartest heroes (Strange, or Reed) decides Doom's plan prevents something worse and lets him win. Secret Wars becomes a reckoning, not revenge.",
+    "evidence": [
+      { "text": "Doctor Strange has made world-altering choices alone before.", "status": "canon", "citation": "Spider-Man: No Way Home; Multiverse of Madness" }
+    ],
+    "against": [
+      "There's no footage or announcement pointing this way.",
+      "Strange isn't in the official cast list."
+    ],
+    "plausibility": 1,
+    "characters": ["doctor-strange", "reed-richards"],
+    "projects": ["spider-man-no-way-home"],
+    "image": "doom-throne",
+    "sources": [
+      { "label": "Bamfuzzle", "url": "https://bamfuzzle.com/blog/avengers-doomsday-theories/" }
+    ]
+  }
+]

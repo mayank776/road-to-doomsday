@@ -7,7 +7,7 @@ const CLUE_KINDS = new Set(["post-credit", "scene", "dialogue", "reference", "an
 const REVIEW = new Set(["pending", "in-review", "reviewed"]);
 
 /** @returns {string[]} list of human-readable problems; empty when valid */
-export function validateContent({ projects, characters, concepts, clues, connections, research, universes = /** @type {any[]} */ ([]), teams = /** @type {any[]} */ ([]), crossings = /** @type {any[]} */ ([]), mediaIds = /** @type {Set<string> | null} */ (null), mediaSubjects = /** @type {{ id: string, subjects: string[] }[]} */ ([]) }) {
+export function validateContent({ projects, characters, concepts, clues, connections, research, universes = /** @type {any[]} */ ([]), teams = /** @type {any[]} */ ([]), crossings = /** @type {any[]} */ ([]), theories = /** @type {any[]} */ ([]), mediaIds = /** @type {Set<string> | null} */ (null), mediaSubjects = /** @type {{ id: string, subjects: string[] }[]} */ ([]) }) {
   const errors = [];
   const err = (where, msg) => errors.push(`${where}: ${msg}`);
 
@@ -118,6 +118,19 @@ export function validateContent({ projects, characters, concepts, clues, connect
   // every image tag must name real content (or a reserved tag), so a typo cannot silently hide an image
   const TAGS = new Set(["comics", "texture", ...projectSlugs, ...characterSlugs, ...conceptSlugs, ...clues.map((c) => c.slug), ...universeSlugs, ...teams.map((t) => t.slug)]);
   for (const m of mediaSubjects) for (const s of m.subjects ?? []) if (!TAGS.has(s)) err(`media ${m.id}`, `unknown subject "${s}"`);
+  // the Theory Vault: every theory must point at real content and carry real evidence
+  unique(theories, "slug", "theories");
+  for (const t of theories) {
+    const w = `theory ${t.slug}`;
+    if (!t.title || !t.claim || !t.codename || !t.file) err(w, "needs file, codename, title and claim");
+    if (!(t.plausibility >= 1 && t.plausibility <= 5)) err(w, "plausibility must be 1–5");
+    if (!t.evidence?.length) err(w, "list at least one piece of evidence fans point to");
+    (t.evidence ?? []).forEach((c, i) => checkClaim(`${w} evidence ${i}`, c));
+    if (!t.sources?.length || t.sources.some((x) => !String(x.url).startsWith("https://"))) err(w, "needs https sources");
+    for (const s of t.characters ?? []) if (!characterSlugs.has(s)) err(w, `unknown character "${s}"`);
+    for (const s of t.projects ?? []) if (!projectSlugs.has(s)) err(w, `unknown project "${s}"`);
+    if (mediaIds && t.image && !mediaIds.has(t.image)) err(w, `unknown image "${t.image}"`);
+  }
   unique(crossings, "id", "crossings");
   for (const x of crossings) {
     const w = `crossing ${x.id}`;

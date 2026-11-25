@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { Claim } from "@/lib/types";
-import { characters, cluesForCharacter, getCharacter, getProject, getUniverse, teams } from "@/lib/content";
+import { characters, cluesForCharacter, getCharacter, getProject, getUniverse, teams, theoriesAbout } from "@/lib/content";
 import { mediaFor } from "@/lib/media";
 import { rosterCard, spotlight } from "@/lib/cast-roster";
 import { CharacterHero } from "@/components/characters/character-hero";
@@ -168,6 +168,28 @@ export default async function CharacterPage({ params }: Props) {
         </div>
         <ConnectionList refId={`character:${slug}`} />
       </section>
+
+      {/* opt-in: fan theories stay sealed in the vault; this only says they exist */}
+      {theoriesAbout(slug).length > 0 && (
+        <section className="border-t border-theory/20 bg-[#08060d] px-4 py-14 sm:px-8">
+          <SectionLabel className="text-theory!">Optional · In the theory vault</SectionLabel>
+          <p className="mt-3 max-w-xl text-white/60">
+            {theoriesAbout(slug).length} fan theor{theoriesAbout(slug).length === 1 ? "y mentions" : "ies mention"} this character. They&apos;re speculation, sealed until you open them.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {theoriesAbout(slug).map((t) => (
+              <Link
+                key={t.slug}
+                href={`/theories#${t.slug}`}
+                data-cursor="Declassify"
+                className="rounded-full border border-theory/40 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-theory transition hover:bg-theory hover:text-ink"
+              >
+                File {t.file} · {t.codename}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <nav className="grid border-t border-line sm:grid-cols-2" aria-label="More characters">
         {[

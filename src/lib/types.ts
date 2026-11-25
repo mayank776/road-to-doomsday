@@ -234,3 +234,30 @@ export interface Update {
   href: string;
   source: string;
 }
+
+/**
+ * A fan theory for the Theory Vault (content/theories.json). The theory itself
+ * is always speculation; its `evidence` are real, labelled facts fans point to.
+ */
+export interface Theory {
+  slug: string;
+  /** Two-digit file number shown on the dossier ("07"). */
+  file: string;
+  /** A short code name for the file ("Iron Mask"). */
+  codename: string;
+  title: string;
+  /** The theory, in two or three sentences. */
+  claim: string;
+  /** What fans point to: real facts, each with its own evidence label. */
+  evidence: Claim[];
+  /** Reasons it may be wrong. */
+  against: string[];
+  /** Editor's read, 1 (unlikely) to 5 (very plausible). */
+  plausibility: 1 | 2 | 3 | 4 | 5;
+  characters?: string[];
+  projects?: string[];
+  /** Media id for the file's image. */
+  image?: string;
+  /** Where the theory is discussed. */
+  sources: { label: string; url: string }[];
+}

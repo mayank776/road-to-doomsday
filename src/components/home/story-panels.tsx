@@ -22,7 +22,7 @@ export function StoryPanels({ kicker, title, beats, href }: { kicker: string; ti
 
       <Reveal className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {beats.map((b, i) => (
-          <Link key={b.title} href={b.href} className="group relative block h-[52svh] min-h-[360px] overflow-hidden border border-line transition hover:border-white/30">
+          <Link key={b.title} href={b.href} data-cursor={b.href === "/trailer" ? "Play" : "Open"} className="variant-hover group relative block h-[52svh] min-h-[360px] overflow-hidden border border-line transition hover:border-white/30">
             <ImageOrArt media={b.media} seed={`arc-${b.title}`} art={b.art} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="transition duration-[1.2s] group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
             <div className="absolute inset-x-0 top-0 flex items-center gap-3 p-5">

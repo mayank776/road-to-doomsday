@@ -20,7 +20,10 @@ export function scrollToTop(smooth = true) {
   else window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
 }
 
-/** Lenis smooth scrolling (mouse wheel only; touch keeps native scrolling), driven by GSAP's ticker so ScrollTrigger stays in sync. */
+/**
+ * Lenis smooth scrolling (mouse wheel only; touch keeps native scrolling), driven by GSAP's ticker so ScrollTrigger stays in sync.
+ * Also publishes the scroll speed as the CSS variable --scroll-skew (see .skew-on-scroll in globals.css).
+ */
 export function SmoothScroll() {
   const pathname = usePathname();
 
@@ -28,6 +31,14 @@ export function SmoothScroll() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
     lenis.on("scroll", ScrollTrigger.update);
+    // scroll speed → a CSS variable, so elements with .skew-on-scroll lean as you scroll fast
+    const root = document.documentElement;
+    let skew = 0;
+    lenis.on("scroll", (l: Lenis) => {
+      const target = Math.max(-5, Math.min(5, l.velocity * 0.12));
+      skew += (target - skew) * 0.25;
+      root.style.setProperty("--scroll-skew", `${skew.toFixed(2)}deg`);
+    });
     const tick = (t: number) => lenis?.raf(t * 1000);
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);

@@ -14,6 +14,7 @@ import { FlipClue } from "@/components/clue-card";
 import { Marquee } from "@/components/effects/marquee";
 import { Reveal, SplitHeadline } from "@/components/effects/scroll-reveal";
 import { SectionLabel } from "@/components/layout/section-label";
+import { VaultTeaser } from "@/components/home/vault-teaser";
 import { STATUS_HEX, STATUS_META } from "@/components/evidence-labels";
 
 // the landing's cut: open in Doom's hall, end on two Earths in our sky
@@ -150,6 +151,8 @@ export default function Home() {
           ))}
         </Reveal>
       </section>
+
+      <VaultTeaser />
 
       <section className="border-t border-line px-4 py-24 sm:px-8">
         <SectionLabel>07 · The labels</SectionLabel>

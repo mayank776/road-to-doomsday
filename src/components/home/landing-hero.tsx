@@ -64,13 +64,18 @@ export function LandingHero({
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const split = SplitText.create(".hero-title", { type: "chars", mask: "chars", charsClass: "hero-char" });
       if (!reduce) {
+        // the case file "decrypts" (000 → 100) on the closed shutters, then they part
+        const count = { v: 0 };
+        const counter = root.current!.querySelector<HTMLElement>(".hero-count")!;
         gsap
           .timeline({ defaults: { ease: "expo.inOut" } })
-          .fromTo(".shutter-top", { yPercent: 0 }, { yPercent: -100, duration: 1.6 }, 0.15)
-          .fromTo(".shutter-bottom", { yPercent: 0 }, { yPercent: 100, duration: 1.6 }, 0.15)
-          .fromTo(split.chars, { yPercent: 115 }, { yPercent: 0, duration: 1.3, stagger: 0.045, ease: "expo.out" }, 0.9)
-          .fromTo(".hero-in", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.1, stagger: 0.09, ease: "expo.out" }, 1.25)
-          .fromTo(".hero-poster", { opacity: 0, y: 60, rotate: 4 }, { opacity: 1, y: 0, rotate: -3, duration: 1.6, ease: "expo.out" }, 1.1);
+          .to(count, { v: 100, duration: 0.9, ease: "power2.inOut", onUpdate: () => (counter.textContent = String(Math.round(count.v)).padStart(3, "0")) }, 0)
+          .to(".hero-loader", { opacity: 0, duration: 0.25, ease: "power1.out" }, 0.95)
+          .fromTo(".shutter-top", { yPercent: 0 }, { yPercent: -100, duration: 1.6 }, 1.05)
+          .fromTo(".shutter-bottom", { yPercent: 0 }, { yPercent: 100, duration: 1.6 }, 1.05)
+          .fromTo(split.chars, { yPercent: 115 }, { yPercent: 0, duration: 1.3, stagger: 0.045, ease: "expo.out" }, 1.8)
+          .fromTo(".hero-in", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.1, stagger: 0.09, ease: "expo.out" }, 2.15)
+          .fromTo(".hero-poster", { opacity: 0, y: 60, rotate: 4 }, { opacity: 1, y: 0, rotate: -3, duration: 1.6, ease: "expo.out" }, 2);
 
         // scroll: copy drifts up and fades, the frame sinks back
         const st = { trigger: root.current, start: "top top", end: "bottom top", scrub: true };
@@ -78,7 +83,7 @@ export function LandingHero({
         gsap.to(".hero-stage", { scale: 1.08, yPercent: 12, ease: "none", scrollTrigger: st });
         gsap.to(".hero-poster-wrap", { yPercent: -30, ease: "none", scrollTrigger: st });
       } else {
-        gsap.set([".shutter-top", ".shutter-bottom"], { display: "none" });
+        gsap.set([".shutter-top", ".shutter-bottom", ".hero-loader"], { display: "none" });
       }
       return () => split.revert();
     },
@@ -132,6 +137,11 @@ export function LandingHero({
       {/* ── projector shutters, opened on load ── */}
       <div className="shutter-top pointer-events-none absolute inset-x-0 top-0 z-30 h-1/2 bg-black" aria-hidden />
       <div className="shutter-bottom pointer-events-none absolute inset-x-0 bottom-0 z-30 h-1/2 bg-black" aria-hidden />
+      <div className="hero-loader pointer-events-none absolute inset-0 z-40 flex flex-col items-center justify-center gap-3" aria-hidden>
+        <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-doom-bright">Decrypting case file</span>
+        <span className="hero-count font-display text-7xl tabular-nums text-white sm:text-8xl">000</span>
+        <span className="h-px w-40 bg-gradient-to-r from-transparent via-doom-bright to-transparent shadow-[0_0_12px_#7dffb0]" />
+      </div>
 
       {/* ── poster, desktop ── */}
       {poster && (
@@ -183,6 +193,7 @@ export function LandingHero({
           <div className="hero-in mt-6 flex flex-wrap items-center gap-3 sm:mt-7">
             <Link
               href="#universes"
+              data-magnetic
               className="group inline-flex items-center gap-3 rounded-full bg-doom-bright px-6 py-3.5 font-mono text-xs uppercase tracking-[0.25em] text-ink shadow-[0_0_40px_-8px_#7dffb0] transition hover:bg-white"
             >
               Explore the multiverse
@@ -190,6 +201,8 @@ export function LandingHero({
             </Link>
             <Link
               href="/trailer"
+              data-magnetic
+              data-cursor="Play"
               className="inline-flex items-center gap-3 rounded-full border border-white/25 bg-black/30 px-6 py-3.5 font-mono text-xs uppercase tracking-[0.25em] backdrop-blur transition hover:border-white hover:bg-white hover:text-ink"
             >
               <span aria-hidden>▶</span> The trailer

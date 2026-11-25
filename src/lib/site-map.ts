@@ -33,6 +33,7 @@ export const PAGES: SitePage[] = [
   { href: "/clues", label: "Clues", n: "05", blurb: "Post-credit scenes, lines and announcements, each with its evidence.", image: "doom-still" },
   { href: "/trailer", label: "Trailer", n: "06", blurb: "Watch the trailer and browse the stills from the footage.", image: "doomsday-title" },
   { href: "/sources", label: "Sources", n: "07", blurb: "Where every fact comes from, and how the evidence labels work.", image: "starfield-mono" },
+  { href: "/theories", label: "Theories", n: "08", blurb: "Fan theories and conspiracies, sealed until you choose to open them.", image: "doom-throne" },
 ];
 
 /** The page before and after `pathname` in reading order (home leads into the first page). */

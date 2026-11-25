@@ -7,6 +7,7 @@ import researchJson from "../../content/research.json";
 import universesJson from "../../content/universes.json";
 import teamsJson from "../../content/teams.json";
 import crossingsJson from "../../content/crossings.json";
+import theoriesJson from "../../content/theories.json";
 import { validateContent } from "./validate-content.mjs";
 import { media, mediaIds } from "./media";
 import type {
@@ -19,6 +20,7 @@ import type {
   Project,
   ResearchSource,
   Team,
+  Theory,
   Trailer,
   Universe,
   Update,
@@ -34,6 +36,9 @@ export const connections = connectionsJson as Connection[];
 export const universes = universesJson as Universe[];
 export const teams = teamsJson as Team[];
 export const crossings = crossingsJson as Crossing[];
+/** Fan theories for the Theory Vault, most plausible first. */
+export const theories = (theoriesJson as Theory[]).slice().sort((a, b) => b.plausibility - a.plausibility || a.file.localeCompare(b.file));
+export const theoriesAbout = (slug: string) => theories.filter((t) => t.characters?.includes(slug) || t.projects?.includes(slug));
 export const trailers = researchJson.trailers as Trailer[];
 export const sources = researchJson.sources as ResearchSource[];
 export const updates = (researchJson.updates as Update[])
@@ -51,6 +56,7 @@ const problems = validateContent({
   universes,
   teams,
   crossings,
+  theories: theoriesJson,
   mediaIds,
   mediaSubjects: media,
 });

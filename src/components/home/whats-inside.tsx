@@ -3,6 +3,7 @@ import { PAGES } from "@/lib/site-map";
 import { getMedia } from "@/lib/media";
 import { MediaImage } from "@/components/media/media-image";
 import { SectionLabel } from "@/components/layout/section-label";
+import { MaskReveal } from "@/components/effects/scroll-reveal";
 
 /**
  * "What's inside": one picture tile per page, right under the hero, so a
@@ -21,15 +22,17 @@ export function WhatsInside() {
         <p className="max-w-sm text-sm text-white/55">Pick a section, or keep scrolling for the guided tour: the map, the incursions, Steve, the road and Doom.</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <MaskReveal className="skew-on-scroll grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {PAGES.map((p, i) => {
           const m = getMedia(p.image);
+          const vault = p.href === "/theories"; // the opt-in extra gets its own, wider "classified" tile
           return (
             <Link
               key={p.href}
               href={p.href}
-              className={`group relative isolate flex min-h-[200px] flex-col justify-end overflow-hidden border border-white/10 p-4 transition hover:border-doom-bright/60 sm:min-h-[240px] sm:p-5 ${
-                i === 0 ? "col-span-2 lg:row-span-2 lg:min-h-0" : ""
+              data-cursor={vault ? "Enter" : "Open"}
+              className={`variant-hover group relative isolate flex min-h-[200px] flex-col justify-end overflow-hidden border border-white/10 p-4 transition hover:border-doom-bright/60 sm:min-h-[240px] sm:p-5 ${
+                i === 0 ? "col-span-2 lg:row-span-2 lg:min-h-0" : vault ? "col-span-2 border-theory/40 hover:border-theory" : ""
               }`}
             >
               {m && (
@@ -38,14 +41,17 @@ export function WhatsInside() {
                 </div>
               )}
               <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/55 to-black/10" />
-              <span className="absolute left-4 top-4 font-mono text-[11px] text-doom-bright sm:left-5 sm:top-5">{p.n}</span>
+              <span className={`absolute left-4 top-4 font-mono text-[11px] sm:left-5 sm:top-5 ${vault ? "text-theory" : "text-doom-bright"}`}>
+                {p.n}
+                {vault && <span className="ml-2 text-[#ff5a5a]">· Classified</span>}
+              </span>
               <span className="absolute right-4 top-3 text-xl text-white/60 transition group-hover:translate-x-1 group-hover:text-doom-bright sm:right-5">→</span>
               <h3 className={`font-display uppercase leading-none ${i === 0 ? "text-5xl sm:text-7xl" : "text-3xl sm:text-4xl"}`}>{p.label}</h3>
               <p className={`mt-2 text-white/70 ${i === 0 ? "max-w-md text-sm sm:text-base" : "line-clamp-3 text-xs sm:text-sm"}`}>{p.blurb}</p>
             </Link>
           );
         })}
-      </div>
+      </MaskReveal>
     </section>
   );
 }

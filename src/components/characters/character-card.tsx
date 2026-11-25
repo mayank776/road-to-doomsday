@@ -36,9 +36,10 @@ export function CharacterCard({ c, size = "md", priority = false }: { c: RosterC
       <Link
         ref={ref}
         href={`/characters/${c.slug}`}
+        data-cursor="Open file"
         onPointerMove={move}
         onPointerLeave={reset}
-        className="group relative block h-full overflow-hidden border border-white/10 bg-surface transition-[border-color,box-shadow] duration-500 hover:border-[var(--accent)]"
+        className="variant-hover group relative block h-full overflow-hidden border border-white/10 bg-surface transition-[border-color,box-shadow] duration-500 hover:border-[var(--accent)]"
         style={{ "--accent": c.accent, boxShadow: `0 30px 60px -30px ${c.accent}40` } as React.CSSProperties}
       >
         <div className={`absolute inset-0 transition duration-[1.2s] ease-out group-hover:scale-[1.06] ${notAnnounced ? "grayscale-[60%] group-hover:grayscale-0" : ""}`}>

@@ -135,3 +135,31 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+/* ── Signature effects ─────────────────────────────────────────────── */
+
+/* Lean with scroll speed (the variable is set by effects/smooth-scroll.tsx). */
+.skew-on-scroll {
+  transform: skewY(var(--scroll-skew, 0deg));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* "Variant split": on hover an image splits into offset colour channels and
+   jitters, as if a variant from another universe is bleeding through.
+   The SVG filter it uses lives in effects/variant-filter.tsx. */
+.variant-hover img { transition: filter 0.2s; }
+.variant-hover:hover img {
+  filter: url(#variant-split);
+  animation: variant-jitter 0.32s steps(2) infinite;
+}
+@keyframes variant-jitter {
+  0% { translate: 0 0; }
+  50% { translate: 2px -1px; }
+  100% { translate: -2px 1px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skew-on-scroll { transform: none; }
+  .variant-hover:hover img { filter: none; animation: none; }
+}
