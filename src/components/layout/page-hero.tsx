@@ -2,10 +2,10 @@ import Link from "next/link";
 import type { Art, Media } from "@/lib/types";
 import { isWide } from "@/lib/media";
 import { MediaImage } from "@/components/media/media-image";
-import { Visual } from "@/components/media/visual";
-import { SplitHeadline } from "./reveal";
+import { ImageOrArt } from "@/components/media/image-or-art";
+import { SplitHeadline } from "@/components/effects/scroll-reveal";
 
-export function ArtHero({
+export function PageHero({
   seed,
   art,
   media,
@@ -32,7 +32,7 @@ export function ArtHero({
         // a tall poster: full-bleed on phones; on desktop a soft wash behind the framed poster
         <MediaImage m={media!} sizes="(min-width: 1024px) 30vw, 100vw" priority className="lg:scale-110 lg:opacity-40 lg:blur-2xl lg:saturate-150" />
       ) : (
-        <Visual media={media} seed={seed} art={art} sizes="100vw" priority />
+        <ImageOrArt media={media} seed={seed} art={art} sizes="100vw" priority />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-black/50" />
       {tall && (

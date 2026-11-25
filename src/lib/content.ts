@@ -85,4 +85,4 @@ export const teamsFor = (universe: string) => teams.filter((t) => t.universe ===
 export const connectionsFor = (ref: NodeRef) =>
   connections.filter((e) => e.from === ref || e.to === ref);
 
-export { formatDate } from "./format";
+export { formatDate } from "./format-date";

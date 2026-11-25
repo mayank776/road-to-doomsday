@@ -11,7 +11,7 @@ import { MediaImage } from "@/components/media/media-image";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const IronSigil = dynamic(() => import("@/components/three/iron-sigil"), { ssr: false });
+const DoomSigil3D = dynamic(() => import("@/components/three-d/doom-sigil-3d"), { ssr: false });
 
 export type DossierStat = { label: string; value: string; tone: "official" | "canon" | "supported" | "theory" | "comics" | "muted" };
 export type Lane = { label: string; count: number; color: string };
@@ -25,7 +25,7 @@ const TONE: Record<DossierStat["tone"], string> = {
   muted: "text-white/40",
 };
 
-export function DoomSection({ stats, lanes, backdrop }: { stats: DossierStat[]; lanes: Lane[]; backdrop?: Media }) {
+export function DoomDossier({ stats, lanes, backdrop }: { stats: DossierStat[]; lanes: Lane[]; backdrop?: Media }) {
   const root = useRef<HTMLElement>(null);
   const progress = useRef(0);
   const max = Math.max(...lanes.map((l) => l.count));
@@ -61,7 +61,7 @@ export function DoomSection({ stats, lanes, backdrop }: { stats: DossierStat[]; 
 
       <div className="relative mx-auto grid min-h-svh max-w-7xl items-center gap-8 px-4 py-24 sm:px-8 lg:grid-cols-2">
         <div className="relative order-2 aspect-square w-full lg:order-1">
-          <IronSigil progress={progress} />
+          <DoomSigil3D progress={progress} />
           <div className="pointer-events-none absolute inset-6 hud" />
         </div>
 

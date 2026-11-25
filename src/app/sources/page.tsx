@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { sources } from "@/lib/content";
-import { STATUS_HEX, STATUS_META } from "@/components/evidence";
-import { Kicker } from "@/components/site-chrome";
-import { GenerativeArt } from "@/components/visual/generative-art";
-import { SplitHeadline } from "@/components/visual/reveal";
+import { STATUS_HEX, STATUS_META } from "@/components/evidence-labels";
+import { SectionLabel } from "@/components/layout/section-label";
+import { GenerativeArt } from "@/components/effects/generative-art";
+import { SplitHeadline } from "@/components/effects/scroll-reveal";
 
 export const metadata: Metadata = { title: "Sources & editorial rules" };
 
@@ -19,7 +19,7 @@ const RULES = [
 export default function SourcesPage() {
   return (
     <div className="px-4 pb-20 pt-32 sm:px-8">
-      <Kicker>How we know</Kicker>
+      <SectionLabel>How we know</SectionLabel>
       <SplitHeadline as="h1" immediate className="mt-2 font-display text-[16vw] uppercase leading-[0.82] sm:text-[10vw]">
         The rules
       </SplitHeadline>
@@ -44,7 +44,7 @@ export default function SourcesPage() {
       </div>
 
       <section className="mt-20">
-        <Kicker>Research set · {sources.length} leads</Kicker>
+        <SectionLabel>Research set · {sources.length} leads</SectionLabel>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {sources.map((s, i) => {
             return (

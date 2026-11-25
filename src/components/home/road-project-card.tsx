@@ -1,18 +1,18 @@
 import Link from "next/link";
 import type { Media, Project } from "@/lib/types";
-import { Visual } from "@/components/media/visual";
-import { EvidenceDots } from "@/components/evidence";
+import { ImageOrArt } from "@/components/media/image-or-art";
+import { EvidenceDots } from "@/components/evidence-labels";
 
-export function RoadPanel({ p, i, total, cover }: { p: Project; i: number; total: number; cover?: Media }) {
+export function RoadProjectCard({ p, i, total, cover }: { p: Project; i: number; total: number; cover?: Media }) {
   return (
     <Link
       href={`/timeline/${p.slug}`}
-      className={`group relative h-full min-h-[420px] w-[82vw] shrink-0 motion-reduce:h-[70svh] overflow-hidden border sm:w-[52vw] lg:w-[36vw] motion-reduce:w-full ${
+      className={`group relative h-full min-h-[420px] w-[82vw] shrink-0 snap-center motion-reduce:h-[70svh] overflow-hidden border sm:w-[52vw] lg:w-[36vw] motion-reduce:w-full ${
         p.upcoming ? "border-doom-bright/70" : "border-line"
       }`}
     >
       <div className="road-art absolute -inset-x-[10%] inset-y-0">
-        <Visual media={cover} seed={p.slug} art={p.art} sizes="(min-width: 1024px) 36vw, (min-width: 640px) 52vw, 82vw" className="transition duration-[1.2s] ease-out group-hover:scale-105" />
+        <ImageOrArt media={cover} seed={p.slug} art={p.art} sizes="(min-width: 1024px) 36vw, (min-width: 640px) 52vw, 82vw" className="transition duration-[1.2s] ease-out group-hover:scale-105" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/40" />
 

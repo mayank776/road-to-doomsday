@@ -2,11 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { clues, getCharacter, getClue, getProject } from "@/lib/content";
-import { ArtHero } from "@/components/visual/art-hero";
+import { PageHero } from "@/components/layout/page-hero";
 import { coverFor } from "@/lib/media";
-import { BasisTag, EvidenceBadge, STATUS_HEX, STATUS_META, SupersededNote } from "@/components/evidence";
+import { BasisTag, EvidenceBadge, STATUS_HEX, STATUS_META, SupersededNote } from "@/components/evidence-labels";
 import { KindGlyph, KIND_LABEL } from "@/components/clue-card";
-import { Kicker } from "@/components/site-chrome";
+import { SectionLabel } from "@/components/layout/section-label";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,7 +28,7 @@ export default async function CluePage({ params }: Props) {
 
   return (
     <>
-      <ArtHero
+      <PageHero
         seed={c.slug}
         media={coverFor(c.slug, c.project)}
         art={project?.art ?? { hue: 140, motif: "eclipse" }}
@@ -43,11 +43,11 @@ export default async function CluePage({ params }: Props) {
           <EvidenceBadge status={c.status} />
           <BasisTag basis={c.basis} />
         </div>
-      </ArtHero>
+      </PageHero>
 
       <section className="grid gap-px border-y border-line bg-line lg:grid-cols-2">
         <div className="bg-ink px-4 py-14 sm:px-8">
-          <Kicker>Shown</Kicker>
+          <SectionLabel>Shown</SectionLabel>
           <p className="mt-4 font-display text-3xl uppercase leading-tight sm:text-5xl">{c.observation}</p>
         </div>
         <div className="bg-ink px-4 py-14 sm:px-8" style={{ boxShadow: `inset 0 0 120px -60px ${col}` }}>
@@ -61,7 +61,7 @@ export default async function CluePage({ params }: Props) {
 
       <section className="flex flex-wrap items-end justify-between gap-6 px-4 py-14 sm:px-8">
         <div>
-          <Kicker>Source</Kicker>
+          <SectionLabel>Source</SectionLabel>
           <p className="mt-2 font-mono text-sm text-muted">{c.citation}</p>
         </div>
         <div className="flex flex-wrap gap-2">

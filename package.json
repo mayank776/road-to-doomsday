@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "validate": "node scripts/validate.mjs",
-    "prebuild": "node scripts/validate.mjs",
-    "media": "node scripts/media.mjs"
+    "prebuild": "node scripts/check-content.mjs",
+    "check-content": "node scripts/check-content.mjs",
+    "images": "node scripts/process-images.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

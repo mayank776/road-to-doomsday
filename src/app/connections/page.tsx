@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { connections } from "@/lib/content";
-import { buildThreads } from "@/lib/threads";
+import { buildConnectionThreads } from "@/lib/connection-threads";
 import type { NodeRef } from "@/lib/types";
 import { ThreadExplorer } from "@/components/threads/thread-explorer";
-import { Kicker } from "@/components/site-chrome";
-import { SplitHeadline } from "@/components/visual/reveal";
+import { SectionLabel } from "@/components/layout/section-label";
+import { SplitHeadline } from "@/components/effects/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Connections",
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 
 export default async function ConnectionsPage({ searchParams }: { searchParams: Promise<{ focus?: string }> }) {
   const { focus } = await searchParams;
-  const { nodes, edges } = buildThreads();
+  const { nodes, edges } = buildConnectionThreads();
   const confirmed = connections.filter((c) => c.status === "official" || c.status === "canon" || c.status === "trailer").length;
 
   return (
     <div className="px-4 pb-24 pt-32 sm:px-8">
-      <Kicker>Connections · {connections.length} threads</Kicker>
+      <SectionLabel>Connections · {connections.length} threads</SectionLabel>
       <SplitHeadline as="h1" immediate className="mt-2 font-display text-[15vw] uppercase leading-[0.82] sm:text-[9vw]">
         Pull a thread
       </SplitHeadline>

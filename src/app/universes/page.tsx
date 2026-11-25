@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { buildAtlas } from "@/lib/atlas";
+import { buildUniverseMapData } from "@/lib/universe-map-data";
 import { getMedia } from "@/lib/media";
 import { MediaImage } from "@/components/media/media-image";
 import { UniverseMap } from "@/components/universe/universe-map";
-import { Kicker } from "@/components/site-chrome";
-import { SplitHeadline } from "@/components/visual/reveal";
+import { SectionLabel } from "@/components/layout/section-label";
+import { SplitHeadline } from "@/components/effects/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Universes",
@@ -21,14 +21,14 @@ export default function UniversesPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/70 to-ink" />
         </div>
       )}
-      <Kicker>The multiverse map</Kicker>
+      <SectionLabel>The multiverse map</SectionLabel>
       <SplitHeadline as="h1" immediate className="mt-2 font-display text-[16vw] uppercase leading-[0.82] sm:text-[10vw]">
         The universes
       </SplitHeadline>
       <p className="mb-10 mt-4 max-w-xl text-white/60">
         Marvel says Doomsday&apos;s heroes come from three distinct universes. Here they are, plus two others the story touches.
       </p>
-      <UniverseMap atlas={buildAtlas()} />
+      <UniverseMap atlas={buildUniverseMapData()} />
     </div>
   );
 }

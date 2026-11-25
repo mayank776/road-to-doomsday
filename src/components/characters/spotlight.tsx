@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import type { RosterCard } from "@/lib/roster";
+import type { RosterCard } from "@/lib/cast-roster";
 import { CharacterCard } from "./character-card";
 
 type Filter = { id: string; label: string; color?: string; test: (c: RosterCard) => boolean };

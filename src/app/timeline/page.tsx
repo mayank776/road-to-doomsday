@@ -2,30 +2,30 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { formatDate, projects } from "@/lib/content";
 import { coverFor } from "@/lib/media";
-import { Visual } from "@/components/media/visual";
-import { EvidenceDots } from "@/components/evidence";
-import { Kicker } from "@/components/site-chrome";
-import { SplitHeadline } from "@/components/visual/reveal";
+import { ImageOrArt } from "@/components/media/image-or-art";
+import { EvidenceDots } from "@/components/evidence-labels";
+import { SectionLabel } from "@/components/layout/section-label";
+import { SplitHeadline } from "@/components/effects/scroll-reveal";
 
 export const metadata: Metadata = { title: "Timeline" };
 
 export default function TimelinePage() {
   return (
     <div className="px-4 pt-32 sm:px-8">
-      <Kicker>Follow the road · {projects.length} stops</Kicker>
+      <SectionLabel>Follow the road · {projects.length} stops</SectionLabel>
       <SplitHeadline as="h1" immediate className="mt-2 font-display text-[16vw] uppercase leading-[0.82] sm:text-[10vw]">
         The timeline
       </SplitHeadline>
 
-      {/* Sticky stacking cards: each stop slides over the last. */}
+      {/* Desktop: sticky stacking cards, each stop slides over the last. Phones: a plain list, so nothing sticks while you scroll. */}
       <ol className="relative mt-16 pb-[20vh]">
         {projects.map((p, i) => (
-          <li key={p.slug} className="sticky mb-[12vh]" style={{ top: `calc(80px + ${i * 14}px)` }}>
+          <li key={p.slug} className="mb-6 lg:sticky lg:mb-[12vh]" style={{ top: `calc(80px + ${i * 14}px)` }}>
             <Link
               href={`/timeline/${p.slug}`}
-              className={`group relative block h-[72svh] overflow-hidden border bg-ink ${p.upcoming ? "border-doom-bright/70" : "border-line"}`}
+              className={`group relative block h-[60svh] overflow-hidden lg:h-[72svh] border bg-ink ${p.upcoming ? "border-doom-bright/70" : "border-line"}`}
             >
-              <Visual media={coverFor(p.slug)} seed={p.slug} art={p.art} sizes="100vw" className="transition duration-[1.4s] ease-out group-hover:scale-105" />
+              <ImageOrArt media={coverFor(p.slug)} seed={p.slug} art={p.art} sizes="100vw" className="transition duration-[1.4s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
 
               <div className="relative flex h-full flex-col justify-between p-5 sm:p-10">

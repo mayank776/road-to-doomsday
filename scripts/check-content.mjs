@@ -1,4 +1,4 @@
-// Usage: npm run validate — checks /content/*.json for broken references and missing evidence.
+// Usage: npm run check-content — checks /content/*.json for broken references and missing evidence.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

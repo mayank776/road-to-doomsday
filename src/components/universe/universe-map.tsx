@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import type { Atlas, AtlasUniverse } from "@/lib/atlas";
+import type { UniverseMapData, MapUniverse } from "@/lib/universe-map-data";
 import type { Claim, Crossing, EvidenceStatus } from "@/lib/types";
-import { EvidenceBadge, STATUS_HEX, STATUS_META } from "@/components/evidence";
-import { Visual } from "@/components/media/visual";
+import { EvidenceBadge, STATUS_HEX, STATUS_META } from "@/components/evidence-labels";
+import { ImageOrArt } from "@/components/media/image-or-art";
 import { MediaImage } from "@/components/media/media-image";
-import { Portrait } from "./portrait";
+import { InitialsPortrait } from "./initials-portrait";
 
 /* ---------- layout ---------- */
 
@@ -35,7 +35,7 @@ const WIDE: Layout = {
   fs: { chip: 11, name: 26, sub: 11, periName: 15, periSub: 9 },
 };
 
-/** Portrait layout for phones: worlds stacked, type scaled up so it stays legible. */
+/** InitialsPortrait layout for phones: worlds stacked, type scaled up so it stays legible. */
 const TALL: Layout = {
   vb: { w: 600, h: 1000 },
   pos: {
@@ -88,7 +88,7 @@ type Sel = { kind: "universe"; slug: string } | { kind: "crossing"; id: string }
 
 /* ---------- map ---------- */
 
-export function UniverseMap({ atlas }: { atlas: Atlas }) {
+export function UniverseMap({ atlas }: { atlas: UniverseMapData }) {
   const [sel, setSel] = useState<Sel>({ kind: "universe", slug: "earth-616" });
   const L = useNarrow() ? TALL : WIDE;
   const { vb: VB, pos: POS, doom: DOOM } = L;
@@ -277,7 +277,7 @@ export function UniverseMap({ atlas }: { atlas: Atlas }) {
   );
 }
 
-function World({ u, L, on, onSelect, onKey }: { u: AtlasUniverse; L: Layout; on: boolean; onSelect: () => void; onKey: (e: React.KeyboardEvent) => void }) {
+function World({ u, L, on, onSelect, onKey }: { u: MapUniverse; L: Layout; on: boolean; onSelect: () => void; onKey: (e: React.KeyboardEvent) => void }) {
   const [x, y] = L.pos[u.slug];
   const fs = L.fs;
   const r = R[u.role];
@@ -327,7 +327,7 @@ function PanelLabel({ children }: { children: React.ReactNode }) {
   return <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-faint">{children}</p>;
 }
 
-function UniversePanel({ u }: { u: AtlasUniverse }) {
+function UniversePanel({ u }: { u: MapUniverse }) {
   return (
     <article className="overflow-hidden border border-line bg-surface/70 p-5 sm:p-6" style={{ boxShadow: `inset 0 3px 0 ${u.color}` }}>
       {u.cover && (
@@ -376,7 +376,7 @@ function UniversePanel({ u }: { u: AtlasUniverse }) {
                             <MediaImage m={m.portrait} sizes="40px" />
                           </span>
                         ) : (
-                          <Portrait name={m.name} color={u.color} size={40} />
+                          <InitialsPortrait name={m.name} color={u.color} size={40} />
                         )}
                         <span className="min-w-0">
                           <span className="block truncate text-[13px] font-semibold leading-tight">{m.name.split("·")[0].trim()}</span>
@@ -419,7 +419,7 @@ function UniversePanel({ u }: { u: AtlasUniverse }) {
           <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1">
             {u.projects.map((p) => (
               <Link key={p.slug} href={`/timeline/${p.slug}`} className="group relative h-28 w-20 shrink-0 overflow-hidden border border-line">
-                <Visual media={p.cover} seed={p.slug} art={p.art} sizes="80px" className="transition duration-700 group-hover:scale-110" grain={false} />
+                <ImageOrArt media={p.cover} seed={p.slug} art={p.art} sizes="80px" className="transition duration-700 group-hover:scale-110" grain={false} />
                 <span className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                 <span className="absolute inset-x-1 bottom-1 font-display text-[11px] uppercase leading-tight">{p.title}</span>
                 <span className="absolute left-1 top-1 font-mono text-[9px] text-white/70">{p.year}</span>
@@ -446,7 +446,7 @@ function UniversePanel({ u }: { u: AtlasUniverse }) {
   );
 }
 
-function CrossingPanel({ x, byId }: { x: Crossing; byId: Map<string, AtlasUniverse> }) {
+function CrossingPanel({ x, byId }: { x: Crossing; byId: Map<string, MapUniverse> }) {
   const a = byId.get(x.from)!;
   const b = byId.get(x.to)!;
   return (
@@ -467,7 +467,7 @@ function CrossingPanel({ x, byId }: { x: Crossing; byId: Map<string, AtlasUniver
   );
 }
 
-function DoomPanel({ doom }: { doom: Atlas["doom"] }) {
+function DoomPanel({ doom }: { doom: UniverseMapData["doom"] }) {
   return (
     <article className="border border-doom/50 bg-surface/70 p-5 sm:p-6" style={{ boxShadow: "inset 0 3px 0 #3dff8f" }}>
       <PanelLabel>The threat to all three</PanelLabel>

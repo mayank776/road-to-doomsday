@@ -1,5 +1,5 @@
 import type { Basis, Claim, EvidenceStatus } from "@/lib/types";
-import { formatDate } from "@/lib/format";
+import { formatDate } from "@/lib/format-date";
 
 export const STATUS_META: Record<
   EvidenceStatus,

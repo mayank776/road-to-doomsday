@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import type { ThreadEdge, ThreadNode } from "@/lib/threads";
+import type { ThreadEdge, ThreadNode } from "@/lib/connection-threads";
 import type { EvidenceStatus, NodeRef } from "@/lib/types";
-import { BasisTag, EvidenceBadge, STATUS_HEX, STATUS_META } from "@/components/evidence";
-import { Visual } from "@/components/media/visual";
+import { BasisTag, EvidenceBadge, STATUS_HEX, STATUS_META } from "@/components/evidence-labels";
+import { ImageOrArt } from "@/components/media/image-or-art";
 import { MediaImage } from "@/components/media/media-image";
 
 const KIND = { project: "Film / series", character: "Character", concept: "Concept" } as const;
@@ -143,7 +143,7 @@ export function ThreadExplorer({ nodes, edges, initialFocus }: { nodes: ThreadNo
               n.id === focus ? "border-doom-bright shadow-[0_0_20px_-4px_#7dffb0]" : "border-white/10 opacity-60 hover:opacity-100"
             }`}
           >
-            <Visual media={n.image} seed={n.id} art={n.art} sizes="68px" grain={false} />
+            <ImageOrArt media={n.image} seed={n.id} art={n.art} sizes="68px" grain={false} />
             <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black to-transparent px-1 pb-1 pt-4 text-left font-mono text-[8px] uppercase leading-tight text-white/80">
               {n.label}
             </span>
@@ -201,7 +201,7 @@ export function ThreadExplorer({ nodes, edges, initialFocus }: { nodes: ThreadNo
             <motion.div key={node.id} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.5, ease: EASE }} onAnimationComplete={measure}>
               <div className="flex gap-5 lg:block">
                 <div ref={anchor} className="relative aspect-[3/4] w-32 shrink-0 overflow-hidden border border-white/15 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9)] sm:w-44 lg:w-full lg:max-w-[420px]">
-                  <Visual media={node.image} seed={node.id} art={node.art} sizes="(min-width: 1024px) 30vw, 176px" priority />
+                  <ImageOrArt media={node.image} seed={node.id} art={node.art} sizes="(min-width: 1024px) 30vw, 176px" priority />
                   <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
                 </div>
                 <div className="min-w-0 lg:mt-6">
@@ -252,7 +252,7 @@ export function ThreadExplorer({ nodes, edges, initialFocus }: { nodes: ThreadNo
                       style={{ borderLeftColor: STATUS_HEX[e.status] }}
                     >
                       <span className="relative h-24 w-[72px] shrink-0 overflow-hidden border border-white/10">
-                        <Visual media={other.image} seed={other.id} art={other.art} sizes="72px" grain={false} className="transition duration-700 group-hover:scale-110" />
+                        <ImageOrArt media={other.image} seed={other.id} art={other.art} sizes="72px" grain={false} className="transition duration-700 group-hover:scale-110" />
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="flex flex-wrap items-center gap-1.5">

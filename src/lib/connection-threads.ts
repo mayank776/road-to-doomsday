@@ -33,7 +33,7 @@ function describe(ref: NodeRef): Omit<ThreadNode, "degree"> {
 }
 
 /** Every node that takes part in a documented connection, with the edges between them. */
-export function buildThreads(): { nodes: ThreadNode[]; edges: ThreadEdge[] } {
+export function buildConnectionThreads(): { nodes: ThreadNode[]; edges: ThreadEdge[] } {
   const degree = new Map<NodeRef, number>();
   for (const e of connections) for (const id of [e.from, e.to]) degree.set(id, (degree.get(id) ?? 0) + 1);
 

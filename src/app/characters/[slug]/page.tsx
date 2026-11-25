@@ -4,17 +4,17 @@ import type { Metadata } from "next";
 import type { Claim } from "@/lib/types";
 import { characters, cluesForCharacter, getCharacter, getProject, getUniverse, teams } from "@/lib/content";
 import { mediaFor } from "@/lib/media";
-import { rosterCard, spotlight } from "@/lib/roster";
+import { rosterCard, spotlight } from "@/lib/cast-roster";
 import { CharacterHero } from "@/components/characters/character-hero";
 import { CharacterCard } from "@/components/characters/character-card";
 import { Gallery } from "@/components/characters/gallery";
 import { MediaImage } from "@/components/media/media-image";
-import { Portrait } from "@/components/universe/portrait";
-import { GenerativeArt } from "@/components/visual/generative-art";
-import { BasisTag, EvidenceBadge, STATUS_HEX, SupersededNote } from "@/components/evidence";
+import { InitialsPortrait } from "@/components/universe/initials-portrait";
+import { GenerativeArt } from "@/components/effects/generative-art";
+import { BasisTag, EvidenceBadge, STATUS_HEX, SupersededNote } from "@/components/evidence-labels";
 import { FlipClue } from "@/components/clue-card";
 import { ConnectionList } from "@/components/connection-list";
-import { Kicker } from "@/components/site-chrome";
+import { SectionLabel } from "@/components/layout/section-label";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -87,7 +87,7 @@ export default async function CharacterPage({ params }: Props) {
       <CharacterHero c={c} card={card} />
 
       <section className="px-4 pb-20 pt-6 sm:px-8">
-        <Kicker>The evidence</Kicker>
+        <SectionLabel>The evidence</SectionLabel>
         <div className={`mt-6 grid gap-4 ${lanes.length === 3 ? "lg:grid-cols-3" : lanes.length === 2 ? "lg:grid-cols-2" : ""}`}>
           {lanes.map((l) => (
             <Lane key={l.key} title={l.title} sub={l.sub} color={l.color} claims={l.claims} />
@@ -99,7 +99,7 @@ export default async function CharacterPage({ params }: Props) {
         <section className="border-t border-line px-4 py-20 sm:px-8">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <Kicker>Gallery</Kicker>
+              <SectionLabel>Gallery</SectionLabel>
               <h2 className="mt-2 font-display text-5xl uppercase leading-none sm:text-6xl">{gallery.length} artworks</h2>
             </div>
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">Select an image to enlarge it · artwork, not official stills</p>
@@ -110,7 +110,7 @@ export default async function CharacterPage({ params }: Props) {
 
       {(mateCards.length > 0 || mateChips.length > 0) && (
         <section className="border-t border-line px-4 py-20 sm:px-8">
-          <Kicker>Fights alongside</Kicker>
+          <SectionLabel>Fights alongside</SectionLabel>
           <h2 className="mt-2 font-display text-5xl uppercase leading-none sm:text-6xl">{myTeams.map((t) => t.name).join(" · ")}</h2>
           {mateCards.length > 0 && (
             <div className="mt-8 grid auto-rows-[320px] grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -123,7 +123,7 @@ export default async function CharacterPage({ params }: Props) {
             <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
               {mateChips.map((m) => (
                 <div key={m.name} className="flex items-center gap-3 border border-line p-2.5">
-                  <Portrait name={m.name} color={m.color} size={44} />
+                  <InitialsPortrait name={m.name} color={m.color} size={44} />
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold">{m.name.split("·")[0].trim()}</p>
                     <p className="truncate font-mono text-[10px] text-white/40">{m.actor}</p>
@@ -137,7 +137,7 @@ export default async function CharacterPage({ params }: Props) {
 
       {c.openQuestions && c.openQuestions.length > 0 && (
         <section className="border-t border-line px-4 py-20 sm:px-8">
-          <Kicker>Unanswered</Kicker>
+          <SectionLabel>Unanswered</SectionLabel>
           <ul className="mt-6 space-y-6">
             {c.openQuestions.map((q) => (
               <li key={q} className="font-display text-3xl uppercase leading-tight text-outline transition hover:text-white sm:text-6xl">
@@ -150,7 +150,7 @@ export default async function CharacterPage({ params }: Props) {
 
       {related.length > 0 && (
         <section className="border-t border-line px-4 py-20 sm:px-8">
-          <Kicker>Related clues</Kicker>
+          <SectionLabel>Related clues</SectionLabel>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((cl) => (
               <FlipClue key={cl.slug} clue={cl} art={getProject(cl.project ?? "")?.art ?? c.art} />
@@ -161,7 +161,7 @@ export default async function CharacterPage({ params }: Props) {
 
       <section className="border-t border-line px-4 py-20 sm:px-8">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <Kicker>Threads</Kicker>
+          <SectionLabel>Threads</SectionLabel>
           <Link href={`/connections?focus=character:${slug}`} className="font-mono text-[11px] uppercase tracking-[0.25em] text-doom-bright hover:text-white">
             Follow its threads →
           </Link>

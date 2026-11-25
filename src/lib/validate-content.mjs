@@ -1,5 +1,5 @@
 // Shared content validator. Plain JS so both the Next.js build and
-// `npm run validate` (node scripts/validate.mjs) can use it.
+// `npm run check-content` (node scripts/check-content.mjs) can use it.
 
 const STATUSES = new Set(["official", "trailer", "canon", "supported", "theory"]);
 const BASES = new Set(["mcu", "comics", "official-announcement"]);
@@ -112,7 +112,7 @@ export function validateContent({ projects, characters, concepts, clues, connect
   }
   if (mediaIds) {
     for (const x of [...characters, ...teams])
-      for (const id of x.media ?? []) if (!mediaIds.has(id)) err(`${x.slug}`, `unknown or unprocessed media "${id}" (run npm run media)`);
+      for (const id of x.media ?? []) if (!mediaIds.has(id)) err(`${x.slug}`, `unknown or unprocessed media "${id}" (run npm run images)`);
     for (const t of teams) for (const m of t.members ?? []) if (m.portrait && !mediaIds.has(m.portrait)) err(`team ${t.slug}`, `unknown portrait "${m.portrait}"`);
   }
   // every image tag must name real content (or a reserved tag), so a typo cannot silently hide an image

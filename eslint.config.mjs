@@ -7,7 +7,7 @@ export default defineConfig([
   ...nextTs,
   {
     // React Three Fiber mutates three.js objects inside useFrame by design (no re-renders per frame).
-    files: ["src/components/three/**"],
+    files: ["src/components/three-d/**"],
     rules: { "react-hooks/immutability": "off" },
   },
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),

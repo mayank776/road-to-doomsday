@@ -8,7 +8,7 @@ import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import type { Media } from "@/lib/types";
 import { MediaImage } from "@/components/media/media-image";
-import { Countdown } from "@/components/visual/countdown";
+import { Countdown } from "@/components/effects/countdown";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
@@ -21,7 +21,7 @@ const FRAME_MS = 6500;
  * (letterbox shutters part, the title rises), with the countdown, the three
  * Earths and the poster on hand. Scrolling pushes the copy away.
  */
-export function Hero({
+export function LandingHero({
   release,
   stats,
   earths,

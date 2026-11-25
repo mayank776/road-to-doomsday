@@ -71,7 +71,7 @@ function Sigil({ progress }: { progress: React.RefObject<number> }) {
   );
 }
 
-export default function IronSigil({ progress }: { progress: React.RefObject<number> }) {
+export default function DoomSigil3D({ progress }: { progress: React.RefObject<number> }) {
   const wrap = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {

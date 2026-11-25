@@ -1,18 +1,27 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { Art, Clue, EvidenceStatus, Media } from "@/lib/types";
 import { FlipClue, KindGlyph, KIND_LABEL } from "@/components/clue-card";
-import { STATUS_HEX, STATUS_META } from "@/components/evidence";
+import { STATUS_HEX, STATUS_META } from "@/components/evidence-labels";
 
 const chip = (on: boolean) =>
   `flex items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] transition ${
     on ? "border-doom-bright/60 bg-doom-bright/10 text-white" : "border-line text-white/50 hover:text-white"
   }`;
 
+function onHashChange(cb: () => void) {
+  window.addEventListener("hashchange", cb);
+  return () => window.removeEventListener("hashchange", cb);
+}
+
 export function ClueWall({ items }: { items: { clue: Clue; art: Art; cover?: Media }[] }) {
-  const [status, setStatus] = useState<EvidenceStatus | "all">("all");
+  // /clues#canon opens the wall filtered to that label (linked from the homepage label tiles);
+  // a chip the visitor clicks takes over from the link
+  const hash = useSyncExternalStore(onHashChange, () => window.location.hash.slice(1), () => "");
+  const [picked, setStatus] = useState<EvidenceStatus | "all" | null>(null);
+  const status: EvidenceStatus | "all" = picked ?? (hash in STATUS_META ? (hash as EvidenceStatus) : "all");
   const [kind, setKind] = useState<Clue["kind"] | "all">("all");
   const shown = useMemo(
     () => items.filter(({ clue }) => (status === "all" || clue.status === status) && (kind === "all" || clue.kind === kind)),
@@ -43,7 +52,7 @@ export function ClueWall({ items }: { items: { clue: Clue; art: Art; cover?: Med
       </div>
 
       <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-faint" aria-live="polite">
-        {shown.length} / {items.length} clues · hover or tap to flip
+        {shown.length} / {items.length} clues · hover or tap “Evidence” to see why
       </p>
 
       <motion.div layout className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

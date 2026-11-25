@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Anton, Inter, JetBrains_Mono } from "next/font/google";
-import { SiteFooter, SiteHeader } from "@/components/site-chrome";
-import { SmoothScroll } from "@/components/visual/smooth-scroll";
-import { Cursor } from "@/components/visual/cursor";
+import { BackToTop, SiteFooter, SiteHeader } from "@/components/layout/site-header-footer";
+import { SmoothScroll } from "@/components/effects/smooth-scroll";
+import { CustomCursor } from "@/components/effects/custom-cursor";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -23,10 +23,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <SmoothScroll />
-        <Cursor />
+        <CustomCursor />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
+        <BackToTop />
       </body>
     </html>
   );

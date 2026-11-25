@@ -1,13 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { universes } from "@/lib/content";
-import { castByUniverse, filmstrip, rosterCard, spotlight } from "@/lib/roster";
+import { castByUniverse, filmstrip, rosterCard, spotlight } from "@/lib/cast-roster";
 import { MediaImage } from "@/components/media/media-image";
 import { Spotlight } from "@/components/characters/spotlight";
-import { Portrait } from "@/components/universe/portrait";
-import { EvidenceBadge } from "@/components/evidence";
-import { Kicker } from "@/components/site-chrome";
-import { Reveal, SplitHeadline } from "@/components/visual/reveal";
+import { InitialsPortrait } from "@/components/universe/initials-portrait";
+import { EvidenceBadge } from "@/components/evidence-labels";
+import { SectionLabel } from "@/components/layout/section-label";
+import { Reveal, SplitHeadline } from "@/components/effects/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Characters",
@@ -41,7 +41,7 @@ export default function CharactersPage() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/80 to-ink" aria-hidden />
 
         <div className="relative px-4 sm:px-8">
-          <Kicker>The players</Kicker>
+          <SectionLabel>The players</SectionLabel>
           <SplitHeadline as="h1" immediate className="mt-2 font-display text-[19vw] uppercase leading-[0.8] sm:text-[12vw]">
             Characters
           </SplitHeadline>
@@ -68,7 +68,7 @@ export default function CharactersPage() {
       <section className="border-t border-line px-4 py-24 sm:px-8">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <Kicker>Full cast</Kicker>
+            <SectionLabel>Full cast</SectionLabel>
             <SplitHeadline className="mt-2 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Who&apos;s fighting, and where from</SplitHeadline>
           </div>
           <p className="max-w-xs font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-white/40">
@@ -115,7 +115,7 @@ export default function CharactersPage() {
                         const inner = (
                           <>
                             <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/10 sm:h-14 sm:w-14">
-                              {m.portrait ? <MediaImage m={m.portrait} sizes="56px" /> : <Portrait name={m.name} color={u.color} size={56} />}
+                              {m.portrait ? <MediaImage m={m.portrait} sizes="56px" /> : <InitialsPortrait name={m.name} color={u.color} size={56} />}
                             </div>
                             <div className="min-w-0">
                               <p className="line-clamp-2 text-sm font-semibold leading-tight sm:text-base">{m.name.split("·")[0].trim()}</p>
@@ -148,7 +148,7 @@ export default function CharactersPage() {
 
         <div className="mt-20 flex items-center gap-4 border border-line p-5">
           <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-doom/60 bg-ink">
-            {doom?.portrait ? <MediaImage m={doom.portrait} sizes="56px" /> : <Portrait name="Doctor Doom" color="#3dff8f" size={56} />}
+            {doom?.portrait ? <MediaImage m={doom.portrait} sizes="56px" /> : <InitialsPortrait name="Doctor Doom" color="#3dff8f" size={56} />}
           </div>
           <div>
             <p className="font-display text-2xl uppercase">Doctor Doom · Robert Downey Jr.</p>

@@ -14,7 +14,7 @@ export function initials(name: string) {
   return ((parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? parts[0]?.[1] ?? "")).toUpperCase();
 }
 
-export function Portrait({ name, color, size = 56, dim = false }: { name: string; color: string; size?: number; dim?: boolean }) {
+export function InitialsPortrait({ name, color, size = 56, dim = false }: { name: string; color: string; size?: number; dim?: boolean }) {
   const h = hash(name);
   const id = `pt${h.toString(36)}`;
   const spokes = 3 + (h % 5);

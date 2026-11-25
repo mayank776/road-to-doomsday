@@ -1,5 +1,5 @@
 import type { Claim } from "@/lib/types";
-import { BasisTag, EvidenceBadge, STATUS_HEX, SupersededNote } from "./evidence";
+import { BasisTag, EvidenceBadge, STATUS_HEX, SupersededNote } from "./evidence-labels";
 
 /** Large numbered claim rows. The left rule glows in the evidence colour. */
 export function ClaimStack({ claims, accent }: { claims: Claim[]; accent?: string }) {

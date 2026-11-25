@@ -3,7 +3,7 @@
  *
  * All editorial content lives in /content/*.json. Editors change those files —
  * never application code — to add or correct a project, clue or connection.
- * Run `npm run validate` after editing to catch broken references.
+ * Run `npm run check-content` after editing to catch broken references.
  */
 
 /** Evidence status — required on every important claim and connection. */
@@ -212,7 +212,7 @@ export interface Crossing {
 
 export type MediaKind = "illustration" | "poster" | "comic" | "photo" | "still";
 
-/** An image supplied by the site owner, processed by `npm run media`. */
+/** An image supplied by the site owner, processed by `npm run images`. */
 export interface Media {
   id: string;
   kind: MediaKind;

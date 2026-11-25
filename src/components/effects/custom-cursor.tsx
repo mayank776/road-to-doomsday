@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 /** A trailing ring cursor that grows over links. Hidden on touch devices. */
-export function Cursor() {
+export function CustomCursor() {
   const ring = useRef<HTMLDivElement>(null);
   const dot = useRef<HTMLDivElement>(null);
 

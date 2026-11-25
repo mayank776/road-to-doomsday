@@ -3,9 +3,9 @@ import Link from "next/link";
 import { trailers } from "@/lib/content";
 import { mediaAbout } from "@/lib/media";
 import { Gallery } from "@/components/characters/gallery";
-import { EvidenceBadge } from "@/components/evidence";
-import { Kicker } from "@/components/site-chrome";
-import { SplitHeadline } from "@/components/visual/reveal";
+import { EvidenceBadge } from "@/components/evidence-labels";
+import { SectionLabel } from "@/components/layout/section-label";
+import { SplitHeadline } from "@/components/effects/scroll-reveal";
 
 export const metadata: Metadata = { title: "Trailer breakdown" };
 
@@ -20,7 +20,7 @@ export default function TrailerPage() {
   return (
     <div className="pt-32">
       <div className="px-4 sm:px-8">
-        <Kicker>Frame by frame</Kicker>
+        <SectionLabel>Frame by frame</SectionLabel>
         <SplitHeadline as="h1" immediate className="mt-2 font-display text-[16vw] uppercase leading-[0.82] sm:text-[10vw]">
           The trailer
         </SplitHeadline>
@@ -108,7 +108,7 @@ export default function TrailerPage() {
         <section className="border-t border-line px-4 py-20 sm:px-8">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <Kicker>Stills · {stills.length}</Kicker>
+              <SectionLabel>Stills · {stills.length}</SectionLabel>
               <h2 className="mt-2 font-display text-5xl uppercase leading-none sm:text-7xl">From the footage</h2>
             </div>
             <p className="max-w-sm font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-faint">

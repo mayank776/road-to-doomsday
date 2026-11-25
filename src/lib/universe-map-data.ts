@@ -2,18 +2,18 @@ import { crossings, getCharacter, getProject, teamsFor, universes } from "./cont
 import { bannerFor, coverFor, getMedia } from "./media";
 import type { Art, Claim, Crossing, EvidenceStatus, Media, Universe } from "./types";
 
-export type AtlasMember = { name: string; actor: string; href: string | null; note?: string; portrait?: Media };
-export type AtlasTeam = { slug: string; name: string; summary: string; universeStatus?: EvidenceStatus; members: AtlasMember[] };
-export type AtlasProject = { slug: string; title: string; year: string; art: Art; cover?: Media };
-export type AtlasUniverse = Omit<Universe, "teams" | "projects"> & { teams: AtlasTeam[]; projects: AtlasProject[]; castCount: number; cover?: Media };
-export type Atlas = {
-  universes: AtlasUniverse[];
+export type MapMember = { name: string; actor: string; href: string | null; note?: string; portrait?: Media };
+export type MapTeam = { slug: string; name: string; summary: string; universeStatus?: EvidenceStatus; members: MapMember[] };
+export type MapProject = { slug: string; title: string; year: string; art: Art; cover?: Media };
+export type MapUniverse = Omit<Universe, "teams" | "projects"> & { teams: MapTeam[]; projects: MapProject[]; castCount: number; cover?: Media };
+export type UniverseMapData = {
+  universes: MapUniverse[];
   crossings: Crossing[];
   doom: { name: string; actor: string; href: string; facts: Claim[] };
 };
 
 /** Everything the universe map needs, resolved to plain serialisable data. */
-export function buildAtlas(): Atlas {
+export function buildUniverseMapData(): UniverseMapData {
   const doom = getCharacter("doctor-doom")!;
   return {
     universes: universes.map((u) => {

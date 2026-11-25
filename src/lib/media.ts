@@ -2,7 +2,7 @@ import mediaJson from "../../content/media.json";
 import generated from "../../content/media.generated.json";
 import type { Media, MediaKind } from "./types";
 
-export { KIND_LABEL } from "./media-kind";
+export { KIND_LABEL } from "./media-kind-labels";
 
 type Source = { id: string; file: string; kind: MediaKind; alt: string; subjects: string[]; focus?: string };
 type Built = { src: string; width: number; height: number; blur: string; color: string };

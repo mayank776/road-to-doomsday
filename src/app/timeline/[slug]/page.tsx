@@ -2,15 +2,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { cluesForProject, formatDate, getProject, projects } from "@/lib/content";
-import { ArtHero } from "@/components/visual/art-hero";
+import { PageHero } from "@/components/layout/page-hero";
 import { coverFor, mediaAbout } from "@/lib/media";
-import { Visual } from "@/components/media/visual";
+import { ImageOrArt } from "@/components/media/image-or-art";
 import { Gallery } from "@/components/characters/gallery";
 import { ClaimStack } from "@/components/claim-stack";
 import { FlipClue } from "@/components/clue-card";
 import { ConnectionList } from "@/components/connection-list";
-import { EvidenceDots } from "@/components/evidence";
-import { Kicker } from "@/components/site-chrome";
+import { EvidenceDots } from "@/components/evidence-labels";
+import { SectionLabel } from "@/components/layout/section-label";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -35,7 +35,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      <ArtHero
+      <PageHero
         seed={p.slug}
         art={p.art}
         media={cover}
@@ -48,12 +48,12 @@ export default async function ProjectPage({ params }: Props) {
           <EvidenceDots statuses={p.events.map((e) => (e.superseded ? "superseded" : e.status))} />
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">{p.events.length} key events</span>
         </div>
-      </ArtHero>
+      </PageHero>
 
       <section className="px-4 py-20 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
           <div>
-            <Kicker>Why it matters</Kicker>
+            <SectionLabel>Why it matters</SectionLabel>
             <p className="mt-3 font-display text-3xl uppercase leading-tight sm:text-4xl">{p.whyItMatters}</p>
           </div>
           <ClaimStack claims={p.events} />
@@ -62,7 +62,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {images.length > 1 && (
         <section className="border-t border-line px-4 py-20 sm:px-8">
-          <Kicker>In pictures · {images.length}</Kicker>
+          <SectionLabel>In pictures · {images.length}</SectionLabel>
           <div className="mt-8">
             <Gallery items={images} accent={cover?.color ?? "#7dffb0"} />
           </div>
@@ -71,7 +71,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {projectClues.length > 0 && (
         <section className="border-t border-line px-4 py-20 sm:px-8">
-          <Kicker>Clues from this stop</Kicker>
+          <SectionLabel>Clues from this stop</SectionLabel>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {projectClues.map((c) => (
               <FlipClue key={c.slug} clue={c} art={p.art} cover={coverFor(c.slug, slug)} />
@@ -82,7 +82,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <section className="border-t border-line px-4 py-20 sm:px-8">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <Kicker>Threads</Kicker>
+          <SectionLabel>Threads</SectionLabel>
           <Link href={`/connections?focus=project:${slug}`} className="font-mono text-[11px] uppercase tracking-[0.25em] text-doom-bright hover:text-white">
             Follow its threads →
           </Link>
@@ -92,10 +92,10 @@ export default async function ProjectPage({ params }: Props) {
 
       {next && (
         <Link href={`/timeline/${next.slug}`} className="group relative block h-[60svh] overflow-hidden border-t border-line">
-          <Visual media={coverFor(next.slug)} seed={next.slug} art={next.art} sizes="100vw" className="opacity-60 transition duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+          <ImageOrArt media={coverFor(next.slug)} seed={next.slug} art={next.art} sizes="100vw" className="opacity-60 transition duration-1000 group-hover:scale-105 group-hover:opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink to-transparent" />
           <div className="absolute inset-x-0 bottom-0 px-4 pb-12 sm:px-8">
-            <Kicker>Next stop →</Kicker>
+            <SectionLabel>Next stop →</SectionLabel>
             <p className="mt-2 font-display text-[12vw] uppercase leading-[0.85] sm:text-[8vw]">{next.title}</p>
           </div>
         </Link>

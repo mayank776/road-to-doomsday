@@ -1,11 +1,11 @@
 import Link from "next/link";
 import type { Character, EvidenceStatus } from "@/lib/types";
-import type { RosterCard } from "@/lib/roster";
+import type { RosterCard } from "@/lib/cast-roster";
 import { isWide, mediaFor } from "@/lib/media";
 import { MediaImage } from "@/components/media/media-image";
-import { GenerativeArt } from "@/components/visual/generative-art";
-import { SplitHeadline } from "@/components/visual/reveal";
-import { STATUS_HEX, STATUS_META } from "@/components/evidence";
+import { GenerativeArt } from "@/components/effects/generative-art";
+import { SplitHeadline } from "@/components/effects/scroll-reveal";
+import { STATUS_HEX, STATUS_META } from "@/components/evidence-labels";
 import { TiltFrame } from "./tilt-frame";
 
 /**

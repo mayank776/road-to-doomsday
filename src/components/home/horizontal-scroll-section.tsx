@@ -8,10 +8,11 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 /**
- * Pins its section and converts vertical scroll into horizontal travel along the track.
+ * Pins its section and converts vertical scroll into horizontal travel along the track (768px and up).
+ * On phones the track is an ordinary horizontal scroller you swipe, snapping panel by panel.
  * Server-rendered children keep the heavy SVG art out of the client bundle.
  */
-export function HorizontalPin({ children, header, ticks }: { children: React.ReactNode; header: React.ReactNode; ticks: string[] }) {
+export function HorizontalScrollSection({ children, header, ticks }: { children: React.ReactNode; header: React.ReactNode; ticks: string[] }) {
   const section = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const bar = useRef<HTMLDivElement>(null);
@@ -19,7 +20,8 @@ export function HorizontalPin({ children, header, ticks }: { children: React.Rea
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // pinned travel on tablets and up; phones get a native swipeable row instead (see the track classes)
+      mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
         const distance = () => track.current!.scrollWidth - window.innerWidth;
         const tween = gsap.to(track.current, {
           x: () => -distance(),
@@ -48,12 +50,18 @@ export function HorizontalPin({ children, header, ticks }: { children: React.Rea
   // unmount React removes this wrapper instead of a <section> that GSAP has re-parented.
   return (
     <div>
-    <section ref={section} id="road" className="relative flex h-svh flex-col overflow-hidden motion-reduce:h-auto">
+    <section ref={section} id="road" className="relative flex flex-col overflow-hidden md:h-svh motion-reduce:h-auto">
       <div className="px-4 pt-20 sm:px-8">{header}</div>
-      <div ref={track} className="flex min-h-0 flex-1 items-stretch gap-4 px-4 py-6 will-change-transform sm:gap-6 sm:px-8 motion-reduce:flex-col motion-reduce:items-stretch">
+      <p className="px-4 pt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-white/45 md:hidden" aria-hidden>
+        Swipe →
+      </p>
+      <div
+        ref={track}
+        className="flex min-h-0 flex-1 snap-x snap-mandatory items-stretch gap-4 overflow-x-auto px-4 py-6 [scrollbar-width:none] sm:gap-6 sm:px-8 md:snap-none md:overflow-visible md:will-change-transform motion-reduce:flex-col motion-reduce:items-stretch"
+      >
         {children}
       </div>
-      <div className="px-4 pb-6 sm:px-8 motion-reduce:hidden">
+      <div className="hidden px-4 pb-6 sm:px-8 md:block motion-reduce:hidden">
         <div className="relative h-px bg-line">
           <div ref={bar} className="absolute inset-0 origin-left scale-x-0 bg-doom-bright" />
         </div>

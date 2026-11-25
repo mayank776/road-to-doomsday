@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import type { Media } from "@/lib/types";
 import { MediaImage } from "@/components/media/media-image";
 
-import { KIND_LABEL as KIND } from "@/lib/media-kind";
+import { KIND_LABEL as KIND } from "@/lib/media-kind-labels";
 
 /** Snap-scrolling artwork strip with a keyboard-navigable lightbox. */
 export function Gallery({ items, accent }: { items: Media[]; accent: string }) {

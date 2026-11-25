@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
 import type { Art, Clue, Media } from "@/lib/types";
-import { Visual } from "@/components/media/visual";
-import { EvidenceBadge, STATUS_HEX } from "@/components/evidence";
+import { ImageOrArt } from "@/components/media/image-or-art";
+import { EvidenceBadge, STATUS_HEX } from "@/components/evidence-labels";
 
 export const KIND_LABEL: Record<Clue["kind"], string> = {
   "post-credit": "Post-credit",
@@ -83,19 +83,17 @@ export function FlipClue({ clue, art, cover }: { clue: Clue; art: Art; cover?: M
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* front */}
-        <button
-          onClick={() => setFlipped((f) => !f)}
-          className="absolute inset-0 overflow-hidden border border-line text-left [backface-visibility:hidden]"
-          aria-label={`${clue.title}: show evidence`}
-        >
-          <Visual media={cover} seed={clue.slug} art={art} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" grain={false} />
+        {/* front: the card opens the clue; only the Evidence button flips it, so a
+            touch that starts a scroll on the card can never spin it by accident */}
+        <div className="absolute inset-0 overflow-hidden border border-line [backface-visibility:hidden]">
+          <Link href={`/clues/${clue.slug}`} className="absolute inset-0 text-left" aria-label={`Open clue: ${clue.title}`}>
+          <ImageOrArt media={cover} seed={clue.slug} art={art} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" grain={false} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
           <div className="absolute left-5 top-5 text-white/90" style={{ filter: `drop-shadow(0 0 12px ${glow})` }}>
             <KindGlyph kind={clue.kind} className="h-12 w-12" />
           </div>
           <span className="absolute right-5 top-5 h-3 w-3 rounded-full" style={{ background: glow, boxShadow: `0 0 16px ${glow}` }} />
-          <div className="absolute inset-x-0 bottom-0 p-5">
+          <div className="absolute inset-x-0 bottom-0 p-5 pr-32">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
               {KIND_LABEL[clue.kind]}
               {clue.superseded ? " · Superseded" : ""}
@@ -104,14 +102,27 @@ export function FlipClue({ clue, art, cover }: { clue: Clue; art: Art; cover?: M
               {clue.title}
             </h3>
           </div>
-        </button>
+          </Link>
+          <button
+            onClick={() => setFlipped(true)}
+            className="absolute bottom-5 right-5 rounded-full border border-white/25 bg-black/60 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-white backdrop-blur transition hover:border-white"
+            aria-label={`${clue.title}: show the evidence`}
+          >
+            Evidence ↻
+          </button>
+        </div>
 
         {/* back */}
         <div
           className="absolute inset-0 flex flex-col border bg-surface p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
           style={{ borderColor: glow + "66", boxShadow: `inset 0 0 60px ${glow}14` }}
         >
-          <EvidenceBadge status={clue.status} />
+          <div className="flex items-start justify-between gap-2">
+            <EvidenceBadge status={clue.status} />
+            <button onClick={() => setFlipped(false)} className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 hover:text-white" aria-label="Flip back">
+              ↺ Back
+            </button>
+          </div>
           <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-faint">Shown</p>
           <p className="mt-1 text-sm">{clue.observation}</p>
           <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-faint">Why it matters</p>

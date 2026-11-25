@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import type { RosterCard } from "@/lib/roster";
+import type { RosterCard } from "@/lib/cast-roster";
 import { MediaImage } from "@/components/media/media-image";
-import { GenerativeArt } from "@/components/visual/generative-art";
+import { GenerativeArt } from "@/components/effects/generative-art";
 
 /** Poster card with pointer-driven 3D tilt, accent glow and hover reveal. */
 export function CharacterCard({ c, size = "md", priority = false }: { c: RosterCard; size?: "lg" | "md"; priority?: boolean }) {

@@ -1,4 +1,4 @@
-// Usage: npm run media
+// Usage: npm run images
 // Reads content/media.json, processes each source image from ../assets into
 // public/media/<id>.jpg, and writes content/media.generated.json with the
 // dimensions, a tiny blur placeholder and the dominant colour for every image.

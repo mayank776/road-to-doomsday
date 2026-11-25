@@ -1,28 +1,37 @@
 import Link from "next/link";
 import { clues, getCharacter, getProject, projects, teams, universes, updates, formatDate } from "@/lib/content";
-import { buildAtlas } from "@/lib/atlas";
+import { buildUniverseMapData } from "@/lib/universe-map-data";
 import { coverFor, getMedia, mediaFor } from "@/lib/media";
-import { Hero } from "@/components/home/hero";
-import { HorizontalPin } from "@/components/home/horizontal-pin";
-import { RoadPanel } from "@/components/home/road-panel";
-import { DoomSection } from "@/components/home/doom-section";
-import { Incursion } from "@/components/home/incursion";
-import { StoryArc } from "@/components/home/steve-arc";
+import { LandingHero } from "@/components/home/landing-hero";
+import { WhatsInside } from "@/components/home/whats-inside";
+import { HorizontalScrollSection } from "@/components/home/horizontal-scroll-section";
+import { RoadProjectCard } from "@/components/home/road-project-card";
+import { DoomDossier } from "@/components/home/doom-dossier";
+import { IncursionStory } from "@/components/home/incursion-story";
+import { StoryPanels } from "@/components/home/story-panels";
 import { UniverseMap } from "@/components/universe/universe-map";
 import { FlipClue } from "@/components/clue-card";
-import { Marquee } from "@/components/visual/marquee";
-import { Reveal, SplitHeadline } from "@/components/visual/reveal";
-import { Kicker } from "@/components/site-chrome";
-import { STATUS_HEX, STATUS_META } from "@/components/evidence";
+import { Marquee } from "@/components/effects/marquee";
+import { Reveal, SplitHeadline } from "@/components/effects/scroll-reveal";
+import { SectionLabel } from "@/components/layout/section-label";
+import { STATUS_HEX, STATUS_META } from "@/components/evidence-labels";
 
 // the landing's cut: open in Doom's hall, end on two Earths in our sky
 const HERO_FRAMES = ["doom-court", "avengers-team-up", "doom-still", "steve-f4", "cyclops-still", "doom-sentinels", "steve-peggy-lamplight", "incursion-sky"];
+// where each evidence label's tile leads: the trailer itself, or clues filtered to that label
+const LABEL_LINK: Record<keyof typeof STATUS_META, { href: string; cta: string }> = {
+  official: { href: "/clues#official", cta: "Official clues" },
+  trailer: { href: "/trailer", cta: "Watch the trailer" },
+  canon: { href: "/clues#canon", cta: "Canon clues" },
+  supported: { href: "/clues#supported", cta: "Supported clues" },
+  theory: { href: "/connections", cta: "Theories in the threads" },
+};
 const KEY_CLUES = ["doom-mask-with-franklin", "ship-from-another-dimension", "clea-incursion", "loki-holds-the-tree", "council-of-kangs", "rdj-is-doom"];
 
 export default function Home() {
   const doomsday = getProject("avengers-doomsday")!;
   const doom = getCharacter("doctor-doom")!;
-  const atlas = buildAtlas();
+  const atlas = buildUniverseMapData();
   const central = universes.filter((u) => u.role === "central");
   const officialCast = teams.reduce((n, t) => n + t.members.length, 0) + 1; // + Doom
   const featured = KEY_CLUES.map((s) => clues.find((c) => c.slug === s)!);
@@ -30,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero
+      <LandingHero
         release={doomsday.releaseDate}
         earths={central.map((u) => ({ designation: u.designation, name: u.name, color: u.color }))}
         stats={[
@@ -42,13 +51,15 @@ export default function Home() {
         poster={getMedia("doomsday-official-poster")}
       />
 
+      <WhatsInside />
+
       <Marquee items={(Object.keys(STATUS_META) as (keyof typeof STATUS_META)[]).map((s) => ({ text: STATUS_META[s].label, color: STATUS_HEX[s] }))} />
 
       {/* the centrepiece */}
       <section id="universes" className="scroll-mt-16 px-4 py-24 sm:px-8">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <Kicker>01 · The multiverse map</Kicker>
+            <SectionLabel>01 · The multiverse map</SectionLabel>
             <SplitHeadline className="mt-2 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Three Earths. One Doom.</SplitHeadline>
           </div>
           <p className="max-w-sm font-mono text-[11px] uppercase leading-relaxed tracking-[0.15em] text-white/50">
@@ -62,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Incursion
+      <IncursionStory
         backdrop={getMedia("starfield-mono")}
         sky={getMedia("incursion-sky")}
         steps={[
@@ -74,24 +85,24 @@ export default function Home() {
         ]}
       />
 
-      <StoryArc
+      <StoryPanels
         kicker="03 · The return"
         title="Steve Rogers comes back"
         href="/characters/steve-rogers"
         beats={[
-          { when: "2019", title: "He stays with Peggy", status: "canon", citation: "Avengers: Endgame", art: { hue: 12, motif: "shield" }, media: getMedia("steve-peggy-dance") },
-          { when: "2026", title: "They have a son", status: "canon", citation: "Endgame Encore, per Variety", art: { hue: 28, motif: "branch" }, media: getMedia("steve-peggy-lamplight") },
-          { when: "Trailer", title: "The Fantastic Four come for him", status: "trailer", citation: "Final trailer, per Variety", art: { hue: 210, motif: "orbit" }, media: getMedia("steve-f4") },
-          { when: "Dec 18", title: "Chris Evans returns", status: "official", citation: "marvel.com", art: { hue: 140, motif: "eclipse" }, media: getMedia("steve-mjolnir") },
+          { when: "2019", title: "He stays with Peggy", status: "canon", citation: "Avengers: Endgame", href: "/timeline/avengers-endgame", art: { hue: 12, motif: "shield" }, media: getMedia("steve-peggy-dance") },
+          { when: "2026", title: "They have a son", status: "canon", citation: "Endgame Encore, per Variety", href: "/timeline/endgame-encore", art: { hue: 28, motif: "branch" }, media: getMedia("steve-peggy-lamplight") },
+          { when: "Trailer", title: "The Fantastic Four come for him", status: "trailer", citation: "Final trailer, per Variety", href: "/trailer", art: { hue: 210, motif: "orbit" }, media: getMedia("steve-f4") },
+          { when: "Dec 18", title: "Chris Evans returns", status: "official", citation: "marvel.com", href: "/characters/steve-rogers", art: { hue: 140, motif: "eclipse" }, media: getMedia("steve-mjolnir") },
         ]}
       />
 
-      <HorizontalPin
+      <HorizontalScrollSection
         ticks={projects.map((p) => (p.upcoming ? "DOOMSDAY" : `'${p.releaseDate.slice(2, 4)}`))}
         header={
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <Kicker>04 · The road</Kicker>
+              <SectionLabel>04 · The road</SectionLabel>
               <h2 className="mt-2 font-display text-5xl uppercase leading-none sm:text-7xl">{projects.length} stops to Doomsday</h2>
             </div>
             <Link href="/timeline" className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/60 hover:text-doom-bright">
@@ -101,11 +112,11 @@ export default function Home() {
         }
       >
         {projects.map((p, i) => (
-          <RoadPanel key={p.slug} p={p} i={i} total={projects.length} cover={coverFor(p.slug)} />
+          <RoadProjectCard key={p.slug} p={p} i={i} total={projects.length} cover={coverFor(p.slug)} />
         ))}
-      </HorizontalPin>
+      </HorizontalScrollSection>
 
-      <DoomSection
+      <DoomDossier
         backdrop={getMedia("doom-court")}
         stats={[
           { label: "Actor", value: "Official", tone: "official" },
@@ -123,7 +134,7 @@ export default function Home() {
       <section className="px-4 py-28 sm:px-8">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <Kicker>06 · Evidence locker</Kicker>
+            <SectionLabel>06 · Evidence locker</SectionLabel>
             <SplitHeadline className="mt-2 font-display text-6xl uppercase leading-[0.85] sm:text-8xl">Read the clues</SplitHeadline>
           </div>
           <div className="flex flex-col items-start gap-2 sm:items-end">
@@ -141,23 +152,24 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line px-4 py-24 sm:px-8">
-        <Kicker>07 · The labels</Kicker>
+        <SectionLabel>07 · The labels</SectionLabel>
         <SplitHeadline className="mt-2 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">Know what you&apos;re looking at</SplitHeadline>
         <Reveal className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
           {(Object.keys(STATUS_META) as (keyof typeof STATUS_META)[]).map((s) => (
-            <div key={s} className="flex min-h-52 flex-col bg-ink p-5">
+            <Link key={s} href={LABEL_LINK[s].href} className="group flex min-h-52 flex-col bg-ink p-5 transition hover:bg-white/[0.04]">
               <span className="h-4 w-4 rounded-full" style={{ background: STATUS_HEX[s], boxShadow: `0 0 24px ${STATUS_HEX[s]}` }} />
               <p className="mt-auto font-display text-3xl uppercase" style={{ color: STATUS_HEX[s] }}>
                 {STATUS_META[s].short}
               </p>
               <p className="mt-2 text-sm text-muted">{STATUS_META[s].description}</p>
-            </div>
+              <span className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 transition group-hover:text-white">{LABEL_LINK[s].cta} →</span>
+            </Link>
           ))}
         </Reveal>
       </section>
 
       <section className="border-t border-line px-4 py-16 sm:px-8">
-        <Kicker>Latest additions</Kicker>
+        <SectionLabel>Latest additions</SectionLabel>
         <ul className="mt-6">
           {updates.map((u) => (
             <li key={u.title}>

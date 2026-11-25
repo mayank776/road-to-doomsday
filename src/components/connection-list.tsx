@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { NodeRef } from "@/lib/types";
 import { connectionsFor, resolveRef } from "@/lib/content";
-import { BasisTag, EvidenceBadge, STATUS_HEX } from "./evidence";
+import { BasisTag, EvidenceBadge, STATUS_HEX } from "./evidence-labels";
 
 /** Connections rendered as glowing link rows: the line colour is the evidence level. */
 export function ConnectionList({ refId }: { refId: NodeRef }) {

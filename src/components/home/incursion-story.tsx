@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import type { EvidenceStatus, Media } from "@/lib/types";
 import { MediaImage } from "@/components/media/media-image";
-import { EvidenceBadge } from "@/components/evidence";
+import { EvidenceBadge } from "@/components/evidence-labels";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -23,7 +23,7 @@ const SHARDS = Array.from({ length: 26 }, (_, i) => {
   return { dx: Math.round(Math.cos(a) * d), dy: Math.round(Math.sin(a) * d), r: 2 + (i % 4) };
 });
 
-export function Incursion({ steps, backdrop, sky }: { steps: IncursionStep[]; backdrop?: Media; sky?: Media }) {
+export function IncursionStory({ steps, backdrop, sky }: { steps: IncursionStep[]; backdrop?: Media; sky?: Media }) {
   const root = useRef<HTMLElement>(null);
   const [step, setStep] = useState(0);
   const last = useRef(0);
@@ -31,7 +31,8 @@ export function Incursion({ steps, backdrop, sky }: { steps: IncursionStep[]; ba
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // the pinned, scroll-driven story runs on tablets and up; phones read the steps as a list
+      mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: root.current,
@@ -78,12 +79,12 @@ export function Incursion({ steps, backdrop, sky }: { steps: IncursionStep[]; ba
   return (
     // React-owned wrapper: ScrollTrigger re-parents the pinned section inside it.
     <div>
-      <section ref={root} className="relative isolate flex h-svh flex-col overflow-hidden border-y border-line motion-reduce:h-auto">
+      <section ref={root} className="relative isolate flex flex-col overflow-hidden border-y border-line md:h-svh motion-reduce:h-auto">
         {/* deep space throughout; the real "two Earths in our sky" image arrives on the last step */}
         <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
           {backdrop && <MediaImage m={backdrop} sizes="100vw" className="opacity-25" />}
           {sky && (
-            <div className="inc-photo absolute inset-0 opacity-0">
+            <div className="inc-photo absolute inset-0 opacity-40 md:opacity-0">
               <MediaImage m={sky} sizes="100vw" />
             </div>
           )}
@@ -95,7 +96,7 @@ export function Incursion({ steps, backdrop, sky }: { steps: IncursionStep[]; ba
         </div>
 
         <div className="grid min-h-0 flex-1 items-center gap-6 px-4 pb-8 sm:px-8 lg:grid-cols-[1.4fr_1fr]">
-          <svg viewBox="0 0 800 500" className="h-full max-h-[56svh] w-full" aria-hidden>
+          <svg viewBox="0 0 800 500" className="hidden h-full max-h-[56svh] w-full md:block motion-reduce:hidden" aria-hidden>
             <defs>
               <radialGradient id="inc-ga" cx="40%" cy="35%" r="70%">
                 <stop offset="0%" stopColor={A} stopOpacity="0.55" />
@@ -172,7 +173,22 @@ export function Incursion({ steps, backdrop, sky }: { steps: IncursionStep[]; ba
             </g>
           </svg>
 
-          <div className="min-h-[220px]">
+          {/* phones (and reduced motion): every step, in order */}
+          <ol className="space-y-6 py-4 md:hidden motion-reduce:block">
+            {steps.map((st, i) => (
+              <li key={st.title} className="border-l-2 border-doom-bright/50 pl-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-faint">Step {i + 1}</p>
+                <h3 className="mt-1 font-display text-3xl uppercase leading-none">{st.title}</h3>
+                <p className="mt-2 text-text/85">{st.text}</p>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <EvidenceBadge status={st.status} short />
+                  <span className="font-mono text-[10px] text-faint">{st.citation}</span>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="hidden min-h-[220px] md:block motion-reduce:hidden">
             <div className="mb-4 flex gap-1.5" aria-hidden>
               {steps.map((_, i) => (
                 <span key={i} className={`h-1 flex-1 rounded-full transition-colors duration-500 ${i <= step ? "bg-doom-bright" : "bg-line"}`} />
